@@ -24,6 +24,15 @@
 		17A870A52B08653300D5162C /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870A42B08653300D5162C /* Base.swift */; };
 		17A870A72B08657500D5162C /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870A62B08657500D5162C /* Font.swift */; };
 		17A870A92B0865A200D5162C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870A82B0865A200D5162C /* String.swift */; };
+		17A870AC2B08668E00D5162C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 17A870AB2B08668E00D5162C /* SnapKit */; };
+		17A870AF2B0866C400D5162C /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 17A870AE2B0866C400D5162C /* Then */; };
+		17A870B22B08672A00D5162C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 17A870B12B08672A00D5162C /* Kingfisher */; };
+		17A870B42B08687700D5162C /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 17A870B32B08687700D5162C /* Pretendard-ExtraBold.otf */; };
+		17A870B82B08688500D5162C /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 17A870B52B08688400D5162C /* Pretendard-Medium.otf */; };
+		17A870B92B08688500D5162C /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 17A870B62B08688400D5162C /* Pretendard-Regular.otf */; };
+		17A870BA2B08688500D5162C /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 17A870B72B08688400D5162C /* Pretendard-SemiBold.otf */; };
+		17A870BC2B08689100D5162C /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 17A870BB2B08689100D5162C /* Pretendard-Bold.otf */; };
+		17A870BE2B08697E00D5162C /* FontLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870BD2B08697E00D5162C /* FontLiterals.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +55,12 @@
 		17A870A42B08653300D5162C /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 		17A870A62B08657500D5162C /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		17A870A82B0865A200D5162C /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		17A870B32B08687700D5162C /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
+		17A870B52B08688400D5162C /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		17A870B62B08688400D5162C /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		17A870B72B08688400D5162C /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		17A870BB2B08689100D5162C /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		17A870BD2B08697E00D5162C /* FontLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontLiterals.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +68,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17A870B22B08672A00D5162C /* Kingfisher in Frameworks */,
+				17A870AC2B08668E00D5162C /* SnapKit in Frameworks */,
+				17A870AF2B0866C400D5162C /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +156,7 @@
 			children = (
 				17A8709E2B0864E200D5162C /* Literal */,
 				17A8709F2B0864EA00D5162C /* String */,
+				17A870BD2B08697E00D5162C /* FontLiterals.swift */,
 			);
 			path = Literals;
 			sourceTree = "<group>";
@@ -255,6 +274,11 @@
 		17A870A02B08650300D5162C /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				17A870B32B08687700D5162C /* Pretendard-ExtraBold.otf */,
+				17A870BB2B08689100D5162C /* Pretendard-Bold.otf */,
+				17A870B52B08688400D5162C /* Pretendard-Medium.otf */,
+				17A870B62B08688400D5162C /* Pretendard-Regular.otf */,
+				17A870B72B08688400D5162C /* Pretendard-SemiBold.otf */,
 				17A870A62B08657500D5162C /* Font.swift */,
 			);
 			path = Font;
@@ -292,6 +316,11 @@
 			dependencies = (
 			);
 			name = Kurly;
+			packageProductDependencies = (
+				17A870AB2B08668E00D5162C /* SnapKit */,
+				17A870AE2B0866C400D5162C /* Then */,
+				17A870B12B08672A00D5162C /* Kingfisher */,
+			);
 			productName = Kurly;
 			productReference = 09DE08322B05B70100D7DF3D /* Kurly.app */;
 			productType = "com.apple.product-type.application";
@@ -320,6 +349,11 @@
 				Base,
 			);
 			mainGroup = 09DE08292B05B70100D7DF3D;
+			packageReferences = (
+				17A870AA2B08668E00D5162C /* XCRemoteSwiftPackageReference "SnapKit" */,
+				17A870AD2B0866C400D5162C /* XCRemoteSwiftPackageReference "Then" */,
+				17A870B02B08672A00D5162C /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 09DE08332B05B70100D7DF3D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -336,6 +370,11 @@
 			files = (
 				09DE08422B05B70200D7DF3D /* LaunchScreen.storyboard in Resources */,
 				09DE083F2B05B70200D7DF3D /* Assets.xcassets in Resources */,
+				17A870BC2B08689100D5162C /* Pretendard-Bold.otf in Resources */,
+				17A870B92B08688500D5162C /* Pretendard-Regular.otf in Resources */,
+				17A870BA2B08688500D5162C /* Pretendard-SemiBold.otf in Resources */,
+				17A870B42B08687700D5162C /* Pretendard-ExtraBold.otf in Resources */,
+				17A870B82B08688500D5162C /* Pretendard-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +389,7 @@
 				17A8709D2B0864CB00D5162C /* Service.swift in Sources */,
 				17A870A72B08657500D5162C /* Font.swift in Sources */,
 				09DE083A2B05B70100D7DF3D /* ViewController.swift in Sources */,
+				17A870BE2B08697E00D5162C /* FontLiterals.swift in Sources */,
 				09DE08362B05B70100D7DF3D /* AppDelegate.swift in Sources */,
 				17A870852B0863A600D5162C /* Protocols.swift in Sources */,
 				17A870872B0863B700D5162C /* Literals.swift in Sources */,
@@ -575,6 +615,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		17A870AA2B08668E00D5162C /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+		17A870AD2B0866C400D5162C /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		17A870B02B08672A00D5162C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		17A870AB2B08668E00D5162C /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17A870AA2B08668E00D5162C /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		17A870AE2B0866C400D5162C /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17A870AD2B0866C400D5162C /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		17A870B12B08672A00D5162C /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17A870B02B08672A00D5162C /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 09DE082A2B05B70100D7DF3D /* Project object */;
 }
