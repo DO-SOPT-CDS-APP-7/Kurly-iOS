@@ -33,6 +33,8 @@
 		17A870BA2B08688500D5162C /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 17A870B72B08688400D5162C /* Pretendard-SemiBold.otf */; };
 		17A870BC2B08689100D5162C /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 17A870BB2B08689100D5162C /* Pretendard-Bold.otf */; };
 		17A870BE2B08697E00D5162C /* FontLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870BD2B08697E00D5162C /* FontLiterals.swift */; };
+		17A870C02B086DE900D5162C /* ColorLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870BF2B086DE900D5162C /* ColorLiterals.swift */; };
+		17A870C22B086E4800D5162C /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870C12B086E4800D5162C /* UIColor+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		17A870B72B08688400D5162C /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		17A870BB2B08689100D5162C /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		17A870BD2B08697E00D5162C /* FontLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontLiterals.swift; sourceTree = "<group>"; };
+		17A870BF2B086DE900D5162C /* ColorLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLiterals.swift; sourceTree = "<group>"; };
+		17A870C12B086E4800D5162C /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				17A870882B0863C600D5162C /* Extension.swift */,
+				17A870C12B086E4800D5162C /* UIColor+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 				17A8709E2B0864E200D5162C /* Literal */,
 				17A8709F2B0864EA00D5162C /* String */,
 				17A870BD2B08697E00D5162C /* FontLiterals.swift */,
+				17A870BF2B086DE900D5162C /* ColorLiterals.swift */,
 			);
 			path = Literals;
 			sourceTree = "<group>";
@@ -387,6 +393,7 @@
 			files = (
 				17A870992B0864B000D5162C /* Base.swift in Sources */,
 				17A8709D2B0864CB00D5162C /* Service.swift in Sources */,
+				17A870C02B086DE900D5162C /* ColorLiterals.swift in Sources */,
 				17A870A72B08657500D5162C /* Font.swift in Sources */,
 				09DE083A2B05B70100D7DF3D /* ViewController.swift in Sources */,
 				17A870BE2B08697E00D5162C /* FontLiterals.swift in Sources */,
@@ -401,6 +408,7 @@
 				17A870892B0863C600D5162C /* Extension.swift in Sources */,
 				17A870A92B0865A200D5162C /* String.swift in Sources */,
 				17A870952B08649D00D5162C /* Models.swift in Sources */,
+				17A870C22B086E4800D5162C /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
