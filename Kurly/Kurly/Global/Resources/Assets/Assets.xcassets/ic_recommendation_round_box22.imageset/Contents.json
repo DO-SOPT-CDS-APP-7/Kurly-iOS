@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_recommendation_round_box22.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}
