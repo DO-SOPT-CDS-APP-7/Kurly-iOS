@@ -9,7 +9,14 @@
 /* Begin PBXBuildFile section */
 		097266F62B0A134B00FB6E54 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097266F52B0A134B00FB6E54 /* BaseViewController.swift */; };
 		09BA868B2B0A231000BF85D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DE08402B05B70200D7DF3D /* LaunchScreen.storyboard */; };
-		09BA868D2B0A23B100BF85D9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09BA868C2B0A23B100BF85D9 /* Info.plist */; };
+		09BA86942B0A3BF200BF85D9 /* SizeLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA86932B0A3BF200BF85D9 /* SizeLiterals.swift */; };
+		09BA86992B0A3C6400BF85D9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA86982B0A3C6400BF85D9 /* DetailViewController.swift */; };
+		09BA86AD2B0A4C9200BF85D9 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA86AC2B0A4C9200BF85D9 /* TabBarView.swift */; };
+		09BA86AF2B0A4D9400BF85D9 /* TabBarCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA86AE2B0A4D9400BF85D9 /* TabBarCollectionView.swift */; };
+		09BA86B12B0A4DB100BF85D9 /* TabBarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA86B02B0A4DB100BF85D9 /* TabBarCollectionViewCell.swift */; };
+		09BA86B32B0A4E4D00BF85D9 /* UICollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA86B22B0A4E4D00BF85D9 /* UICollectionView+.swift */; };
+		09BA86B52B0A4E7C00BF85D9 /* TabBarRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA86B42B0A4E7C00BF85D9 /* TabBarRect.swift */; };
+		09BA86B82B0A616500BF85D9 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA86B72B0A616500BF85D9 /* CustomNavigationBar.swift */; };
 		09DE08362B05B70100D7DF3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DE08352B05B70100D7DF3D /* AppDelegate.swift */; };
 		09DE08382B05B70100D7DF3D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DE08372B05B70100D7DF3D /* SceneDelegate.swift */; };
 		09DE083A2B05B70100D7DF3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DE08392B05B70100D7DF3D /* ViewController.swift */; };
@@ -24,7 +31,6 @@
 		17A8709D2B0864CB00D5162C /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A8709C2B0864CB00D5162C /* Service.swift */; };
 		17A870A52B08653300D5162C /* Base1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870A42B08653300D5162C /* Base1.swift */; };
 		17A870A72B08657500D5162C /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870A62B08657500D5162C /* Font.swift */; };
-		17A870A92B0865A200D5162C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870A82B0865A200D5162C /* String.swift */; };
 		17A870AC2B08668E00D5162C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 17A870AB2B08668E00D5162C /* SnapKit */; };
 		17A870AF2B0866C400D5162C /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 17A870AE2B0866C400D5162C /* Then */; };
 		17A870B22B08672A00D5162C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 17A870B12B08672A00D5162C /* Kingfisher */; };
@@ -55,6 +61,14 @@
 /* Begin PBXFileReference section */
 		097266F52B0A134B00FB6E54 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		09BA868C2B0A23B100BF85D9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09BA86932B0A3BF200BF85D9 /* SizeLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeLiterals.swift; sourceTree = "<group>"; };
+		09BA86982B0A3C6400BF85D9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		09BA86AC2B0A4C9200BF85D9 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		09BA86AE2B0A4D9400BF85D9 /* TabBarCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCollectionView.swift; sourceTree = "<group>"; };
+		09BA86B02B0A4DB100BF85D9 /* TabBarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCollectionViewCell.swift; sourceTree = "<group>"; };
+		09BA86B22B0A4E4D00BF85D9 /* UICollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+.swift"; sourceTree = "<group>"; };
+		09BA86B42B0A4E7C00BF85D9 /* TabBarRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRect.swift; sourceTree = "<group>"; };
+		09BA86B72B0A616500BF85D9 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		09DE08322B05B70100D7DF3D /* Kurly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kurly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09DE08352B05B70100D7DF3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09DE08372B05B70100D7DF3D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,7 +85,6 @@
 		17A8709C2B0864CB00D5162C /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		17A870A42B08653300D5162C /* Base1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base1.swift; sourceTree = "<group>"; };
 		17A870A62B08657500D5162C /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
-		17A870A82B0865A200D5162C /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		17A870B32B08687700D5162C /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
 		17A870B52B08688400D5162C /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		17A870B62B08688400D5162C /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
@@ -110,6 +123,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09BA86902B0A3B9F00BF85D9 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				09BA86AC2B0A4C9200BF85D9 /* TabBarView.swift */,
+				09BA86AE2B0A4D9400BF85D9 /* TabBarCollectionView.swift */,
+				09BA86B02B0A4DB100BF85D9 /* TabBarCollectionViewCell.swift */,
+				09BA86B42B0A4E7C00BF85D9 /* TabBarRect.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		09BA86972B0A3C5900BF85D9 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				09BA86982B0A3C6400BF85D9 /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		09BA86B62B0A614400BF85D9 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				09BA86B72B0A616500BF85D9 /* CustomNavigationBar.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
 		09DE08292B05B70100D7DF3D = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +180,8 @@
 		09FF07822B0A08A5002FE124 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				09BA86B62B0A614400BF85D9 /* UIComponents */,
+				09BA86902B0A3B9F00BF85D9 /* TabBar */,
 				09FF07832B0A08B0002FE124 /* Base */,
 			);
 			path = Common;
@@ -188,6 +230,7 @@
 		17A8707A2B08631200D5162C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				09BA86972B0A3C5900BF85D9 /* Detail */,
 				09FF07822B0A08A5002FE124 /* Common */,
 				17A8708A2B0863D400D5162C /* Home */,
 			);
@@ -211,6 +254,7 @@
 				17A870D92B08A6E200D5162C /* UITextView+.swift */,
 				17A870DB2B08A6F700D5162C /* UIView+.swift */,
 				17A870DD2B08A70F00D5162C /* UIViewController+.swift */,
+				09BA86B22B0A4E4D00BF85D9 /* UICollectionView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -218,8 +262,10 @@
 		17A8707C2B08633300D5162C /* Literals */ = {
 			isa = PBXGroup;
 			children = (
-				17A8709E2B0864E200D5162C /* Literal */,
-				17A8709F2B0864EA00D5162C /* String */,
+				17A870BD2B08697E00D5162C /* FontLiterals.swift */,
+				17A870BF2B086DE900D5162C /* ColorLiterals.swift */,
+				17A870C32B0873C200D5162C /* ImageLiterals.swift */,
+				09BA86932B0A3BF200BF85D9 /* SizeLiterals.swift */,
 			);
 			path = Literals;
 			sourceTree = "<group>";
@@ -316,24 +362,6 @@
 				17A870982B0864B000D5162C /* Base.swift */,
 			);
 			path = Base;
-			sourceTree = "<group>";
-		};
-		17A8709E2B0864E200D5162C /* Literal */ = {
-			isa = PBXGroup;
-			children = (
-				17A870BD2B08697E00D5162C /* FontLiterals.swift */,
-				17A870BF2B086DE900D5162C /* ColorLiterals.swift */,
-				17A870C32B0873C200D5162C /* ImageLiterals.swift */,
-			);
-			path = Literal;
-			sourceTree = "<group>";
-		};
-		17A8709F2B0864EA00D5162C /* String */ = {
-			isa = PBXGroup;
-			children = (
-				17A870A82B0865A200D5162C /* String.swift */,
-			);
-			path = String;
 			sourceTree = "<group>";
 		};
 		17A870A02B08650300D5162C /* Font */ = {
@@ -433,7 +461,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09BA868D2B0A23B100BF85D9 /* Info.plist in Resources */,
 				09BA868B2B0A231000BF85D9 /* LaunchScreen.storyboard in Resources */,
 				09DE083F2B05B70200D7DF3D /* Assets.xcassets in Resources */,
 				17A870BC2B08689100D5162C /* Pretendard-Bold.otf in Resources */,
@@ -452,6 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17A870D22B08A67900D5162C /* UIStackView+.swift in Sources */,
+				09BA86992B0A3C6400BF85D9 /* DetailViewController.swift in Sources */,
 				17A870D02B08A4F400D5162C /* UIResponder+.swift in Sources */,
 				17A870C42B0873C200D5162C /* ImageLiterals.swift in Sources */,
 				17A870D62B08A6B000D5162C /* UITableView+.swift in Sources */,
@@ -460,21 +488,27 @@
 				17A870D42B08A69800D5162C /* UITabBar+.swift in Sources */,
 				17A870C02B086DE900D5162C /* ColorLiterals.swift in Sources */,
 				17A870A72B08657500D5162C /* Font.swift in Sources */,
+				09BA86AD2B0A4C9200BF85D9 /* TabBarView.swift in Sources */,
+				09BA86B32B0A4E4D00BF85D9 /* UICollectionView+.swift in Sources */,
 				17A870CE2B08A4CB00D5162C /* NSObject+.swift in Sources */,
 				09DE083A2B05B70100D7DF3D /* ViewController.swift in Sources */,
 				17A870BE2B08697E00D5162C /* FontLiterals.swift in Sources */,
 				09DE08362B05B70100D7DF3D /* AppDelegate.swift in Sources */,
+				09BA86942B0A3BF200BF85D9 /* SizeLiterals.swift in Sources */,
+				09BA86B52B0A4E7C00BF85D9 /* TabBarRect.swift in Sources */,
+				09BA86B82B0A616500BF85D9 /* CustomNavigationBar.swift in Sources */,
 				097266F62B0A134B00FB6E54 /* BaseViewController.swift in Sources */,
 				17A870852B0863A600D5162C /* Protocols.swift in Sources */,
 				17A870DA2B08A6E200D5162C /* UITextView+.swift in Sources */,
+				09BA86B12B0A4DB100BF85D9 /* TabBarCollectionViewCell.swift in Sources */,
 				17A8709B2B0864BB00D5162C /* DataModel.swift in Sources */,
 				17A870932B08649300D5162C /* View.swift in Sources */,
 				09DE08382B05B70100D7DF3D /* SceneDelegate.swift in Sources */,
 				17A870972B0864A600D5162C /* Cell.swift in Sources */,
 				17A870A52B08653300D5162C /* Base1.swift in Sources */,
 				09FF07852B0A08C6002FE124 /* BaseView.swift in Sources */,
-				17A870A92B0865A200D5162C /* String.swift in Sources */,
 				17A870C62B08742300D5162C /* UIImage+.swift in Sources */,
+				09BA86AF2B0A4D9400BF85D9 /* TabBarCollectionView.swift in Sources */,
 				17A870952B08649D00D5162C /* Models.swift in Sources */,
 				17A870DC2B08A6F700D5162C /* UIView+.swift in Sources */,
 				17A870D82B08A6CC00D5162C /* UITextField+.swift in Sources */,
