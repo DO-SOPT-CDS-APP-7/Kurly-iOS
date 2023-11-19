@@ -137,7 +137,7 @@
 		09BA86972B0A3C5900BF85D9 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				09BA86982B0A3C6400BF85D9 /* DetailViewController.swift */,
+				09BA86B92B0A6BE600BF85D9 /* ViewController */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -148,6 +148,14 @@
 				09BA86B72B0A616500BF85D9 /* CustomNavigationBar.swift */,
 			);
 			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		09BA86B92B0A6BE600BF85D9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				09BA86982B0A3C6400BF85D9 /* DetailViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		09DE08292B05B70100D7DF3D = {

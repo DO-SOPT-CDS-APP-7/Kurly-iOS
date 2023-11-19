@@ -11,6 +11,7 @@ import Then
 import SnapKit
 
 enum NavigationType {
+    
     case backCartButton
     case closeButton
     
@@ -37,6 +38,7 @@ class CustomNavigationBar: UIView {
     init(type: NavigationType) {
         self.type = type
         super.init(frame: .zero)
+
         setUI()
         setLayout()
     }
@@ -48,8 +50,6 @@ class CustomNavigationBar: UIView {
 }
 
 extension CustomNavigationBar {
-    
-    // MARK: - UI Components Property
     
     private func setUI() {
         
@@ -77,8 +77,6 @@ extension CustomNavigationBar {
             $0.isHidden = type.setting.cartHidden
         }
     }
-    
-    // MARK: - Layout Helper
     
     private func setLayout() {
         
