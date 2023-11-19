@@ -25,7 +25,7 @@ enum NavigationType {
     }
 }
 
-class CustomNavigationBar: UIView {
+final class CustomNavigationBar: UIView {
     
     var type: NavigationType
     
@@ -52,7 +52,6 @@ class CustomNavigationBar: UIView {
 extension CustomNavigationBar {
     
     private func setUI() {
-        
         self.backgroundColor = .white
         
         titleLabel.do {
@@ -79,7 +78,6 @@ extension CustomNavigationBar {
     }
     
     private func setLayout() {
-        
         self.addSubviews(backButton, titleLabel, closeButton, cartButton)
         
         self.snp.makeConstraints {

@@ -11,15 +11,17 @@ import UIKit
 import SnapKit
 import Then
 
-final class DetailViewController: UIViewController {
+final class DetailViewController: BaseViewController {
+    
     private let navigationBar = CustomNavigationBar(type: .backCartButton)
     private let tabBarView = TabBarView()
+    private let bottomCTAButton = BottomCTAButton(type: .buy)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
 
-        view.addSubviews(navigationBar, tabBarView)
+        view.addSubviews(navigationBar, tabBarView, bottomCTAButton)
         
         navigationBar.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide)
@@ -30,6 +32,11 @@ final class DetailViewController: UIViewController {
             $0.top.equalToSuperview().inset(100)
             $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(45)
+        }
+        
+        bottomCTAButton.snp.makeConstraints {
+            $0.leading.equalToSuperview().inset(73)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-11)
         }
     }
     

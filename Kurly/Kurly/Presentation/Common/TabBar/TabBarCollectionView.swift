@@ -50,6 +50,7 @@ final class TabBarCollectionView: UICollectionView {
 }
 
 extension TabBarCollectionView {
+    
     func moveUnderlineFor(at tabBarRect: TabBarRect) {
         underlineView.snp.updateConstraints {
             $0.height.equalTo(2)
