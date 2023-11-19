@@ -37,10 +37,10 @@ final class TabBarCollectionView: UICollectionView {
         self.addSubview(underlineView)
         
         underlineView.snp.makeConstraints {
-            $0.height.equalTo(3.5)
+            $0.height.equalTo(2)
             $0.centerY.equalToSuperview().offset(20)
-            $0.width.equalTo(14)
-            $0.leading.equalToSuperview().inset(15)
+            $0.width.equalTo(56)
+            $0.leading.equalToSuperview()
         }
     }
     
@@ -50,12 +50,12 @@ final class TabBarCollectionView: UICollectionView {
 }
 
 extension TabBarCollectionView {
-    func moveUnderlineFor(at tappedRect: TapRect) {
+    func moveUnderlineFor(at tabBarRect: TabBarRect) {
         underlineView.snp.updateConstraints {
-            $0.height.equalTo(3.5)
+            $0.height.equalTo(2)
             $0.centerY.equalToSuperview().offset(20)
-            $0.width.equalTo(tappedRect.width)
-            $0.leading.equalTo(tappedRect.xPosition.x)
+            $0.width.equalTo(tabBarRect.width)
+            $0.leading.equalTo(tabBarRect.xPosition.x)
         }
         
         UIView.animate(withDuration: 0.3) {

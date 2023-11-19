@@ -1,5 +1,5 @@
 //
-//  TabView.swift
+//  TabBarView.swift
 //  Kurly
 //
 //  Created by Minjoo Kim on 11/19/23.
@@ -22,9 +22,9 @@ final class TabBarView: UIView {
     
     private var isHomeSelected = true
     private var selectedTapIndex: Int = 0
-    private var selectedTapRect: TapRect!
+    private var selectedTapRect: TabBarRect!
     
-    private lazy var tapViewCollectionView = TapCollectionView(frame: .zero, collectionViewLayout: setFlowLayout())
+    private lazy var tabBarCollectionView = TabBarCollectionView(frame: .zero, collectionViewLayout: setFlowLayout())
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,21 +35,23 @@ final class TabBarView: UIView {
     
     private func basicSetup() {
         self.backgroundColor = .clear
-        tapViewCollectionView.delegate = self
-        tapViewCollectionView.dataSource = self
+        tabBarCollectionView.delegate = self
+        tabBarCollectionView.dataSource = self
     }
     
     private func setStyle() {
-        tapViewCollectionView.do {
-            $0.register(HomeHeaderTapCollectionViewCell.self, forCellWithReuseIdentifier: HomeHeaderTapCollectionViewCell.className)
+        tabBarCollectionView.do {
+            $0.register(TabBarCollectionViewCell.self, forCellWithReuseIdentifier: TabBarCollectionViewCell.className)
         }
     }
     
     private func setLayout() {
-        self.addSubviews(tapViewCollectionView)
+        self.addSubviews(tabBarCollectionView)
         
-        tapViewCollectionView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+        tabBarCollectionView.snp.makeConstraints {
+            $0.leading.equalToSuperview().inset(31)
+            $0.trailing.equalToSuperview().inset(46)
+            $0.verticalEdges.equalToSuperview()
         }
     }
     
@@ -63,7 +65,7 @@ extension TabBarView {
         let tapViewFlowLayout = UICollectionViewFlowLayout()
         tapViewFlowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         tapViewFlowLayout.scrollDirection = .horizontal
-        tapViewFlowLayout.minimumLineSpacing = 5
+        tapViewFlowLayout.minimumLineSpacing = 30
         return tapViewFlowLayout
     }
 }
@@ -74,9 +76,9 @@ extension TabBarView: UICollectionViewDelegate, UICollectionViewDataSource {
         isHomeSelected = false
         selectedTapIndex = indexPath.item
         
-        let selectedTapRect: TapRect = collectionView.fetchCellRectFor(indexPath: indexPath, paddingFromLeading: 15, cellHorizontalPadding: 20)
+        let selectedTapRect: TabBarRect = collectionView.fetchCellRectFor(indexPath: indexPath, paddingFromLeading: 0, cellHorizontalPadding: 0)
         
-        tapViewCollectionView.moveUnderlineFor(at: selectedTapRect)
+        tabBarCollectionView.moveUnderlineFor(at: selectedTapRect)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -84,7 +86,7 @@ extension TabBarView: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeHeaderTapCollectionViewCell.className, for: indexPath) as? HomeHeaderTapCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TabBarCollectionViewCell.className, for: indexPath) as? TabBarCollectionViewCell else { return UICollectionViewCell() }
         
         if indexPath.item == 0 && isHomeSelected == true {
             cell.isSelected = true

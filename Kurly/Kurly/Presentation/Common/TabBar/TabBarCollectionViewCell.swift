@@ -1,5 +1,5 @@
 //
-//  TabBarCollectionVIew.swift
+//  TabBarCollectionViewCell.swift
 //  Kurly
 //
 //  Created by Minjoo Kim on 11/19/23.
@@ -10,14 +10,16 @@ import UIKit
 import SnapKit
 import Then
 
-final class HomeHeaderTapCollectionViewCell: UICollectionViewCell {
+final class TabBarCollectionViewCell: UICollectionViewCell {
     
     override var isSelected: Bool {
         didSet {
             if isSelected {
                 tapMenuLabel.font = .fontGuide(.body_medium_15)
+                tapMenuLabel.textColor = .kuPurple
             } else {
                 tapMenuLabel.font = .fontGuide(.body_regular_15)
+                tapMenuLabel.textColor = .gray5
             }
         }
     }
@@ -47,7 +49,7 @@ final class HomeHeaderTapCollectionViewCell: UICollectionViewCell {
         
         stackView.do {
             $0.axis = .horizontal
-            $0.distribution = .fill
+            $0.distribution = .equalSpacing
             $0.spacing = 4
             $0.alignment = .center
         }
@@ -60,8 +62,8 @@ final class HomeHeaderTapCollectionViewCell: UICollectionViewCell {
         stackView.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.height.equalTo(30)
-            $0.leading.equalToSuperview().inset(15)
-            $0.trailing.equalToSuperview().inset(5)
+            $0.leading.equalToSuperview().inset(2)
+            $0.trailing.equalToSuperview().inset(2)
         }
     }
     
@@ -70,7 +72,7 @@ final class HomeHeaderTapCollectionViewCell: UICollectionViewCell {
     }
 }
 
-extension HomeHeaderTapCollectionViewCell {
+extension TabBarCollectionViewCell {
     func configureCell(tapMenu: String) {
         self.tapMenuLabel.text = tapMenu
     }
