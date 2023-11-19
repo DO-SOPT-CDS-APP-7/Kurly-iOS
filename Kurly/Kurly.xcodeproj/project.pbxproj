@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		097266F62B0A134B00FB6E54 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097266F52B0A134B00FB6E54 /* BaseViewController.swift */; };
+		09BA868B2B0A231000BF85D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DE08402B05B70200D7DF3D /* LaunchScreen.storyboard */; };
+		09BA868D2B0A23B100BF85D9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09BA868C2B0A23B100BF85D9 /* Info.plist */; };
 		09DE08362B05B70100D7DF3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DE08352B05B70100D7DF3D /* AppDelegate.swift */; };
 		09DE08382B05B70100D7DF3D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DE08372B05B70100D7DF3D /* SceneDelegate.swift */; };
 		09DE083A2B05B70100D7DF3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DE08392B05B70100D7DF3D /* ViewController.swift */; };
 		09DE083F2B05B70200D7DF3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09DE083E2B05B70200D7DF3D /* Assets.xcassets */; };
-		09DE08422B05B70200D7DF3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DE08402B05B70200D7DF3D /* LaunchScreen.storyboard */; };
 		09FF07852B0A08C6002FE124 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FF07842B0A08C6002FE124 /* BaseView.swift */; };
 		17A870852B0863A600D5162C /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870842B0863A600D5162C /* Protocols.swift */; };
 		17A870932B08649300D5162C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870922B08649300D5162C /* View.swift */; };
@@ -21,7 +22,7 @@
 		17A870992B0864B000D5162C /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870982B0864B000D5162C /* Base.swift */; };
 		17A8709B2B0864BB00D5162C /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A8709A2B0864BB00D5162C /* DataModel.swift */; };
 		17A8709D2B0864CB00D5162C /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A8709C2B0864CB00D5162C /* Service.swift */; };
-		17A870A52B08653300D5162C /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870A42B08653300D5162C /* Base.swift */; };
+		17A870A52B08653300D5162C /* Base1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870A42B08653300D5162C /* Base1.swift */; };
 		17A870A72B08657500D5162C /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870A62B08657500D5162C /* Font.swift */; };
 		17A870A92B0865A200D5162C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870A82B0865A200D5162C /* String.swift */; };
 		17A870AC2B08668E00D5162C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 17A870AB2B08668E00D5162C /* SnapKit */; };
@@ -53,13 +54,13 @@
 
 /* Begin PBXFileReference section */
 		097266F52B0A134B00FB6E54 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		09BA868C2B0A23B100BF85D9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09DE08322B05B70100D7DF3D /* Kurly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kurly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09DE08352B05B70100D7DF3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09DE08372B05B70100D7DF3D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		09DE08392B05B70100D7DF3D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		09DE083E2B05B70200D7DF3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09DE08412B05B70200D7DF3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		09DE08432B05B70200D7DF3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../Info.plist; sourceTree = "<group>"; };
 		09FF07842B0A08C6002FE124 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		17A870842B0863A600D5162C /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		17A870922B08649300D5162C /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -68,7 +69,7 @@
 		17A870982B0864B000D5162C /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 		17A8709A2B0864BB00D5162C /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		17A8709C2B0864CB00D5162C /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
-		17A870A42B08653300D5162C /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
+		17A870A42B08653300D5162C /* Base1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base1.swift; sourceTree = "<group>"; };
 		17A870A62B08657500D5162C /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		17A870A82B0865A200D5162C /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		17A870B32B08687700D5162C /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
@@ -236,7 +237,7 @@
 			children = (
 				17A870A02B08650300D5162C /* Font */,
 				17A870A12B08650700D5162C /* Assets */,
-				09DE08432B05B70200D7DF3D /* Info.plist */,
+				09BA868C2B0A23B100BF85D9 /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -359,7 +360,7 @@
 		17A870A32B08652800D5162C /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				17A870A42B08653300D5162C /* Base.swift */,
+				17A870A42B08653300D5162C /* Base1.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -432,7 +433,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09DE08422B05B70200D7DF3D /* LaunchScreen.storyboard in Resources */,
+				09BA868D2B0A23B100BF85D9 /* Info.plist in Resources */,
+				09BA868B2B0A231000BF85D9 /* LaunchScreen.storyboard in Resources */,
 				09DE083F2B05B70200D7DF3D /* Assets.xcassets in Resources */,
 				17A870BC2B08689100D5162C /* Pretendard-Bold.otf in Resources */,
 				17A870B92B08688500D5162C /* Pretendard-Regular.otf in Resources */,
@@ -469,7 +471,7 @@
 				17A870932B08649300D5162C /* View.swift in Sources */,
 				09DE08382B05B70100D7DF3D /* SceneDelegate.swift in Sources */,
 				17A870972B0864A600D5162C /* Cell.swift in Sources */,
-				17A870A52B08653300D5162C /* Base.swift in Sources */,
+				17A870A52B08653300D5162C /* Base1.swift in Sources */,
 				09FF07852B0A08C6002FE124 /* BaseView.swift in Sources */,
 				17A870A92B0865A200D5162C /* String.swift in Sources */,
 				17A870C62B08742300D5162C /* UIImage+.swift in Sources */,
@@ -626,7 +628,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KKFK367WP8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Kurly/Info.plist;
+				INFOPLIST_FILE = Kurly/Global/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -654,7 +656,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KKFK367WP8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Kurly/Info.plist;
+				INFOPLIST_FILE = Kurly/Global/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
