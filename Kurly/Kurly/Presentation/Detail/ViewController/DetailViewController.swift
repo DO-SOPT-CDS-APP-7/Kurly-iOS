@@ -36,7 +36,7 @@ final class DetailViewController: BaseViewController {
         
         bottomCTAButton.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(73)
-            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-11)
         }
     }
     

@@ -62,8 +62,15 @@ extension BottomCTAButton {
             $0.setTitle(titleType.title, for: .normal)
             $0.titleLabel?.font = .fontGuide(.title_semibold_16)
             $0.layer.cornerRadius = 6
-            $0.backgroundColor = .kuPurple
-            $0.setTitleColor(.white, for: .normal)
+            switch titleType {
+            case .orderDetail:
+                $0.backgroundColor = .white
+                $0.setTitleColor(.gray6, for: .normal)
+                $0.makeBorder(width: 1, color: .gray3)
+            default:
+                $0.backgroundColor = .kuPurple
+                $0.setTitleColor(.white, for: .normal)
+            }
         }
     }
     
