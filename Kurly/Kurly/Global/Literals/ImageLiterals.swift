@@ -28,6 +28,7 @@ enum ImageLiterals {
             static var thumbnail_03: UIImage { .load(name: "img_thumbnail_03_small_slide") }
             static var thumbnailLarge: UIImage { .load(name: "img_thumbnail_Large") }
         }
+        
         enum icn {
             static var backButton: UIImage { .load(name: "ic_back") }
             static var cartButton22: UIImage { .load(name: "ic_cart_button22") }
@@ -60,5 +61,11 @@ enum ImageLiterals {
             static var KuGood: UIImage { .load(name: "KuGood") }
             static var KuProcess: UIImage { .load(name: "KuProcess") }
         }
+    }
+    
+    enum navigation {
+        static var backButton: UIImage { .load(name: "ic_back") }
+        static var closeButton: UIImage { .load(name: "ic_close") }
+        static var cartButton: UIImage { .load(name: "ic_cart") }
     }
 }
