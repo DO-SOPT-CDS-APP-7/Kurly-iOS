@@ -73,6 +73,7 @@ final class TabBarCollectionViewCell: UICollectionViewCell {
 }
 
 extension TabBarCollectionViewCell {
+    
     func configureCell(tapMenu: String) {
         self.tapMenuLabel.text = tapMenu
     }

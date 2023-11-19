@@ -11,6 +11,7 @@ import SnapKit
 import Then
 
 enum TabBarItem: String, CaseIterable {
+    
     case home = "상품설명"
     case kids = "상세정보"
     case tvSeries = "후기 9,999+"
@@ -18,6 +19,7 @@ enum TabBarItem: String, CaseIterable {
 }
 
 final class TabBarView: UIView {
+    
     private lazy var tapList = TabBarItem.allCases
     
     private var isHomeSelected = true
@@ -61,6 +63,7 @@ final class TabBarView: UIView {
 }
 
 extension TabBarView {
+    
     private func setFlowLayout() -> UICollectionViewFlowLayout {
         let tapViewFlowLayout = UICollectionViewFlowLayout()
         tapViewFlowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
@@ -71,6 +74,7 @@ extension TabBarView {
 }
 
 extension TabBarView: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         isHomeSelected = false

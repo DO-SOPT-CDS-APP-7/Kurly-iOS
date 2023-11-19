@@ -8,6 +8,7 @@
 import UIKit
 
 struct TabBarRect {
+    
     var index: Int
     var width: CGFloat
     var xPosition: CGPoint

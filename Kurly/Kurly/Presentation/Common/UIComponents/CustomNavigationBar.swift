@@ -25,7 +25,7 @@ enum NavigationType {
     }
 }
 
-class CustomNavigationBar: UIView {
+final class CustomNavigationBar: UIView {
     
     var type: NavigationType
     

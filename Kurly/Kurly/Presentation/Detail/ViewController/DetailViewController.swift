@@ -11,7 +11,8 @@ import UIKit
 import SnapKit
 import Then
 
-final class DetailViewController: UIViewController {
+final class DetailViewController: BaseViewController {
+    
     private let navigationBar = CustomNavigationBar(type: .backCartButton)
     private let tabBarView = TabBarView()
     private let bottomCTAButton = BottomCTAButton(type: .buy)
