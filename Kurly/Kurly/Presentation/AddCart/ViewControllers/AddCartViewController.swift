@@ -43,6 +43,8 @@ extension AddCartViewController {
 extension AddCartViewController {
     @objc func tapButton() {
         print("\(addCartView.stepper.value)")
+        self.dismiss(animated: true)
+        print("설마되나?")
     }
     
     @objc func updateValue(_ sender: UIButton) {
