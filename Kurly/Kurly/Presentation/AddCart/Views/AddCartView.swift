@@ -69,6 +69,7 @@ final class AddCartView: BaseView {
             $0.textColor = .gray4
         }
         
+        
         stepper.do {
             $0.minimumValue = 1
             $0.maximumValue = 100
@@ -175,5 +176,6 @@ extension AddCartView {
         self.orderNameLabel.text = model.name
         self.salePriceLabel.text = "\(model.salePrice)원"
         self.priceLabel.text = "\(model.price)원"
+        self.priceLabel.attributedText = priceLabel.text?.strikeThrough()
     }
 }
