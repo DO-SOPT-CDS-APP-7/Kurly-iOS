@@ -36,7 +36,7 @@ final class TabBarView: UIView {
     }
     
     private func basicSetup() {
-        self.backgroundColor = .clear
+        self.backgroundColor = .white
         tabBarCollectionView.delegate = self
         tabBarCollectionView.dataSource = self
     }
