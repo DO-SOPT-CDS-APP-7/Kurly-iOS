@@ -9,10 +9,6 @@ import UIKit
 
 import SnapKit
 import Then
-//
-//protocol SetValueProtocol {
-//    func setValue(_ value: Int)
-//}
 
 final class Stepper: UIControl {
     
