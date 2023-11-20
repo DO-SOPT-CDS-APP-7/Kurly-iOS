@@ -11,7 +11,6 @@ import SnapKit
 
 final class AddCartViewController: BaseViewController {
     
-    
     private let dummy = Product.dummy()
     
     private let addCartView = AddCartView()
