@@ -43,11 +43,9 @@ extension TestViewController {
     @objc private func presentModalBtnTap() {
         let detentIdentifier = UISheetPresentationController.Detent.Identifier("customDetent")
         let customDetent = UISheetPresentationController.Detent.custom(identifier: detentIdentifier) { _ in
-            // safe area bottom을 구하기 위한 선언.
             let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
             let safeAreaBottom = windowScene?.windows.first?.safeAreaInsets.bottom ?? 0
 
-            // ✅ 모든 기기에서 항상 높이가 600인 detent를 만들어낼 수 있다.
             return 361
         }
         
