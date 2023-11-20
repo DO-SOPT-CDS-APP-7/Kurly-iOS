@@ -17,6 +17,8 @@ final class DetailViewController: BaseViewController {
     private let tabBarView = TabBarView()
     private let bottomCTAButton = BottomCTAButton(type: .buy)
     
+    private let detailView = DetailView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -38,6 +40,10 @@ final class DetailViewController: BaseViewController {
             $0.leading.equalToSuperview().inset(73)
             $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-11)
         }
+    }
+    
+    override func loadView() {
+        self.view = detailView
     }
     
     override func viewWillAppear(_ animated: Bool) {
