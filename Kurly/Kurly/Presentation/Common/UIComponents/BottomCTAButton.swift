@@ -80,7 +80,7 @@ extension BottomCTAButton {
                 $0.width.equalTo(SizeLiterals.Screen.screenWidth - 87)
             }
             else {
-                $0.width.equalTo(SizeLiterals.Screen.screenWidth - 26)
+                $0.width.equalTo(SizeLiterals.Screen.screenWidth - 32)
             }
             $0.height.equalTo(SizeLiterals.Screen.screenHeight * 50 / 812)
         }
