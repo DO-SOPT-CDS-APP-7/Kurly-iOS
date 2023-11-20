@@ -68,4 +68,8 @@ enum ImageLiterals {
         static var closeButton: UIImage { .load(name: "ic_close") }
         static var cartButton: UIImage { .load(name: "ic_cart") }
     }
+    
+    enum addCart {
+        static var smallCart: UIImage { .load(name: "img_small_cart") }
+    }
 }
