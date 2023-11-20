@@ -18,7 +18,7 @@ final class AddCartView: BaseView {
     private let orderNameLabel = UILabel()
     private let salePriceLabel = UILabel()
     private let priceLabel = UILabel()
-    private let stepper = UIStepper()
+    private let stepper = Stepper()
     private let secondDivisionView = UIView()
     private let pointLabel = UILabel()
     private let rewardLabel = UILabel()
@@ -69,15 +69,18 @@ final class AddCartView: BaseView {
             $0.textColor = .gray4
         }
         
-        
-        stepper.do {
-            $0.minimumValue = 1
-            $0.maximumValue = 100
-            $0.value = 1
-            $0.wraps = true
-            $0.autorepeat = true
-        }
-        
+//        
+//        stepper.do {
+//            $0.minimumValue = 1
+//            $0.maximumValue = 100
+//            $0.value = 1
+//            $0.autorepeat = true
+//            $0.tintColor = .clear
+//            $0.backgroundColor = .white
+//            $0.makeCornerRound(radius: 4)
+//            $0.makeBorder(width: 1, color: .gray3)
+//        }
+//        
         secondDivisionView.do {
             $0.backgroundColor = .gray2
         }
