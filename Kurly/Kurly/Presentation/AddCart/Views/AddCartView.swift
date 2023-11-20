@@ -11,6 +11,7 @@ import SnapKit
 import Then
 
 final class AddCartView: BaseView {
+    
     private let imageView = UIImageView()
     private let nameLabel = UILabel()
     private let descriptionLabel = UILabel()
@@ -18,11 +19,11 @@ final class AddCartView: BaseView {
     private let orderNameLabel = UILabel()
     private let salePriceLabel = UILabel()
     private let priceLabel = UILabel()
-    private let stepper = Stepper()
+    let stepper = Stepper()
     private let secondDivisionView = UIView()
     private let pointLabel = UILabel()
     private let rewardLabel = UILabel()
-    private let addCartButton = BottomCTAButton(type: .addCart)
+    lazy var addCartButton = BottomCTAButton(type: .addCart)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -68,19 +69,7 @@ final class AddCartView: BaseView {
             $0.font = .fontGuide(.body_medium_15)
             $0.textColor = .gray4
         }
-        
-//        
-//        stepper.do {
-//            $0.minimumValue = 1
-//            $0.maximumValue = 100
-//            $0.value = 1
-//            $0.autorepeat = true
-//            $0.tintColor = .clear
-//            $0.backgroundColor = .white
-//            $0.makeCornerRound(radius: 4)
-//            $0.makeBorder(width: 1, color: .gray3)
-//        }
-//        
+
         secondDivisionView.do {
             $0.backgroundColor = .gray2
         }
@@ -173,12 +162,25 @@ final class AddCartView: BaseView {
 
 extension AddCartView {
     func bindModel(model: Product) {
+        let numberFormatter: NumberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let salePrice: String = numberFormatter.string(for: model.salePrice) ?? "0"
+        let price: String = numberFormatter.string(for: model.price) ?? "0"
         self.imageView.image = model.image
         self.nameLabel.text = model.name
         self.descriptionLabel.text = model.description
         self.orderNameLabel.text = model.name
-        self.salePriceLabel.text = "\(model.salePrice)원"
-        self.priceLabel.text = "\(model.price)원"
+        self.salePriceLabel.text = "\(salePrice)원"
+        self.priceLabel.text = "\(price)원"
         self.priceLabel.attributedText = priceLabel.text?.strikeThrough()
+        bindPrice(price: model.salePrice, value: 1)
     }
+    
+    func bindPrice(price: Int, value: Int) {
+        let numberFormatter: NumberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let buttonString: String = numberFormatter.string(for: price * value) ?? "0"
+        self.addCartButton.setTitle("\(buttonString)원 장바구니 담기", for: .normal)
+    }
+    
 }

@@ -19,6 +19,7 @@ final class AddCartViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindModel()
+        setTarget()
     }
     
     override func loadView() {
@@ -29,5 +30,31 @@ final class AddCartViewController: BaseViewController {
 extension AddCartViewController {
     private func bindModel() {
         addCartView.bindModel(model: dummy)
+    }
+    
+    private func setTarget() {
+        addCartView.addCartButton.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
+        
+        addCartView.stepper.minusButton.addTarget(self, action: #selector(valueChange(_:)), for: .touchUpInside)
+        
+        addCartView.stepper.plusButton.addTarget(self, action: #selector(valueChange(_:)), for: .touchUpInside)
+        
+        
+    }
+}
+
+extension AddCartViewController {
+    @objc func tapButton() {
+        print("\(addCartView.stepper.value)")
+    }
+    
+    @objc func valueChange(_ sender: UIButton) {
+        if(addCartView.stepper.value == 1 && sender.tag == -1) {
+            print("최소구매수량 1")
+        }
+        else {
+            addCartView.stepper.value += sender.tag
+            addCartView.bindPrice(price: dummy.salePrice, value: addCartView.stepper.value)
+        }
     }
 }

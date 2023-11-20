@@ -9,12 +9,16 @@ import UIKit
 
 import SnapKit
 import Then
+//
+//protocol SetValueProtocol {
+//    func setValue(_ value: Int)
+//}
 
 final class Stepper: UIControl {
     
-    var minusButton = UIButton()
-    var plusButton = UIButton()
-    var label = UILabel()
+    let minusButton = UIButton()
+    let plusButton = UIButton()
+    let label = UILabel()
     
     var value: Int = 1 {
         didSet {
@@ -23,11 +27,10 @@ final class Stepper: UIControl {
         }
     }
     
-    init(){
-        super.init(frame: CGRect.zero)
+    override init(frame: CGRect){
+        super.init(frame: frame)
         setUI()
         setLayout()
-        setTarget()
     }
     
     @available(*, unavailable)
@@ -60,7 +63,6 @@ extension Stepper {
             $0.font = .fontGuide(.body_medium_14)
             $0.textAlignment = .center
         }
-        
     }
     
     private func setLayout() {
@@ -83,23 +85,6 @@ extension Stepper {
         
         label.snp.makeConstraints {
             $0.center.equalToSuperview()
-        }
-    }
-    
-    private func setTarget() {
-        self.minusButton.addTarget(self, action: #selector(valueChange(_:)), for: .touchUpInside)
-        self.plusButton.addTarget(self, action: #selector(valueChange(_:)), for: .touchUpInside)
-    }
-}
-
-extension Stepper {
-    
-    @objc func valueChange(_ sender: UIButton) {
-        if(self.value == 1 && sender.tag == -1) {
-            print("최소구매수량 1")
-        }
-        else {
-            self.value += sender.tag
         }
     }
 }
