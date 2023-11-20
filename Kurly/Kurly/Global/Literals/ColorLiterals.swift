@@ -20,6 +20,10 @@ extension UIColor {
         return UIColor(hex: "#C282FC")
     }
     
+    static var purple4: UIColor {
+        return UIColor(hex: "#F8F4FE")
+    }
+    
     static var purpleCard: UIColor {
         return UIColor(hex: "#F3F1F5")
     }
