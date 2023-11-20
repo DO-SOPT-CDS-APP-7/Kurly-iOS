@@ -1,5 +1,5 @@
 //
-//  AddCartViewController.swift
+//  AfterAddCartViewController.swift
 //  Kurly
 //
 //  Created by Minjoo Kim on 11/20/23.
@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-final class AddCartViewController: BaseViewController {
+final class AfterAddCartViewController: BaseViewController {
     
     private let dummy = Product.dummy()
     
@@ -26,7 +26,7 @@ final class AddCartViewController: BaseViewController {
     }
 }
 
-extension AddCartViewController {
+extension AfterAddCartViewController {
     private func bindModel() {
         addCartView.bindModel(model: dummy)
     }
@@ -40,11 +40,9 @@ extension AddCartViewController {
     }
 }
 
-extension AddCartViewController {
+extension AfterAddCartViewController {
     @objc func tapButton() {
         print("\(addCartView.stepper.value)")
-        self.dismiss(animated: true)
-        print("설마되나?")
     }
     
     @objc func updateValue(_ sender: UIButton) {
