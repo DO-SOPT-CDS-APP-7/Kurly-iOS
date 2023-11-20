@@ -9,21 +9,25 @@ import UIKit
 
 import SnapKit
 
-class AddCartViewController: BaseViewController {
+final class AddCartViewController: BaseViewController {
     
-
+    
+    private let dummy = Product.dummy()
+    
+    private let addCartView = AddCartView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindModel()
     }
     
-    override func setUI() {
-        self.view.backgroundColor = .systemYellow
-        self.modalPresentationStyle = .pageSheet
+    override func loadView() {
+        self.view = addCartView
     }
-    
-    override func setLayout() {
-        view.snp.makeConstraints {
-            $0.height.equalTo(SizeLiterals.Screen.screenHeight * 361 / 812)
-        }
+}
+
+extension AddCartViewController {
+    private func bindModel() {
+        addCartView.bindModel(model: dummy)
     }
 }
