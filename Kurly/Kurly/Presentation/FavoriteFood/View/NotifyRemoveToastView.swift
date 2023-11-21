@@ -63,6 +63,7 @@ final class NotifyRemoveToastView: BaseView {
 }
 
 extension NotifyRemoveToastView {
+    
     func viewToastView() {
         UIView.animate(withDuration: 0.5) {
             self.backgroundView.snp.remakeConstraints {

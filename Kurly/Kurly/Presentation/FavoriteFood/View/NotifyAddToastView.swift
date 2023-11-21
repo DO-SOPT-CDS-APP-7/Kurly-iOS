@@ -89,6 +89,7 @@ final class NotifyAddToastView: BaseView {
 }
 
 extension NotifyAddToastView {
+    
     func viewToastView() {
         UIView.animate(withDuration: 0.5) {
             self.backgroundView.snp.remakeConstraints {
