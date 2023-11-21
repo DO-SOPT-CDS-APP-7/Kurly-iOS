@@ -66,6 +66,9 @@
 		17A870DE2B08A70F00D5162C /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870DD2B08A70F00D5162C /* UIViewController+.swift */; };
 		3F52DDCC2B0B531E00BD216E /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52DDCB2B0B531E00BD216E /* CartViewController.swift */; };
 		3F52DDCE2B0B53B200BD216E /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52DDCD2B0B53B200BD216E /* CartView.swift */; };
+		F15DD1D32B0C8C3C00984E6D /* sampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1D22B0C8C3C00984E6D /* sampleViewController.swift */; };
+		F15DD1D52B0C8C6600984E6D /* NotifyAddToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1D42B0C8C6600984E6D /* NotifyAddToastView.swift */; };
+		F15DD1D72B0C8C7E00984E6D /* NotifyRemoveToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1D62B0C8C7E00984E6D /* NotifyRemoveToastView.swift */; };
 		3F6E80F32B0C5E1E00D89606 /* CartHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E80F22B0C5E1E00D89606 /* CartHeaderView.swift */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +131,9 @@
 		17A870DD2B08A70F00D5162C /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		3F52DDCB2B0B531E00BD216E /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		3F52DDCD2B0B53B200BD216E /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		F15DD1D22B0C8C3C00984E6D /* sampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleViewController.swift; sourceTree = "<group>"; };
+		F15DD1D42B0C8C6600984E6D /* NotifyAddToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyAddToastView.swift; sourceTree = "<group>"; };
+		F15DD1D62B0C8C7E00984E6D /* NotifyRemoveToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyRemoveToastView.swift; sourceTree = "<group>"; };
 		3F6E80F22B0C5E1E00D89606 /* CartHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -330,6 +336,7 @@
 		17A8707A2B08631200D5162C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F15DD1CF2B0C8BDF00984E6D /* FavoriteFood */,
 				3F52DDC82B0B52B000BD216E /* Cart */,
 				09EAE9932B0B3BFE0079CAC4 /* AfterAddCart */,
 				09EAE9842B0B04C90079CAC4 /* AddCart */,
@@ -522,6 +529,32 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		F15DD1CF2B0C8BDF00984E6D /* FavoriteFood */ = {
+			isa = PBXGroup;
+			children = (
+				F15DD1D12B0C8BF800984E6D /* View */,
+				F15DD1D02B0C8BF100984E6D /* ViewControllers */,
+			);
+			path = FavoriteFood;
+			sourceTree = "<group>";
+		};
+		F15DD1D02B0C8BF100984E6D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F15DD1D22B0C8C3C00984E6D /* sampleViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F15DD1D12B0C8BF800984E6D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F15DD1D42B0C8C6600984E6D /* NotifyAddToastView.swift */,
+				F15DD1D62B0C8C7E00984E6D /* NotifyRemoveToastView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -628,6 +661,7 @@
 				09DE083A2B05B70100D7DF3D /* ViewController.swift in Sources */,
 				17A870BE2B08697E00D5162C /* FontLiterals.swift in Sources */,
 				09DE08362B05B70100D7DF3D /* AppDelegate.swift in Sources */,
+				F15DD1D52B0C8C6600984E6D /* NotifyAddToastView.swift in Sources */,
 				09BA86942B0A3BF200BF85D9 /* SizeLiterals.swift in Sources */,
 				09BA86B52B0A4E7C00BF85D9 /* TabBarRect.swift in Sources */,
 				09EAE98B2B0B0A8A0079CAC4 /* Product.swift in Sources */,
@@ -654,9 +688,11 @@
 				17A870CC2B08A4A000D5162C /* String+.swift in Sources */,
 				17A870CA2B08A46500D5162C /* UILabel+.swift in Sources */,
 				17A870DE2B08A70F00D5162C /* UIViewController+.swift in Sources */,
+				F15DD1D32B0C8C3C00984E6D /* sampleViewController.swift in Sources */,
 				17A870C22B086E4800D5162C /* UIColor+.swift in Sources */,
 				17A870C82B08A43A00D5162C /* UIButton+.swift in Sources */,
 				09EAE9862B0B05170079CAC4 /* AddCartViewController.swift in Sources */,
+				F15DD1D72B0C8C7E00984E6D /* NotifyRemoveToastView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
