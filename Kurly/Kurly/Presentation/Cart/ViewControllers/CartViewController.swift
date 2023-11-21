@@ -25,7 +25,7 @@ final class CartViewController: BaseViewController {
 
 extension CartViewController {
     
-    private func setTarget(){
+    private func setTarget() {
         cartView.navigationBar.closeButton.addTarget(self, action: #selector(tapBackButton), for: .touchUpInside)
         
         cartView.bottomCTAButton.addTarget(self, action: #selector(tapOrderButton), for: .touchUpInside)

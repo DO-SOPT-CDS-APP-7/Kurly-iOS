@@ -69,6 +69,7 @@
 		F15DD1D32B0C8C3C00984E6D /* sampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1D22B0C8C3C00984E6D /* sampleViewController.swift */; };
 		F15DD1D52B0C8C6600984E6D /* NotifyAddToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1D42B0C8C6600984E6D /* NotifyAddToastView.swift */; };
 		F15DD1D72B0C8C7E00984E6D /* NotifyRemoveToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1D62B0C8C7E00984E6D /* NotifyRemoveToastView.swift */; };
+		3F6E80F32B0C5E1E00D89606 /* CartHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E80F22B0C5E1E00D89606 /* CartHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -133,6 +134,7 @@
 		F15DD1D22B0C8C3C00984E6D /* sampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleViewController.swift; sourceTree = "<group>"; };
 		F15DD1D42B0C8C6600984E6D /* NotifyAddToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyAddToastView.swift; sourceTree = "<group>"; };
 		F15DD1D62B0C8C7E00984E6D /* NotifyRemoveToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyRemoveToastView.swift; sourceTree = "<group>"; };
+		3F6E80F22B0C5E1E00D89606 /* CartHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -514,6 +516,7 @@
 			isa = PBXGroup;
 			children = (
 				3F52DDCD2B0B53B200BD216E /* CartView.swift */,
+				3F6E80F22B0C5E1E00D89606 /* CartHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -640,6 +643,7 @@
 				17A870D22B08A67900D5162C /* UIStackView+.swift in Sources */,
 				09BA86992B0A3C6400BF85D9 /* DetailViewController.swift in Sources */,
 				17A870D02B08A4F400D5162C /* UIResponder+.swift in Sources */,
+				3F6E80F32B0C5E1E00D89606 /* CartHeaderView.swift in Sources */,
 				17A870C42B0873C200D5162C /* ImageLiterals.swift in Sources */,
 				17A870D62B08A6B000D5162C /* UITableView+.swift in Sources */,
 				17A870992B0864B000D5162C /* Base.swift in Sources */,

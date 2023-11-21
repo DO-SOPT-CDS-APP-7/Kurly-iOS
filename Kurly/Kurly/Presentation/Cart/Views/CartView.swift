@@ -14,6 +14,7 @@ class CartView: BaseView {
     
     let navigationBar = CustomNavigationBar(type: .closeButton)
     let bottomCTAButton = BottomCTAButton(type: .order)
+    let cartHeaderView = CartHeaderView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,10 +30,15 @@ class CartView: BaseView {
     }
     
     override func setLayout() {
-        self.addSubviews(navigationBar, bottomCTAButton)
+        self.addSubviews(navigationBar, cartHeaderView, bottomCTAButton)
 
         navigationBar.snp.makeConstraints {
             $0.top.equalTo(self.safeAreaLayoutGuide)
+            $0.horizontalEdges.equalToSuperview()
+        }
+        
+        cartHeaderView.snp.makeConstraints {
+            $0.top.equalTo(navigationBar.snp.bottom)
             $0.horizontalEdges.equalToSuperview()
         }
         
