@@ -54,8 +54,8 @@ enum ImageLiterals {
             static var roundCloseButton: UIImage { .load(name: "ic_round_close") }
             static var searchButtonGray: UIImage { .load(name: "ic_search_gray") }
             static var shareButton: UIImage { .load(name: "ic_share") }
-            static var shorycutButtonBlack: UIImage { .load(name: "ic_shortcut_black") }
-            static var shorycutButtonWhite: UIImage { .load(name: "ic_round ic_shortcut_white") }
+            static var shortcutButtonBlack: UIImage { .load(name: "ic_shortcut_black") }
+            static var shortcutButtonWhite: UIImage { .load(name: "ic_shortcut_white") }
             static var topFloatingButton: UIImage { .load(name: "ic_top_floating") }
             static var KuBrand: UIImage { .load(name: "KuBrand") }
             static var KuGood: UIImage { .load(name: "KuGood") }

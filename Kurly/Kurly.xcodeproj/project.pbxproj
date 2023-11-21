@@ -30,6 +30,9 @@
 		09EAE9972B0B3CB40079CAC4 /* AfterAddCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EAE9962B0B3CB40079CAC4 /* AfterAddCartViewController.swift */; };
 		09EAE9992B0B42F00079CAC4 /* AfterAddCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EAE9982B0B42F00079CAC4 /* AfterAddCartView.swift */; };
 		09FF07852B0A08C6002FE124 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FF07842B0A08C6002FE124 /* BaseView.swift */; };
+		178335FE2B0B4DA1000DF127 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178335FD2B0B4DA1000DF127 /* DetailView.swift */; };
+		178336002B0B61E3000DF127 /* FirstSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178335FF2B0B61E2000DF127 /* FirstSectionCollectionViewCell.swift */; };
+		178336022B0B6832000DF127 /* DetailProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178336012B0B6832000DF127 /* DetailProduct.swift */; };
 		17A870852B0863A600D5162C /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870842B0863A600D5162C /* Protocols.swift */; };
 		17A870932B08649300D5162C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870922B08649300D5162C /* View.swift */; };
 		17A870952B08649D00D5162C /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870942B08649D00D5162C /* Models.swift */; };
@@ -92,6 +95,9 @@
 		09EAE9962B0B3CB40079CAC4 /* AfterAddCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterAddCartViewController.swift; sourceTree = "<group>"; };
 		09EAE9982B0B42F00079CAC4 /* AfterAddCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterAddCartView.swift; sourceTree = "<group>"; };
 		09FF07842B0A08C6002FE124 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		178335FD2B0B4DA1000DF127 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		178335FF2B0B61E2000DF127 /* FirstSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		178336012B0B6832000DF127 /* DetailProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProduct.swift; sourceTree = "<group>"; };
 		17A870842B0863A600D5162C /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		17A870922B08649300D5162C /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		17A870942B08649D00D5162C /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
@@ -153,7 +159,9 @@
 		09BA86972B0A3C5900BF85D9 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				09BA86B92B0A6BE600BF85D9 /* ViewController */,
+				178335FA2B0B4CF8000DF127 /* Views */,
+				09BA86B92B0A6BE600BF85D9 /* ViewControllers */,
+				178335FB2B0B4D0A000DF127 /* Models */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -167,12 +175,12 @@
 			path = UIComponents;
 			sourceTree = "<group>";
 		};
-		09BA86B92B0A6BE600BF85D9 /* ViewController */ = {
+		09BA86B92B0A6BE600BF85D9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				09BA86982B0A3C6400BF85D9 /* DetailViewController.swift */,
 			);
-			path = ViewController;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		09DE08292B05B70100D7DF3D = {
@@ -288,6 +296,23 @@
 				097266F52B0A134B00FB6E54 /* BaseViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		178335FA2B0B4CF8000DF127 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				178335FD2B0B4DA1000DF127 /* DetailView.swift */,
+				178335FF2B0B61E2000DF127 /* FirstSectionCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		178335FB2B0B4D0A000DF127 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				178336012B0B6832000DF127 /* DetailProduct.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		17A870772B0862FA00D5162C /* Application */ = {
@@ -595,11 +620,14 @@
 				17A870BE2B08697E00D5162C /* FontLiterals.swift in Sources */,
 				09DE08362B05B70100D7DF3D /* AppDelegate.swift in Sources */,
 				09BA86942B0A3BF200BF85D9 /* SizeLiterals.swift in Sources */,
+				178336002B0B61E3000DF127 /* FirstSectionCollectionViewCell.swift in Sources */,
 				09BA86B52B0A4E7C00BF85D9 /* TabBarRect.swift in Sources */,
 				09EAE98B2B0B0A8A0079CAC4 /* Product.swift in Sources */,
 				09BA86B82B0A616500BF85D9 /* CustomNavigationBar.swift in Sources */,
 				097266F62B0A134B00FB6E54 /* BaseViewController.swift in Sources */,
+				178335FE2B0B4DA1000DF127 /* DetailView.swift in Sources */,
 				17A870852B0863A600D5162C /* Protocols.swift in Sources */,
+				178336022B0B6832000DF127 /* DetailProduct.swift in Sources */,
 				17A870DA2B08A6E200D5162C /* UITextView+.swift in Sources */,
 				09BA86B12B0A4DB100BF85D9 /* TabBarCollectionViewCell.swift in Sources */,
 				17A8709B2B0864BB00D5162C /* DataModel.swift in Sources */,
@@ -764,7 +792,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KKFK367WP8;
+				DEVELOPMENT_TEAM = A253B8QM8J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Kurly/Global/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -792,7 +820,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KKFK367WP8;
+				DEVELOPMENT_TEAM = A253B8QM8J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Kurly/Global/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
