@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 import SnapKit
 import Then
 
@@ -83,7 +82,6 @@ extension DetailView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
-            
         case 0:
             guard let item = detailCollectionView.dequeueReusableCell(withReuseIdentifier: FirstSectionCollectionViewCell.identifier, for: indexPath) as? FirstSectionCollectionViewCell else {return UICollectionViewCell()}
             item.bindModel(model: sections[indexPath.section][indexPath.item])
