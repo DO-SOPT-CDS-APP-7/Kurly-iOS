@@ -13,7 +13,6 @@ import Then
 class sampleViewController: BaseViewController {
     
     private let favoriteButton = UIButton()
-    private let notifyAddToastView = NotifyAddToastView()
     private let notifyRemoveToastView = NotifyRemoveToastView()
     
     override func viewDidLoad() {
@@ -34,17 +33,11 @@ class sampleViewController: BaseViewController {
     }
     /// View 의 Layout 을 set 합니다.
     override func setLayout() {
-        view.addSubviews(favoriteButton, notifyAddToastView, notifyRemoveToastView)
+        view.addSubviews(favoriteButton, notifyRemoveToastView)
         
         favoriteButton.snp.makeConstraints {
             $0.centerX.centerY.equalToSuperview()
             $0.size.equalTo(44)
-        }
-        
-        notifyAddToastView.snp.makeConstraints {
-            $0.bottom.equalTo(view.snp.bottom)
-            $0.height.equalTo(51)
-            $0.leading.trailing.equalToSuperview().inset(8)
         }
         
         notifyRemoveToastView.snp.makeConstraints {
@@ -58,10 +51,9 @@ class sampleViewController: BaseViewController {
         //찜 삭제했을 때
         notifyRemoveToastView.viewToastView()
         
-        //모달 생성
-//        let relatedFoodModalViewController = RelatedFoodModalViewController()
-//        relatedFoodModalViewController.modalPresentationStyle = .automatic
-//        self.present(relatedFoodModalViewController, animated: true)
+        let relatedFoodModalViewController = RelatedFoodModalViewController()
+        relatedFoodModalViewController.modalPresentationStyle = .automatic
+        self.present(relatedFoodModalViewController, animated: true)
     }
     
     /// View 의 Delegate 을 set 합니다.
