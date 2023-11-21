@@ -31,7 +31,7 @@ final class CustomNavigationBar: UIView {
     
     private lazy var titleLabel = UILabel()
     private lazy var backButton = UIButton()
-    private lazy var closeButton = UIButton()
+    lazy var closeButton = UIButton()
     private lazy var cartButton = UIButton()
     
     
@@ -95,7 +95,7 @@ extension CustomNavigationBar {
         }
         
         closeButton.snp.makeConstraints {
-            $0.trailing.equalToSuperview().inset(9)
+            $0.leading.equalToSuperview().inset(9)
             $0.centerY.equalToSuperview()
             $0.size.equalTo(36)
         }
