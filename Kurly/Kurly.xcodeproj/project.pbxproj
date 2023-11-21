@@ -74,6 +74,7 @@
 		F15DD1E12B0C9CAB00984E6D /* RecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1E02B0C9CAB00984E6D /* RecommendCollectionViewCell.swift */; };
 		F15DD1E32B0CBBB800984E6D /* RecommendHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1E22B0CBBB800984E6D /* RecommendHeaderView.swift */; };
 		F15DD1E52B0CD37E00984E6D /* RecommendFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1E42B0CD37E00984E6D /* RecommendFooterView.swift */; };
+		3F6E80F32B0C5E1E00D89606 /* CartHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E80F22B0C5E1E00D89606 /* CartHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -143,6 +144,7 @@
 		F15DD1E02B0C9CAB00984E6D /* RecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCollectionViewCell.swift; sourceTree = "<group>"; };
 		F15DD1E22B0CBBB800984E6D /* RecommendHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendHeaderView.swift; sourceTree = "<group>"; };
 		F15DD1E42B0CD37E00984E6D /* RecommendFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendFooterView.swift; sourceTree = "<group>"; };
+		3F6E80F22B0C5E1E00D89606 /* CartHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -525,6 +527,7 @@
 			isa = PBXGroup;
 			children = (
 				3F52DDCD2B0B53B200BD216E /* CartView.swift */,
+				3F6E80F22B0C5E1E00D89606 /* CartHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -688,6 +691,7 @@
 				17A870D22B08A67900D5162C /* UIStackView+.swift in Sources */,
 				09BA86992B0A3C6400BF85D9 /* DetailViewController.swift in Sources */,
 				17A870D02B08A4F400D5162C /* UIResponder+.swift in Sources */,
+				3F6E80F32B0C5E1E00D89606 /* CartHeaderView.swift in Sources */,
 				17A870C42B0873C200D5162C /* ImageLiterals.swift in Sources */,
 				17A870D62B08A6B000D5162C /* UITableView+.swift in Sources */,
 				17A870992B0864B000D5162C /* Base.swift in Sources */,
