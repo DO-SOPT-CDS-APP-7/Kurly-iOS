@@ -35,7 +35,7 @@ class RelatedFoodModalView: BaseView {
         
         grabberView.do {
             $0.backgroundColor = .gray3
-            $0.layer.cornerRadius = 2
+            $0.makeCornerRound(radius: 2)
         }
         
         recommendCollectionView.do {

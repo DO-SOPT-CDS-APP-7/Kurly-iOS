@@ -29,8 +29,8 @@ final class NotifyAddToastView: BaseView {
     
     override func setUI() {
         backgroundView.do {
-            $0.backgroundColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0)
-            $0.layer.cornerRadius = 6
+            $0.backgroundColor = .gray6
+            $0.makeCornerRound(radius: 6)
         }
         
         notifyMessageLabel.do {
@@ -49,7 +49,7 @@ final class NotifyAddToastView: BaseView {
         }
         
         shortcutImageView.do {
-            $0.image = ImageLiterals.Home.icn.shorycutButtonBlack.withRenderingMode(.alwaysTemplate)
+            $0.image = ImageLiterals.Home.icn.shortcutButtonBlack.withRenderingMode(.alwaysTemplate)
             $0.tintColor = .white
         }
     }
