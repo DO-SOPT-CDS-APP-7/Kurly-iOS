@@ -13,11 +13,11 @@ import SnapKit
 class TestViewController: BaseViewController {
     
     private let button = BottomCTAButton(type: .buy)
-    private let modalViewController = AddCartViewController()
+    private let addCartViewController = AddCartViewController()
+    private let afterAddCartViewController = AfterAddCartViewController()
     
     override func viewDidLoad() {
-        setUI()
-        setLayout()
+        super.viewDidLoad()
         setTarget()
     }
     
@@ -37,24 +37,39 @@ class TestViewController: BaseViewController {
 extension TestViewController {
     
     private func setTarget() {
-        button.addTarget(self, action: #selector(presentModalBtnTap), for: .touchUpInside)
+        button.addTarget(self, action: #selector(presentaddCartViewController), for: .touchUpInside)
     }
    
-    @objc private func presentModalBtnTap() {
+    @objc private func presentaddCartViewController() {
         let detentIdentifier = UISheetPresentationController.Detent.Identifier("customDetent")
         let customDetent = UISheetPresentationController.Detent.custom(identifier: detentIdentifier) { _ in
-            let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
-            let safeAreaBottom = windowScene?.windows.first?.safeAreaInsets.bottom ?? 0
-
             return 361
         }
         
-        if let sheet = modalViewController.sheetPresentationController {
+        if let sheet = addCartViewController.sheetPresentationController {
             sheet.detents = [customDetent]
             sheet.prefersGrabberVisible = true
         }
-        
-        present(modalViewController, animated: true, completion: nil)
+        addCartViewController.delegate = self
+        present(addCartViewController, animated: true, completion: nil)
     }
     
+    private func presentAfterAddCartViewController() {
+        let detentIdentifier = UISheetPresentationController.Detent.Identifier("customDetent")
+        let customDetent = UISheetPresentationController.Detent.custom(identifier: detentIdentifier) { _ in
+            return 495
+        }
+        
+        if let sheet = afterAddCartViewController.sheetPresentationController {
+            sheet.detents = [customDetent]
+            sheet.prefersGrabberVisible = true
+        }
+        present(afterAddCartViewController, animated: true, completion: nil)
+    }
+}
+
+extension TestViewController: DismissProtocol {
+    func tapButton() {
+        presentAfterAddCartViewController()
+    }
 }

@@ -9,11 +9,18 @@ import UIKit
 
 import SnapKit
 
+protocol DismissProtocol: AnyObject {
+    func tapButton()
+}
+
 final class AddCartViewController: BaseViewController {
     
     private let dummy = Product.dummy()
     
+    weak var delegate: DismissProtocol?
+    
     private let addCartView = AddCartView()
+    private let afterAddCartViewController = AfterAddCartViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,19 +39,17 @@ extension AddCartViewController {
     }
     
     private func setTarget() {
-        addCartView.addCartButton.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
-        
+        addCartView.addCartButton.addTarget(self, action: #selector(tapAddCartButton), for: .touchUpInside)
         addCartView.stepper.minusButton.addTarget(self, action: #selector(updateValue(_:)), for: .touchUpInside)
-        
         addCartView.stepper.plusButton.addTarget(self, action: #selector(updateValue(_:)), for: .touchUpInside)
     }
 }
 
 extension AddCartViewController {
-    @objc func tapButton() {
+    @objc func tapAddCartButton() {
         print("\(addCartView.stepper.value)")
         self.dismiss(animated: true)
-        print("설마되나?")
+        delegate?.tapButton()
     }
     
     @objc func updateValue(_ sender: UIButton) {

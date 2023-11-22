@@ -24,16 +24,7 @@ final class AddCartView: BaseView {
     private let pointLabel = UILabel()
     private let rewardLabel = UILabel()
     lazy var addCartButton = BottomCTAButton(type: .addCart)
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setUI()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+
     override func setUI() {
         self.backgroundColor = .white
         
