@@ -69,6 +69,7 @@
 		17A870DE2B08A70F00D5162C /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870DD2B08A70F00D5162C /* UIViewController+.swift */; };
 		3F52DDCC2B0B531E00BD216E /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52DDCB2B0B531E00BD216E /* CartViewController.swift */; };
 		3F52DDCE2B0B53B200BD216E /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52DDCD2B0B53B200BD216E /* CartView.swift */; };
+		3F6E80F32B0C5E1E00D89606 /* CartHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E80F22B0C5E1E00D89606 /* CartHeaderView.swift */; };
 		F15DD1D32B0C8C3C00984E6D /* sampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1D22B0C8C3C00984E6D /* sampleViewController.swift */; };
 		F15DD1D52B0C8C6600984E6D /* NotifyAddToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1D42B0C8C6600984E6D /* NotifyAddToastView.swift */; };
 		F15DD1D72B0C8C7E00984E6D /* NotifyRemoveToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1D62B0C8C7E00984E6D /* NotifyRemoveToastView.swift */; };
@@ -77,7 +78,7 @@
 		F15DD1E12B0C9CAB00984E6D /* RecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1E02B0C9CAB00984E6D /* RecommendCollectionViewCell.swift */; };
 		F15DD1E32B0CBBB800984E6D /* RecommendHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1E22B0CBBB800984E6D /* RecommendHeaderView.swift */; };
 		F15DD1E52B0CD37E00984E6D /* RecommendFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1E42B0CD37E00984E6D /* RecommendFooterView.swift */; };
-		3F6E80F32B0C5E1E00D89606 /* CartHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E80F22B0C5E1E00D89606 /* CartHeaderView.swift */; };
+		F15DD1E82B0DD7D100984E6D /* RecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1E72B0DD7D100984E6D /* RecommendModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -142,6 +143,7 @@
 		17A870DD2B08A70F00D5162C /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		3F52DDCB2B0B531E00BD216E /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		3F52DDCD2B0B53B200BD216E /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		3F6E80F22B0C5E1E00D89606 /* CartHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartHeaderView.swift; sourceTree = "<group>"; };
 		F15DD1D22B0C8C3C00984E6D /* sampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleViewController.swift; sourceTree = "<group>"; };
 		F15DD1D42B0C8C6600984E6D /* NotifyAddToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyAddToastView.swift; sourceTree = "<group>"; };
 		F15DD1D62B0C8C7E00984E6D /* NotifyRemoveToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyRemoveToastView.swift; sourceTree = "<group>"; };
@@ -150,7 +152,7 @@
 		F15DD1E02B0C9CAB00984E6D /* RecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCollectionViewCell.swift; sourceTree = "<group>"; };
 		F15DD1E22B0CBBB800984E6D /* RecommendHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendHeaderView.swift; sourceTree = "<group>"; };
 		F15DD1E42B0CD37E00984E6D /* RecommendFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendFooterView.swift; sourceTree = "<group>"; };
-		3F6E80F22B0C5E1E00D89606 /* CartHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartHeaderView.swift; sourceTree = "<group>"; };
+		F15DD1E72B0DD7D100984E6D /* RecommendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -594,6 +596,7 @@
 		F15DD1D82B0C966100984E6D /* RelatedFoodModal */ = {
 			isa = PBXGroup;
 			children = (
+				F15DD1E62B0DD7A500984E6D /* Models */,
 				F15DD1DF2B0C9C7E00984E6D /* Cells */,
 				F15DD1DA2B0C969F00984E6D /* Views */,
 				F15DD1D92B0C969700984E6D /* ViewControllers */,
@@ -625,6 +628,14 @@
 				F15DD1E02B0C9CAB00984E6D /* RecommendCollectionViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		F15DD1E62B0DD7A500984E6D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F15DD1E72B0DD7D100984E6D /* RecommendModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -718,6 +729,7 @@
 				17A870D02B08A4F400D5162C /* UIResponder+.swift in Sources */,
 				3F6E80F32B0C5E1E00D89606 /* CartHeaderView.swift in Sources */,
 				17A870C42B0873C200D5162C /* ImageLiterals.swift in Sources */,
+				F15DD1E82B0DD7D100984E6D /* RecommendModel.swift in Sources */,
 				17A870D62B08A6B000D5162C /* UITableView+.swift in Sources */,
 				17A870992B0864B000D5162C /* Base.swift in Sources */,
 				09EAE98F2B0B0C880079CAC4 /* AddCartView.swift in Sources */,
