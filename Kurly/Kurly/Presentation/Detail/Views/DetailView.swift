@@ -38,10 +38,13 @@ final class DetailView: BaseView {
     private func basicSetup() {
         self.detailCollectionView.register(FirstSectionCollectionViewCell.self, forCellWithReuseIdentifier: FirstSectionCollectionViewCell.identifier)
         self.detailCollectionView.register(SecondSectionCollectionViewCell.self, forCellWithReuseIdentifier: SecondSectionCollectionViewCell.identifier)
+        self.detailCollectionView.register(SectionThridHorizontalCollectionViewCell.self,
+                                                              forCellWithReuseIdentifier: SectionThridHorizontalCollectionViewCell.identifier)
+        self.detailCollectionView.register(RecommendHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: RecommendHeaderView.identifier)
         self.detailCollectionView.delegate = self
         self.detailCollectionView.dataSource = self
     }
-    
+   
     override func setUI() {
         detailCollectionView.do {
             $0.backgroundColor = .white
@@ -78,6 +81,8 @@ extension DetailView: UICollectionViewDelegate, UICollectionViewDataSource {
             return sections[section].count
         case 1:
             return 1
+        case 2:
+            return 1
         default:
             return 0
         }
@@ -92,6 +97,10 @@ extension DetailView: UICollectionViewDelegate, UICollectionViewDataSource {
             
         case 1:
             guard let item = detailCollectionView.dequeueReusableCell(withReuseIdentifier: SecondSectionCollectionViewCell.identifier, for: indexPath) as? SecondSectionCollectionViewCell else {return UICollectionViewCell()}
+            return item
+            
+        case 2:
+            guard let item = detailCollectionView.dequeueReusableCell(withReuseIdentifier: SectionThridHorizontalCollectionViewCell.identifier, for: indexPath) as? SectionThridHorizontalCollectionViewCell else {return UICollectionViewCell()}
             return item
             
         default:
@@ -111,8 +120,40 @@ extension DetailView: UICollectionViewDelegateFlowLayout {
         case 1:
             let itemHeight: CGFloat = SizeLiterals.Screen.screenHeight * 132 / 812
             return CGSize(width: collectionView.frame.width, height: itemHeight)
+            
+        case 2:
+            return CGSize(width: collectionView.frame.width, height: SizeLiterals.Screen.screenHeight * 276 / 812)
+
         default:
             return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        switch section {
+        case 2:
+            return CGSize(width: collectionView.bounds.width, height: 61)
+            
+        default:
+            return .zero
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch indexPath.section {
+        case 2:
+            if kind == UICollectionView.elementKindSectionHeader {
+                guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: RecommendHeaderView.identifier, for: indexPath) as? RecommendHeaderView else { return UICollectionReusableView()}
+                headerView.bindData(sectionText: "다른 고객이 함께 본 상품")
+                return headerView
+            }
+        default:
+            return UICollectionReusableView()
+        }
+        return UICollectionReusableView()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
 }
