@@ -40,7 +40,6 @@ class RecommendCollectionViewCell: UICollectionViewCell {
         }
         
         foodImageView.do {
-            $0.image = ImageLiterals.Home.img.activityTop01
             $0.makeCornerRound(radius: 4)
         }
         
@@ -68,14 +67,12 @@ class RecommendCollectionViewCell: UICollectionViewCell {
         }
         
         foodNameLabel.do {
-            $0.text = "[시골보쌈과 감자옹심이 감자..."
             $0.font = .fontGuide(.body_regular_14)
             $0.textColor = .gray6
             $0.numberOfLines = 2
         }
         
         foodPriceLabel.do {
-            $0.text = "10,500원"
             $0.font = .fontGuide(.body_bold_15)
             $0.textColor = .gray6
         }
@@ -104,7 +101,9 @@ class RecommendCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func bindData() {
-        
+    func bindData(cellData: RecommendModel) {
+        foodImageView.image = cellData.foodImage
+        foodNameLabel.text = cellData.foodName
+        foodPriceLabel.text = cellData.foodPrice
     }
 }

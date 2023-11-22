@@ -23,12 +23,14 @@ class FirstSectionCollectionViewCell: UICollectionViewCell {
     private let priceAndIconStackView = UIStackView()
     private let priceLabel = UILabel()
     private let helpButton = UIButton()
+    private let shareButton = UIButton()
     private let originLabel = UILabel()
     private let loginGuideLabel = UILabel()
     private let eventBoxView = UIView()
     private let eventPriceLabel = UILabel()
     private let eventTextLabel = UILabel()
     private let moveToEventImageView = UIImageView()
+    private let divider = UIView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -90,6 +92,10 @@ class FirstSectionCollectionViewCell: UICollectionViewCell {
             $0.setImage(ImageLiterals.Home.icn.helpButton, for: .normal)
         }
         
+        shareButton.do {
+            $0.setImage(ImageLiterals.Home.icn.shareButton, for: .normal)
+        }
+        
         originLabel.do {
             $0.text = "원산지: 상품설명/상세정보 참조"
             $0.font = .fontGuide(.title_semibold_18)
@@ -122,10 +128,14 @@ class FirstSectionCollectionViewCell: UICollectionViewCell {
         moveToEventImageView.do {
             $0.image = ImageLiterals.Home.icn.shortcutButtonBlack
         }
+        
+        divider.do {
+            $0.backgroundColor = .gray2
+        }
     }
     
     private func setLayout() {
-        self.addSubviews(imageView, deliveryLabel, nameLabel, descriptionLabel, salePercentLabel, salePriceLabel, priceAndIconStackView, originLabel, loginGuideLabel, eventBoxView)
+        self.addSubviews(imageView, deliveryLabel, nameLabel, descriptionLabel, salePercentLabel, salePriceLabel, priceAndIconStackView, shareButton, originLabel, loginGuideLabel, eventBoxView, divider)
         priceAndIconStackView.addArrangedSubviews(priceLabel, helpButton)
         eventBoxView.addSubviews(eventPriceLabel, eventTextLabel, moveToEventImageView)
         
@@ -165,6 +175,11 @@ class FirstSectionCollectionViewCell: UICollectionViewCell {
             $0.leading.equalToSuperview().inset(16)
         }
         
+        shareButton.snp.makeConstraints {
+            $0.top.equalTo(imageView.snp.bottom).offset(33)
+            $0.trailing.equalToSuperview().inset(9)
+        }
+        
         originLabel.snp.makeConstraints {
             $0.top.equalTo(priceAndIconStackView.snp.bottom).offset(8)
             $0.leading.equalToSuperview().inset(16)
@@ -189,11 +204,17 @@ class FirstSectionCollectionViewCell: UICollectionViewCell {
         eventTextLabel.snp.makeConstraints {
             $0.top.equalTo(eventBoxView.snp.top).offset(10)
             $0.leading.equalTo(eventPriceLabel.snp.trailing).offset(3)
-            
-            moveToEventImageView.snp.makeConstraints {
-                $0.top.equalTo(eventBoxView.snp.top).offset(8)
-                $0.trailing.equalToSuperview().offset(14)
-            }
+        }
+        
+        moveToEventImageView.snp.makeConstraints {
+            $0.top.equalTo(eventBoxView.snp.top).offset(8)
+            $0.trailing.equalToSuperview().offset(14)
+        }
+        
+        divider.snp.makeConstraints {
+            $0.top.equalTo(eventBoxView.snp.bottom).offset(20)
+            $0.horizontalEdges.equalToSuperview()
+            $0.height.equalTo(1)
         }
     }
 }
