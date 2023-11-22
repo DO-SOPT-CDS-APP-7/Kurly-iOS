@@ -61,7 +61,8 @@ class ThridSectionHorizontalCollectionViewCell: UICollectionViewCell {
     }
 }
 
-extension ThridSectionHorizontalCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ThridSectionHorizontalCollectionViewCell: UICollectionViewDelegate {}
+extension ThridSectionHorizontalCollectionViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 6

@@ -71,7 +71,8 @@ extension DetailView {
     }
 }
 
-extension DetailView: UICollectionViewDelegate, UICollectionViewDataSource {
+extension DetailView: UICollectionViewDelegate {}
+extension DetailView: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 7
