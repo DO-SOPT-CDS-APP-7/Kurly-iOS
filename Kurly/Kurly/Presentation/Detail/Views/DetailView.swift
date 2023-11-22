@@ -42,8 +42,8 @@ final class DetailView: BaseView {
     private func setRegister() {
         self.detailCollectionView.register(FirstSectionCollectionViewCell.self, forCellWithReuseIdentifier: FirstSectionCollectionViewCell.identifier)
         self.detailCollectionView.register(SecondSectionCollectionViewCell.self, forCellWithReuseIdentifier: SecondSectionCollectionViewCell.identifier)
-        self.detailCollectionView.register(SectionThridHorizontalCollectionViewCell.self,
-                                                              forCellWithReuseIdentifier: SectionThridHorizontalCollectionViewCell.identifier)
+        self.detailCollectionView.register(ThridSectionHorizontalCollectionViewCell.self,
+                                                              forCellWithReuseIdentifier: ThridSectionHorizontalCollectionViewCell.identifier)
         self.detailCollectionView.register(RecommendHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: RecommendHeaderView.identifier)
     }
    
@@ -102,7 +102,7 @@ extension DetailView: UICollectionViewDelegate, UICollectionViewDataSource {
             return item
             
         case 2:
-            guard let item = detailCollectionView.dequeueReusableCell(withReuseIdentifier: SectionThridHorizontalCollectionViewCell.identifier, for: indexPath) as? SectionThridHorizontalCollectionViewCell else {return UICollectionViewCell()}
+            guard let item = detailCollectionView.dequeueReusableCell(withReuseIdentifier: ThridSectionHorizontalCollectionViewCell.identifier, for: indexPath) as? ThridSectionHorizontalCollectionViewCell else {return UICollectionViewCell()}
             return item
             
         default:

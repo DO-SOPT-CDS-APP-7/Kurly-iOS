@@ -1,5 +1,5 @@
 //
-//  SectionThridHorizontalCollectionViewCell.swift
+//  ThridThridSectionHorizontalCollectionViewCellHorizontalCollectionViewCell.swift
 //  Kurly
 //
 //  Created by 김보연 on 11/23/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SectionThridHorizontalCollectionViewCell: UICollectionViewCell {
+class ThridSectionHorizontalCollectionViewCell: UICollectionViewCell {
     
     static let identifier: String = "SectionThridHorizontalCollectionViewCell"
     
@@ -61,7 +61,7 @@ class SectionThridHorizontalCollectionViewCell: UICollectionViewCell {
     }
 }
 
-extension SectionThridHorizontalCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ThridSectionHorizontalCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 6
@@ -74,7 +74,7 @@ extension SectionThridHorizontalCollectionViewCell: UICollectionViewDelegate, UI
     }
 }
 
-extension SectionThridHorizontalCollectionViewCell: UICollectionViewDelegateFlowLayout {
+extension ThridSectionHorizontalCollectionViewCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 120, height: 276)
