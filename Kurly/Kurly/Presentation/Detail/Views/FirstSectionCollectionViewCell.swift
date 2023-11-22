@@ -23,6 +23,7 @@ class FirstSectionCollectionViewCell: UICollectionViewCell {
     private let priceAndIconStackView = UIStackView()
     private let priceLabel = UILabel()
     private let helpButton = UIButton()
+    private let shareButton = UIButton()
     private let originLabel = UILabel()
     private let loginGuideLabel = UILabel()
     private let eventBoxView = UIView()
@@ -90,6 +91,10 @@ class FirstSectionCollectionViewCell: UICollectionViewCell {
             $0.setImage(ImageLiterals.Home.icn.helpButton, for: .normal)
         }
         
+        shareButton.do {
+            $0.setImage(ImageLiterals.Home.icn.shareButton, for: .normal)
+        }
+        
         originLabel.do {
             $0.text = "원산지: 상품설명/상세정보 참조"
             $0.font = .fontGuide(.title_semibold_18)
@@ -125,7 +130,7 @@ class FirstSectionCollectionViewCell: UICollectionViewCell {
     }
     
     private func setLayout() {
-        self.addSubviews(imageView, deliveryLabel, nameLabel, descriptionLabel, salePercentLabel, salePriceLabel, priceAndIconStackView, originLabel, loginGuideLabel, eventBoxView)
+        self.addSubviews(imageView, deliveryLabel, nameLabel, descriptionLabel, salePercentLabel, salePriceLabel, priceAndIconStackView, shareButton, originLabel, loginGuideLabel, eventBoxView)
         priceAndIconStackView.addArrangedSubviews(priceLabel, helpButton)
         eventBoxView.addSubviews(eventPriceLabel, eventTextLabel, moveToEventImageView)
         
@@ -163,6 +168,11 @@ class FirstSectionCollectionViewCell: UICollectionViewCell {
         priceAndIconStackView.snp.makeConstraints {
             $0.top.equalTo(salePercentLabel.snp.bottom).offset(2)
             $0.leading.equalToSuperview().inset(16)
+        }
+        
+        shareButton.snp.makeConstraints {
+            $0.top.equalTo(imageView.snp.bottom).offset(33)
+            $0.trailing.equalToSuperview().inset(9)
         }
         
         originLabel.snp.makeConstraints {
