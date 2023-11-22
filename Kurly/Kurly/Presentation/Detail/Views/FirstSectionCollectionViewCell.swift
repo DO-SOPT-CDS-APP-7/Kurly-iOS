@@ -30,6 +30,7 @@ class FirstSectionCollectionViewCell: UICollectionViewCell {
     private let eventPriceLabel = UILabel()
     private let eventTextLabel = UILabel()
     private let moveToEventImageView = UIImageView()
+    private let divider = UIView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -127,10 +128,14 @@ class FirstSectionCollectionViewCell: UICollectionViewCell {
         moveToEventImageView.do {
             $0.image = ImageLiterals.Home.icn.shortcutButtonBlack
         }
+        
+        divider.do {
+            $0.backgroundColor = .gray2
+        }
     }
     
     private func setLayout() {
-        self.addSubviews(imageView, deliveryLabel, nameLabel, descriptionLabel, salePercentLabel, salePriceLabel, priceAndIconStackView, shareButton, originLabel, loginGuideLabel, eventBoxView)
+        self.addSubviews(imageView, deliveryLabel, nameLabel, descriptionLabel, salePercentLabel, salePriceLabel, priceAndIconStackView, shareButton, originLabel, loginGuideLabel, eventBoxView, divider)
         priceAndIconStackView.addArrangedSubviews(priceLabel, helpButton)
         eventBoxView.addSubviews(eventPriceLabel, eventTextLabel, moveToEventImageView)
         
@@ -199,11 +204,17 @@ class FirstSectionCollectionViewCell: UICollectionViewCell {
         eventTextLabel.snp.makeConstraints {
             $0.top.equalTo(eventBoxView.snp.top).offset(10)
             $0.leading.equalTo(eventPriceLabel.snp.trailing).offset(3)
-            
-            moveToEventImageView.snp.makeConstraints {
-                $0.top.equalTo(eventBoxView.snp.top).offset(8)
-                $0.trailing.equalToSuperview().offset(14)
-            }
+        }
+        
+        moveToEventImageView.snp.makeConstraints {
+            $0.top.equalTo(eventBoxView.snp.top).offset(8)
+            $0.trailing.equalToSuperview().offset(14)
+        }
+        
+        divider.snp.makeConstraints {
+            $0.top.equalTo(eventBoxView.snp.bottom).offset(20)
+            $0.horizontalEdges.equalToSuperview()
+            $0.height.equalTo(1)
         }
     }
 }
