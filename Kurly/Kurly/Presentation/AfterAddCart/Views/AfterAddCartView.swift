@@ -99,6 +99,7 @@ final class AfterAddCartView: BaseView {
 }
 
 extension AfterAddCartView {
+    
     func bindPrice(buyPrice: Int) {
         let numberFormatter: NumberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
