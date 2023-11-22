@@ -13,6 +13,17 @@ import Then
 class RelatedFoodModalViewController: BaseViewController {
     
     private let relatedFoodModalView = RelatedFoodModalView()
+    private var relatedFoodList: [RecommendModel] = [
+        .init(foodImage: ImageLiterals.Home.img.activityTop01, foodName: "[시골보쌈과 감자옹심이 감자...", foodPrice: "10,500원"),
+        .init(foodImage: ImageLiterals.Home.img.activityTop02, foodName: "[이연복의 목란] 짬뽕 2인분...", foodPrice: "13,800원"),
+        .init(foodImage: ImageLiterals.Home.img.activityTop03, foodName: "[방방곡곡] 비빔국수 키트(2인...", foodPrice: "9,900원")
+    ]
+
+    private var recommendFoodList: [RecommendModel] = [
+        .init(foodImage: ImageLiterals.Home.img.activityBottom01, foodName: "[시골보쌈과 감자옹심이 감자...", foodPrice: "10,500원"),
+        .init(foodImage: ImageLiterals.Home.img.activityBottom02, foodName: "[이연복의 목란] 짬뽕 2인분...", foodPrice: "13,800원"),
+        .init(foodImage: ImageLiterals.Home.img.activityBottom03, foodName: "[방방곡곡] 비빔국수 키트(2인...", foodPrice: "9,900원")
+    ]
     
     override func loadView() {
         self.view = relatedFoodModalView
@@ -63,8 +74,15 @@ extension RelatedFoodModalViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendCollectionViewCell.identifier, for: indexPath) as? RecommendCollectionViewCell else { return UICollectionViewCell()}
-        return item
+        if indexPath.section == 0 {
+            guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendCollectionViewCell.identifier, for: indexPath) as? RecommendCollectionViewCell else { return UICollectionViewCell()}
+            item.bindData(cellData: relatedFoodList[indexPath.row])
+            return item
+        } else {
+            guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendCollectionViewCell.identifier, for: indexPath) as? RecommendCollectionViewCell else { return UICollectionViewCell()}
+            item.bindData(cellData: recommendFoodList[indexPath.row])
+            return item
+        }
     }
 }
 
