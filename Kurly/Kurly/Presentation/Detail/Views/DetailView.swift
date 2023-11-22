@@ -21,7 +21,8 @@ final class DetailView: BaseView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         bindModel()
-        basicSetup()
+        setDelegates()
+        setRegister()
     }
     
     required init?(coder: NSCoder) {
@@ -33,14 +34,17 @@ final class DetailView: BaseView {
         print("🧵 \(DetailView()) has been successfully Removed")
     }
     
-    private func basicSetup() {
+    private func setDelegates() {
+        self.detailCollectionView.delegate = self
+        self.detailCollectionView.dataSource = self
+    }
+    
+    private func setRegister() {
         self.detailCollectionView.register(FirstSectionCollectionViewCell.self, forCellWithReuseIdentifier: FirstSectionCollectionViewCell.identifier)
         self.detailCollectionView.register(SecondSectionCollectionViewCell.self, forCellWithReuseIdentifier: SecondSectionCollectionViewCell.identifier)
         self.detailCollectionView.register(SectionThridHorizontalCollectionViewCell.self,
                                                               forCellWithReuseIdentifier: SectionThridHorizontalCollectionViewCell.identifier)
         self.detailCollectionView.register(RecommendHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: RecommendHeaderView.identifier)
-        self.detailCollectionView.delegate = self
-        self.detailCollectionView.dataSource = self
     }
    
     override func setUI() {
