@@ -22,8 +22,6 @@ final class DetailView: BaseView {
         super.init(frame: frame)
         bindModel()
         basicSetup()
-        setUI()
-        setLayout()
     }
     
     required init?(coder: NSCoder) {
