@@ -27,8 +27,8 @@ final class NotifyRemoveToastView: BaseView {
     
     override func setUI() {
         backgroundView.do {
-            $0.backgroundColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0)
-            $0.layer.cornerRadius = 6
+            $0.backgroundColor = .gray6
+            $0.makeCornerRound(radius: 6)
         }
         
         notifyMessageLabel.do {

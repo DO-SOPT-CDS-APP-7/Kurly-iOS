@@ -13,6 +13,7 @@ import Then
 class RecommendHeaderView: UICollectionReusableView {
     
     static let identifier: String = "RecommendHeaderView"
+    
     private let sectionLabel = UILabel()
     
     override init(frame: CGRect) {

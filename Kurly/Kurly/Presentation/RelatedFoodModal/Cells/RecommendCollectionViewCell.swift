@@ -13,6 +13,7 @@ import Then
 class RecommendCollectionViewCell: UICollectionViewCell {
     
     static let identifier: String = "RecommendCollectionViewCell"
+    
     private let cellStackView = UIStackView()
     private let foodImageView = UIImageView()
     private let putButton = UIButton()
@@ -40,7 +41,7 @@ class RecommendCollectionViewCell: UICollectionViewCell {
         
         foodImageView.do {
             $0.image = ImageLiterals.Home.img.activityTop01
-            $0.layer.cornerRadius = 4
+            $0.makeCornerRound(radius: 4)
         }
         
         putButton.do {
@@ -52,7 +53,6 @@ class RecommendCollectionViewCell: UICollectionViewCell {
             $0.titleLabel?.font = .fontGuide(.body_regular_13)
             $0.setImage(ImageLiterals.Home.icn.cartButton22, for: .normal)
             $0.contentHorizontalAlignment = .center
-            $0.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
         
         infoStackView.do {
