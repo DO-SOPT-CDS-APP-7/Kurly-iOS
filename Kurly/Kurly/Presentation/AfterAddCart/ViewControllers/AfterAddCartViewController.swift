@@ -11,47 +11,35 @@ import SnapKit
 
 final class AfterAddCartViewController: BaseViewController {
     
-    private let dummy = Product.dummy()
+    private var price: Int = 10000
     
-    private let addCartView = AddCartView()
+    private let afterAddCartView = AfterAddCartView()
+    
+    override func loadView() {
+        self.view = afterAddCartView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         bindModel()
         setTarget()
     }
-    
-    override func loadView() {
-        self.view = addCartView
-    }
 }
 
 extension AfterAddCartViewController {
+    
     private func bindModel() {
-        addCartView.bindModel(model: dummy)
+        afterAddCartView.bindPrice(buyPrice: price)
     }
     
     private func setTarget() {
-        addCartView.addCartButton.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
-        
-        addCartView.stepper.minusButton.addTarget(self, action: #selector(updateValue(_:)), for: .touchUpInside)
-        
-        addCartView.stepper.plusButton.addTarget(self, action: #selector(updateValue(_:)), for: .touchUpInside)
+        afterAddCartView.buyButton.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
     }
 }
 
 extension AfterAddCartViewController {
-    @objc func tapButton() {
-        print("\(addCartView.stepper.value)")
-    }
     
-    @objc func updateValue(_ sender: UIButton) {
-        if(addCartView.stepper.value == 1 && sender.tag == -1) {
-            print("최소구매수량 1")
-        }
-        else {
-            addCartView.stepper.value += sender.tag
-            addCartView.bindPrice(price: dummy.salePrice, value: addCartView.stepper.value)
-        }
+    @objc func tapButton() {
+        print("헤헤")
     }
 }
