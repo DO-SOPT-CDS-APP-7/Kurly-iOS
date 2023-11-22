@@ -79,7 +79,7 @@ final class CartHeaderView: BaseView {
         
         addressStackView.do {
             $0.axis = .vertical
-            $0.distribution = .fill
+            $0.distribution = .fillProportionally
             $0.alignment = .leading
             $0.spacing = 4.0
             $0.addArrangedSubviews(addressLabel, deliveryTypeLabel)
@@ -90,6 +90,8 @@ final class CartHeaderView: BaseView {
             $0.distribution = .fillProportionally
             $0.spacing = 6
             $0.addArrangedSubviews(selectAllItemButton, selectItemCountLabel, selectDeleteItemButton)
+            $0.layoutMargins = UIEdgeInsets(top: 6, left: 14, bottom: 6, right: 20)
+            $0.isLayoutMarginsRelativeArrangement = true
             selectItemCountLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
             selectAllItemButton.setContentHuggingPriority(.required, for: .horizontal)
             selectDeleteItemButton.setContentHuggingPriority(.required, for: .horizontal)
@@ -129,9 +131,9 @@ final class CartHeaderView: BaseView {
         }
         
         bottomStackView.snp.makeConstraints {
-            $0.top.equalTo(divider.snp.bottom).offset(6)
-            $0.leading.equalToSuperview().offset(14)
-            $0.trailing.equalToSuperview().inset(20)
+            $0.leading.trailing.equalToSuperview()
+            $0.top.equalTo(divider.snp.bottom)
+            $0.bottom.equalToSuperview()
         }
     }
 }
