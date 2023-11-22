@@ -37,6 +37,7 @@ final class DetailView: BaseView {
     
     private func basicSetup() {
         self.detailCollectionView.register(FirstSectionCollectionViewCell.self, forCellWithReuseIdentifier: FirstSectionCollectionViewCell.identifier)
+        self.detailCollectionView.register(SecondSectionCollectionViewCell.self, forCellWithReuseIdentifier: SecondSectionCollectionViewCell.identifier)
         self.detailCollectionView.delegate = self
         self.detailCollectionView.dataSource = self
     }
@@ -75,6 +76,8 @@ extension DetailView: UICollectionViewDelegate, UICollectionViewDataSource {
         switch section {
         case 0:
             return sections[section].count
+        case 1:
+            return 1
         default:
             return 0
         }
@@ -85,6 +88,10 @@ extension DetailView: UICollectionViewDelegate, UICollectionViewDataSource {
         case 0:
             guard let item = detailCollectionView.dequeueReusableCell(withReuseIdentifier: FirstSectionCollectionViewCell.identifier, for: indexPath) as? FirstSectionCollectionViewCell else {return UICollectionViewCell()}
             item.bindModel(model: sections[indexPath.section][indexPath.item])
+            return item
+            
+        case 1:
+            guard let item = detailCollectionView.dequeueReusableCell(withReuseIdentifier: SecondSectionCollectionViewCell.identifier, for: indexPath) as? SecondSectionCollectionViewCell else {return UICollectionViewCell()}
             return item
             
         default:
@@ -98,9 +105,12 @@ extension DetailView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch indexPath.section {
         case 0:
-            let itemHeight: CGFloat = 779
+            let itemHeight: CGFloat = SizeLiterals.Screen.screenHeight * 779 / 812
             return CGSize(width: collectionView.frame.width, height: itemHeight)
             
+        case 1:
+            let itemHeight: CGFloat = SizeLiterals.Screen.screenHeight * 132 / 812
+            return CGSize(width: collectionView.frame.width, height: itemHeight)
         default:
             return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
         }
