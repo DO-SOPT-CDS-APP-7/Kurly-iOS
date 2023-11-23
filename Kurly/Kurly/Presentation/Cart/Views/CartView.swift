@@ -54,7 +54,6 @@ class CartView: BaseView {
             $0.top.equalTo(cartHeaderView.snp.bottom).offset(8)
             $0.horizontalEdges.equalToSuperview()
             $0.bottom.equalTo(bottomCTAButton.snp.top)
-            $0.height.equalTo(486)
         }
         
         bottomCTAButton.snp.makeConstraints {
