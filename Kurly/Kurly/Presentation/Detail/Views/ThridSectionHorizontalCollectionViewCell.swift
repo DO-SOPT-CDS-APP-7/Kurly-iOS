@@ -26,8 +26,6 @@ class ThridSectionHorizontalCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         basicSetup()
-        setUI()
-        setLayout()
     }
     
     required init?(coder: NSCoder) {
