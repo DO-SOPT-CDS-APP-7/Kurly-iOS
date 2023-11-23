@@ -25,20 +25,25 @@ class ThridSectionHorizontalCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        basicSetup()
+        setDelegates()
+        setRegister()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func basicSetup() {
+    private func setDelegates() {
+        self.horizontalCollectionView.delegate = self
+        self.horizontalCollectionView.dataSource = self
+    }
+    
+    private func setRegister() {
         self.horizontalCollectionView.register(RecommendCollectionViewCell.self,
                                                forCellWithReuseIdentifier: RecommendCollectionViewCell.identifier)
         relatedFoodModalView.recommendCollectionView.register(RecommendCollectionViewCell.self,
                                                               forCellWithReuseIdentifier: RecommendCollectionViewCell.identifier)
-        self.horizontalCollectionView.delegate = self
-        self.horizontalCollectionView.dataSource = self
+        
     }
     
     private func setUI() {
