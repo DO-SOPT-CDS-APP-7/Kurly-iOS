@@ -15,10 +15,10 @@ final class CartHeaderView: BaseView {
     private let addressLabel = UILabel()
     private let deliveryTypeLabel = UILabel()
     private let locationImage = UIImageView()
-    private let changeAddressButton = UIButton()
-    private let selectAllItemButton = UIButton()
+    let changeAddressButton = UIButton()
+    let selectAllItemButton = UIButton()
     private let selectItemCountLabel = UILabel()
-    private let selectDeleteItemButton = UIButton()
+    let selectDeleteItemButton = UIButton()
     private let addressStackView = UIStackView()
     private let bottomStackView = UIStackView()
     private let divider = UIView()
@@ -79,7 +79,7 @@ final class CartHeaderView: BaseView {
         
         addressStackView.do {
             $0.axis = .vertical
-            $0.distribution = .fill
+            $0.distribution = .fillProportionally
             $0.alignment = .leading
             $0.spacing = 4.0
             $0.addArrangedSubviews(addressLabel, deliveryTypeLabel)
@@ -132,6 +132,7 @@ final class CartHeaderView: BaseView {
             $0.top.equalTo(divider.snp.bottom).offset(6)
             $0.leading.equalToSuperview().offset(14)
             $0.trailing.equalToSuperview().inset(20)
+            $0.bottom.equalToSuperview().inset(6)
         }
     }
 }
