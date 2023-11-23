@@ -14,9 +14,9 @@ final class CartItemCollectionViewCell: UICollectionViewCell {
     
     static let identifier: String = "CartItemCollectionViewCell"
     
-    private let selectItemButton = UIButton()
+    let selectItemButton = UIButton()
     private let itemLabel = UILabel()
-    private let deleteItemButton = UIButton()
+    let deleteItemButton = UIButton()
     private let itemImageView = UIImageView()
     private let itemDiscountPrice = UILabel()
     private let itemPrice = UILabel()
@@ -64,9 +64,9 @@ final class CartItemCollectionViewCell: UICollectionViewCell {
         }
         
         itemPrice.do {
-            $0.text = "5,900원"
             $0.font = .fontGuide(.body_medium_15)
             $0.textColor = .gray4
+            $0.attributedText = "5,900원".strikeThrough()
         }
         
         topStackView.do {
