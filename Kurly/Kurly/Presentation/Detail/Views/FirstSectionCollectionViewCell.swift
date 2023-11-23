@@ -34,7 +34,6 @@ class FirstSectionCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        basicSetup()
         setUI()
         setLayout()
     }
@@ -43,11 +42,9 @@ class FirstSectionCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func basicSetup() {
-        self.backgroundColor = .white
-    }
-    
     private func setUI() {
+        self.backgroundColor = .white
+        
         imageView.do {
             $0.image = ImageLiterals.Home.img.large
         }

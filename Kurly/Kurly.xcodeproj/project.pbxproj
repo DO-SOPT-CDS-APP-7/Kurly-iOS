@@ -36,6 +36,7 @@
 		178336022B0B6832000DF127 /* DetailProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178336012B0B6832000DF127 /* DetailProduct.swift */; };
 		178336062B0E2159000DF127 /* SecondSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178336052B0E2159000DF127 /* SecondSectionCollectionViewCell.swift */; };
 		178336082B0E5790000DF127 /* ThridSectionHorizontalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178336072B0E5790000DF127 /* ThridSectionHorizontalCollectionViewCell.swift */; };
+		1783360A2B0E8843000DF127 /* FourthSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178336092B0E8843000DF127 /* FourthSectionCollectionViewCell.swift */; };
 		17A870852B0863A600D5162C /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870842B0863A600D5162C /* Protocols.swift */; };
 		17A870932B08649300D5162C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870922B08649300D5162C /* View.swift */; };
 		17A870952B08649D00D5162C /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870942B08649D00D5162C /* Models.swift */; };
@@ -118,6 +119,7 @@
 		178336012B0B6832000DF127 /* DetailProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProduct.swift; sourceTree = "<group>"; };
 		178336052B0E2159000DF127 /* SecondSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		178336072B0E5790000DF127 /* ThridSectionHorizontalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThridSectionHorizontalCollectionViewCell.swift; sourceTree = "<group>"; };
+		178336092B0E8843000DF127 /* FourthSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthSectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		17A870842B0863A600D5162C /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		17A870922B08649300D5162C /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		17A870942B08649D00D5162C /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				178335FF2B0B61E2000DF127 /* FirstSectionCollectionViewCell.swift */,
 				178336052B0E2159000DF127 /* SecondSectionCollectionViewCell.swift */,
 				178336072B0E5790000DF127 /* ThridSectionHorizontalCollectionViewCell.swift */,
+				178336092B0E8843000DF127 /* FourthSectionCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -764,6 +767,7 @@
 				09CE00FB2B0E12BC00CB42C4 /* Int+.swift in Sources */,
 				09BA86BB2B0A6F0E00BF85D9 /* BottomCTAButton.swift in Sources */,
 				09EAE9972B0B3CB40079CAC4 /* AfterAddCartViewController.swift in Sources */,
+				1783360A2B0E8843000DF127 /* FourthSectionCollectionViewCell.swift in Sources */,
 				17A870A72B08657500D5162C /* Font.swift in Sources */,
 				F15DD1DE2B0C970700984E6D /* RelatedFoodModalView.swift in Sources */,
 				09BA86AD2B0A4C9200BF85D9 /* TabBarView.swift in Sources */,
