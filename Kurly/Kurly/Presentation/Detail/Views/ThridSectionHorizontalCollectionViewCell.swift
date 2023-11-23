@@ -48,7 +48,7 @@ class ThridSectionHorizontalCollectionViewCell: UICollectionViewCell {
     
     private func setUI() {
         horizontalCollectionView.do {
-            $0.backgroundColor = .clear
+            $0.backgroundColor = .black
             let flowLayout = UICollectionViewFlowLayout()
             flowLayout.scrollDirection = .horizontal
             $0.collectionViewLayout = flowLayout
@@ -65,6 +65,7 @@ class ThridSectionHorizontalCollectionViewCell: UICollectionViewCell {
 }
 
 extension ThridSectionHorizontalCollectionViewCell: UICollectionViewDelegate {}
+
 extension ThridSectionHorizontalCollectionViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -72,7 +73,7 @@ extension ThridSectionHorizontalCollectionViewCell: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendCollectionViewCell.identifier, for: indexPath) as? RecommendCollectionViewCell else { return UICollectionViewCell()}
+        guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendCollectionViewCell.identifier, for: indexPath) as? RecommendCollectionViewCell else { return UICollectionViewCell() }
         item.bindData(cellData: relatedFoodList[indexPath.row])
         return item
     }
