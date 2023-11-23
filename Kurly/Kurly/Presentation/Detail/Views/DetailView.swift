@@ -44,6 +44,8 @@ final class DetailView: BaseView {
         self.detailCollectionView.register(SecondSectionCollectionViewCell.self, forCellWithReuseIdentifier: SecondSectionCollectionViewCell.identifier)
         self.detailCollectionView.register(ThridSectionHorizontalCollectionViewCell.self,
                                                               forCellWithReuseIdentifier: ThridSectionHorizontalCollectionViewCell.identifier)
+        self.detailCollectionView.register(FourthSectionCollectionViewCell.self,
+                                                              forCellWithReuseIdentifier: FourthSectionCollectionViewCell.identifier)
         self.detailCollectionView.register(RecommendHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: RecommendHeaderView.identifier)
     }
    
@@ -75,19 +77,16 @@ extension DetailView: UICollectionViewDelegate {}
 extension DetailView: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 7
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
             return sections[section].count
-        case 1:
-            return 1
-        case 2:
-            return 1
+        
         default:
-            return 0
+            return 1
         }
     }
     
@@ -106,6 +105,10 @@ extension DetailView: UICollectionViewDataSource {
             guard let item = detailCollectionView.dequeueReusableCell(withReuseIdentifier: ThridSectionHorizontalCollectionViewCell.identifier, for: indexPath) as? ThridSectionHorizontalCollectionViewCell else {return UICollectionViewCell()}
             return item
             
+        case 3:
+            guard let item = detailCollectionView.dequeueReusableCell(withReuseIdentifier: FourthSectionCollectionViewCell.identifier, for: indexPath) as? FourthSectionCollectionViewCell else {return UICollectionViewCell()}
+            return item
+            
         default:
             return UICollectionViewCell()
         }
@@ -117,15 +120,16 @@ extension DetailView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch indexPath.section {
         case 0:
-            let itemHeight: CGFloat = SizeLiterals.Screen.screenHeight * 779 / 812
-            return CGSize(width: collectionView.frame.width, height: itemHeight)
+            return CGSize(width: collectionView.frame.width, height: SizeLiterals.Screen.screenHeight * 779 / 812)
             
         case 1:
-            let itemHeight: CGFloat = SizeLiterals.Screen.screenHeight * 132 / 812
-            return CGSize(width: collectionView.frame.width, height: itemHeight)
+            return CGSize(width: collectionView.frame.width, height: SizeLiterals.Screen.screenHeight * 132 / 812)
             
         case 2:
             return CGSize(width: collectionView.frame.width, height: SizeLiterals.Screen.screenHeight * 276 / 812)
+            
+        case 3:
+            return CGSize(width: collectionView.frame.width, height: SizeLiterals.Screen.screenHeight * 370 / 812)
 
         default:
             return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
