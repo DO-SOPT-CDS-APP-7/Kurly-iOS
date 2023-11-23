@@ -25,6 +25,7 @@ final class DetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindModel()
+        setTarget()
     }
     
     override func loadView() {
@@ -55,6 +56,10 @@ final class DetailViewController: BaseViewController {
         }
     }
     
+    private func setTarget() {
+        bottomBarView.bottomDibsButton.addTarget(self, action: #selector(tapDibsButton), for: .touchUpInside)
+    }
+    
     override func setDelegates() {
         detailView.detailCollectionView.delegate = self
         detailView.detailCollectionView.dataSource = self
@@ -81,6 +86,15 @@ final class DetailViewController: BaseViewController {
 }
 
 extension DetailViewController {
+    
+    @objc func tapDibsButton(_ sender: UIButton) {
+        sender.isSelected.toggle()
+        if sender.isSelected {
+            sender.setImage(ImageLiterals.Home.icn.heartButtonLine, for: .normal)
+        } else {
+            sender.setImage(ImageLiterals.Home.icn.heartButtonPressed, for: .normal)
+        }
+    }
     
     private func bindModel() {
         sections = [[dummy]]

@@ -31,6 +31,7 @@ extension BottomDibsButton {
             $0.backgroundColor = .white
             $0.setImage(ImageLiterals.Home.icn.heartButtonLine, for: .normal)
             $0.layer.cornerRadius = 6
+            $0.adjustsImageWhenHighlighted = false
         }
     }
     
