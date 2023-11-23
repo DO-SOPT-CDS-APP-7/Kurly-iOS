@@ -1,5 +1,5 @@
 //
-//  ThridThridSectionHorizontalCollectionViewCellHorizontalCollectionViewCell.swift
+//  ThridSectionHorizontalCollectionViewCell.swift
 //  Kurly
 //
 //  Created by 김보연 on 11/23/23.
@@ -9,7 +9,7 @@ import UIKit
 
 class ThridSectionHorizontalCollectionViewCell: UICollectionViewCell {
     
-    static let identifier: String = "SectionThridHorizontalCollectionViewCell"
+    static let identifier: String = "ThridSectionHorizontalCollectionViewCell"
     
     private lazy var horizontalCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
     
