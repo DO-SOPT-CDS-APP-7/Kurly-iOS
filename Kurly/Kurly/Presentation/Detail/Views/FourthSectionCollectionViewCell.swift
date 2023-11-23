@@ -149,9 +149,7 @@ class FourthSectionCollectionViewCell: UICollectionViewCell {
     }
     
     private func setLayout() {
-        self.addSubviews(thickDivider, productInfoLabel, packagingTypeLabel, saleUnitLabel, productWeightLabel, originLabel, allergyInfoLabel,
-                         packagingMethodLabel, deliveryCautionDescriptionLabel, onePackLabel, weightLabel, productDetailInfoLabel,
-                         noodleAllergyInfoLabel, sauceAllergyInfoLabel, productTotalAllergyInfoLabel, expirationDateDescriptionLabel)
+        self.addSubviews(thickDivider, productInfoLabel, packagingTypeLabel, saleUnitLabel, productWeightLabel, originLabel, allergyInfoLabel, packagingMethodLabel, deliveryCautionDescriptionLabel, onePackLabel, weightLabel, productDetailInfoLabel, noodleAllergyInfoLabel, sauceAllergyInfoLabel, productTotalAllergyInfoLabel, expirationDateDescriptionLabel)
         
         thickDivider.snp.makeConstraints {
             $0.top.equalToSuperview()
