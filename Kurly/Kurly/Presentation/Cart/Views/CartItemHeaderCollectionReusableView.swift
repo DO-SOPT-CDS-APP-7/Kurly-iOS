@@ -35,7 +35,7 @@ final class CartItemHeaderCollectionReusableView: UICollectionReusableView {
         }
         
         cartItemLabel.do {
-            $0.text = "냉동식품"
+            $0.text = "냉동 상품"
             $0.font = .fontGuide(.title_semibold_18)
             $0.textColor = .gray6
         }
