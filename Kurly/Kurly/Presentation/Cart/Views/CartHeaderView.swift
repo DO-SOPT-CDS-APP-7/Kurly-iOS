@@ -15,10 +15,10 @@ final class CartHeaderView: BaseView {
     private let addressLabel = UILabel()
     private let deliveryTypeLabel = UILabel()
     private let locationImage = UIImageView()
-    private let changeAddressButton = UIButton()
-    private let selectAllItemButton = UIButton()
+    let changeAddressButton = UIButton()
+    let selectAllItemButton = UIButton()
     private let selectItemCountLabel = UILabel()
-    private let selectDeleteItemButton = UIButton()
+    let selectDeleteItemButton = UIButton()
     private let addressStackView = UIStackView()
     private let bottomStackView = UIStackView()
     private let divider = UIView()
@@ -90,8 +90,6 @@ final class CartHeaderView: BaseView {
             $0.distribution = .fillProportionally
             $0.spacing = 6
             $0.addArrangedSubviews(selectAllItemButton, selectItemCountLabel, selectDeleteItemButton)
-            $0.layoutMargins = UIEdgeInsets(top: 6, left: 14, bottom: 6, right: 20)
-            $0.isLayoutMarginsRelativeArrangement = true
             selectItemCountLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
             selectAllItemButton.setContentHuggingPriority(.required, for: .horizontal)
             selectDeleteItemButton.setContentHuggingPriority(.required, for: .horizontal)
@@ -131,9 +129,10 @@ final class CartHeaderView: BaseView {
         }
         
         bottomStackView.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview()
-            $0.top.equalTo(divider.snp.bottom)
-            $0.bottom.equalToSuperview()
+            $0.top.equalTo(divider.snp.bottom).offset(6)
+            $0.leading.equalToSuperview().offset(14)
+            $0.trailing.equalToSuperview().inset(20)
+            $0.bottom.equalToSuperview().inset(6)
         }
     }
 }
