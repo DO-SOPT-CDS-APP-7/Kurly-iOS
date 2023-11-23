@@ -37,14 +37,14 @@ final class DetailViewController: BaseViewController {
     
     override func setLayout() {
         view.addSubviews(navigationBar, tabBarView, bottomCTAButton)
-        
+    
         navigationBar.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.horizontalEdges.equalToSuperview()
         }
         
         tabBarView.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(100)
+            $0.top.equalTo(navigationBar.snp.bottom)
             $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(45)
         }
