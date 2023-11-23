@@ -68,6 +68,8 @@ final class DetailViewController: BaseViewController {
         detailView.detailCollectionView.register(FourthSectionCollectionViewCell.self,
                                                               forCellWithReuseIdentifier: FourthSectionCollectionViewCell.identifier)
         detailView.detailCollectionView.register(RecommendHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: RecommendHeaderView.identifier)
+        detailView.detailCollectionView.register(FifthSectionCollectionViewCell.self,
+                                                              forCellWithReuseIdentifier: FifthSectionCollectionViewCell.identifier)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,7 +90,7 @@ extension DetailViewController: UICollectionViewDelegate {}
 extension DetailViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 4
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -120,6 +122,10 @@ extension DetailViewController: UICollectionViewDataSource {
             guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: FourthSectionCollectionViewCell.identifier, for: indexPath) as? FourthSectionCollectionViewCell else { return UICollectionViewCell() }
             return item
             
+        case 4:
+            guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: FifthSectionCollectionViewCell.identifier, for: indexPath) as? FifthSectionCollectionViewCell else { return UICollectionViewCell() }
+            return item
+            
         default:
             return UICollectionViewCell()
         }
@@ -141,6 +147,9 @@ extension DetailViewController: UICollectionViewDelegateFlowLayout {
             
         case 3:
             return CGSize(width: collectionView.frame.width, height: SizeLiterals.Screen.screenHeight * 370 / 812)
+            
+        case 4:
+            return CGSize(width: collectionView.frame.width, height: SizeLiterals.Screen.screenHeight * 630 / 812)
 
         default:
             return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
