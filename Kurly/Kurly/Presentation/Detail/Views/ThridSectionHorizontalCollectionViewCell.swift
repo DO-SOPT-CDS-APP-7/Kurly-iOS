@@ -25,6 +25,8 @@ class ThridSectionHorizontalCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setUI()
+        setLayout()
         setDelegates()
         setRegister()
     }
@@ -43,12 +45,11 @@ class ThridSectionHorizontalCollectionViewCell: UICollectionViewCell {
                                                forCellWithReuseIdentifier: RecommendCollectionViewCell.identifier)
         relatedFoodModalView.recommendCollectionView.register(RecommendCollectionViewCell.self,
                                                               forCellWithReuseIdentifier: RecommendCollectionViewCell.identifier)
-        
     }
     
     private func setUI() {
         horizontalCollectionView.do {
-            $0.backgroundColor = .black
+            $0.backgroundColor = .clear
             let flowLayout = UICollectionViewFlowLayout()
             flowLayout.scrollDirection = .horizontal
             $0.collectionViewLayout = flowLayout
@@ -56,7 +57,7 @@ class ThridSectionHorizontalCollectionViewCell: UICollectionViewCell {
     }
     
     private func setLayout() {
-        self.addSubview(horizontalCollectionView)
+        self.contentView.addSubview(horizontalCollectionView)
         
         horizontalCollectionView.snp.makeConstraints {
             $0.edges.equalToSuperview()
@@ -69,12 +70,12 @@ extension ThridSectionHorizontalCollectionViewCell: UICollectionViewDelegate {}
 extension ThridSectionHorizontalCollectionViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return relatedFoodList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendCollectionViewCell.identifier, for: indexPath) as? RecommendCollectionViewCell else { return UICollectionViewCell() }
-        item.bindData(cellData: relatedFoodList[indexPath.row])
+        item.bindData(cellData: relatedFoodList[indexPath.item])
         return item
     }
 }
