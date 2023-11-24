@@ -37,6 +37,7 @@
 		174713712B0FA05400E8EC51 /* SixthSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174713702B0FA05400E8EC51 /* SixthSectionCollectionViewCell.swift */; };
 		174713732B0FDAFC00E8EC51 /* DetailBottomBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174713722B0FDAFC00E8EC51 /* DetailBottomBarView.swift */; };
 		174713772B0FE55D00E8EC51 /* BottomDibsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174713762B0FE55D00E8EC51 /* BottomDibsButton.swift */; };
+		174713792B10926200E8EC51 /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174713782B10926200E8EC51 /* FloatingButton.swift */; };
 		178335FE2B0B4DA1000DF127 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178335FD2B0B4DA1000DF127 /* DetailView.swift */; };
 		178336002B0B61E3000DF127 /* FirstSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178335FF2B0B61E2000DF127 /* FirstSectionCollectionViewCell.swift */; };
 		178336022B0B6832000DF127 /* DetailProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178336012B0B6832000DF127 /* DetailProduct.swift */; };
@@ -126,6 +127,7 @@
 		174713702B0FA05400E8EC51 /* SixthSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixthSectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		174713722B0FDAFC00E8EC51 /* DetailBottomBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBottomBarView.swift; sourceTree = "<group>"; };
 		174713762B0FE55D00E8EC51 /* BottomDibsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomDibsButton.swift; sourceTree = "<group>"; };
+		174713782B10926200E8EC51 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
 		178335FD2B0B4DA1000DF127 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		178335FF2B0B61E2000DF127 /* FirstSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		178336012B0B6832000DF127 /* DetailProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProduct.swift; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				174713762B0FE55D00E8EC51 /* BottomDibsButton.swift */,
+				174713782B10926200E8EC51 /* FloatingButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -801,6 +804,7 @@
 			files = (
 				F15DD1E52B0CD37E00984E6D /* RecommendFooterView.swift in Sources */,
 				17A870D22B08A67900D5162C /* UIStackView+.swift in Sources */,
+				174713792B10926200E8EC51 /* FloatingButton.swift in Sources */,
 				09BA86992B0A3C6400BF85D9 /* DetailViewController.swift in Sources */,
 				17A870D02B08A4F400D5162C /* UIResponder+.swift in Sources */,
 				3F6E80F32B0C5E1E00D89606 /* CartHeaderView.swift in Sources */,

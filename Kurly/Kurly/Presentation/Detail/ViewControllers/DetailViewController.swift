@@ -15,6 +15,8 @@ final class DetailViewController: BaseViewController {
     private let navigationBar = CustomNavigationBar(type: .backCartButton)
     private let tabBarView = TabBarView()
     private let bottomBarView = DetailBottomBarView()
+    let upFloatingButton = FloatingButton(type: .up)
+    let downFloatingButton = FloatingButton(type: .down)
     
     private let detailView = DetailView()
     
@@ -37,7 +39,7 @@ final class DetailViewController: BaseViewController {
     }
     
     override func setLayout() {
-        view.addSubviews(navigationBar, tabBarView, bottomBarView)
+        view.addSubviews(navigationBar, tabBarView, bottomBarView, upFloatingButton, downFloatingButton)
         
         navigationBar.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide)
@@ -53,6 +55,16 @@ final class DetailViewController: BaseViewController {
         bottomBarView.snp.makeConstraints {
             $0.horizontalEdges.equalToSuperview()
             $0.bottom.equalToSuperview()
+        }
+        
+        upFloatingButton.snp.makeConstraints {
+            $0.trailing.equalToSuperview().inset(16)
+            $0.top.equalTo(tabBarView.snp.bottom).offset(SizeLiterals.Screen.screenHeight * 482 / 812)
+        }
+        
+        downFloatingButton.snp.makeConstraints {
+            $0.trailing.equalToSuperview().inset(16)
+            $0.top.equalTo(upFloatingButton.snp.bottom).offset(6)
         }
     }
     
