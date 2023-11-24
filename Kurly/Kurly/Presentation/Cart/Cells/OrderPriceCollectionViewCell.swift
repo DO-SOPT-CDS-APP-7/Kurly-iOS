@@ -99,7 +99,6 @@ extension OrderPriceCollectionViewCell {
         }
         
         divider.do {
-            $0.frame = CGRect(x: 0, y: 0, width: SizeLiterals.Screen.screenWidth - 32, height: 1)
             $0.backgroundColor = .gray2
         }
         
