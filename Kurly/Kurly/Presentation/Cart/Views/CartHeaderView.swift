@@ -25,8 +25,6 @@ final class CartHeaderView: BaseView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setUI()
-        setLayout()
     }
     
     required init?(coder: NSCoder) {

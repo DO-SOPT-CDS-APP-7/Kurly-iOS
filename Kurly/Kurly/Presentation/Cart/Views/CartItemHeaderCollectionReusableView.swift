@@ -10,9 +10,9 @@ import UIKit
 import SnapKit
 import Then
 
-final class CartItemHeaderCollectionReusableView: UICollectionReusableView {
+class CartItemHeaderCollectionReusableView: UICollectionReusableView {
     
-    static let identifier: String = "CartItemHeaderCollectionReusableView"
+    static let identifier: String = className
     
     private let ItemKindImage = UIImageView()
     private let cartItemLabel = UILabel()
@@ -26,6 +26,9 @@ final class CartItemHeaderCollectionReusableView: UICollectionReusableView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+extension CartItemHeaderCollectionReusableView {
     
     private func setUI() {
         self.backgroundColor = .white
