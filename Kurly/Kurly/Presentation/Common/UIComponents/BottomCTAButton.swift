@@ -17,6 +17,7 @@ enum BottomCTAButtonType {
     case order
     case orderDetail
     case shopping
+    case emptyCart
     
     var title: String {
         switch self {
@@ -32,6 +33,8 @@ enum BottomCTAButtonType {
             return "주문 상세보기"
         case .shopping:
             return "쇼핑 계속하기"
+        case .emptyCart:
+            return "상품을 담아주세요"
         }
     }
 }
@@ -67,6 +70,9 @@ extension BottomCTAButton {
                 $0.backgroundColor = .white
                 $0.setTitleColor(.gray6, for: .normal)
                 $0.makeBorder(width: 1, color: .gray3)
+            case .emptyCart:
+                $0.backgroundColor = .gray3
+                $0.setTitleColor(.white, for: .normal)
             default:
                 $0.backgroundColor = .kuPurple
                 $0.setTitleColor(.white, for: .normal)
