@@ -18,6 +18,8 @@ final class AfterAddCartView: BaseView {
     private let priceLabel = UILabel()
     private let progressView = UIProgressView()
     private let divisionLabel = UILabel()
+    private let headerView = UILabel()
+    let relatedCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     
     override func setUI() {
         self.backgroundColor = .white
@@ -56,10 +58,23 @@ final class AfterAddCartView: BaseView {
         divisionLabel.do {
             $0.backgroundColor = .gray2
         }
+        
+        headerView.do {
+            $0.text = "다른 고객이 함께 본 상품"
+            $0.font = .fontGuide(.title_semibold_16)
+            $0.textColor = .gray6
+        }
+        
+        relatedCollectionView.do {
+            $0.backgroundColor = .white
+            let flowLayout = UICollectionViewFlowLayout()
+            flowLayout.scrollDirection = .vertical
+            $0.collectionViewLayout = flowLayout
+        }
     }
     
     override func setLayout() {
-        self.addSubviews(imageView, descriptionLabel, buyButton, priceLabel, progressView, divisionLabel)
+        self.addSubviews(imageView, descriptionLabel, buyButton, priceLabel, progressView, divisionLabel, headerView, relatedCollectionView)
         
         imageView.snp.makeConstraints {
             $0.top.equalToSuperview().inset(33)
@@ -95,18 +110,31 @@ final class AfterAddCartView: BaseView {
             $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(0.5)
         }
+        
+        headerView.snp.makeConstraints {
+            $0.top.equalTo(divisionLabel.snp.bottom).offset(18)
+            $0.leading.equalToSuperview().inset(16)
+        }
+        
+        relatedCollectionView.snp.makeConstraints {
+            $0.top.equalTo(headerView.snp.bottom).offset(17)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(257)
+        }
     }
 }
 
 extension AfterAddCartView {
     
     func bindPrice(buyPrice: Int) {
-        let numberFormatter: NumberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
         let price: String = (40000 - buyPrice).priceText
         priceLabel.text = "\(price) 더 담으면 무료배송"
         priceLabel.asFontColor(targetString: "\(price)", font: .fontGuide(.body_semibold_13), color: .kuPurple)
         let progress = Float(buyPrice) / 40000
         progressView.setProgress(progress, animated: true)
+    }
+    
+    func bindRelativeFood(model: [RelatedModel]) {
+        print("")
     }
 }
