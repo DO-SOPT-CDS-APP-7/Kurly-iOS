@@ -40,7 +40,8 @@ final class DetailView: BaseView {
         self.addSubviews(detailCollectionView)
         
         detailCollectionView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.equalTo(self.safeAreaLayoutGuide).inset(95)
+            $0.leading.trailing.bottom.equalToSuperview()
         }
     }
 }
