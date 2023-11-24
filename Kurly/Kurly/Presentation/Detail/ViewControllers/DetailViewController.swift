@@ -14,7 +14,7 @@ final class DetailViewController: BaseViewController {
     
     private let navigationBar = CustomNavigationBar(type: .backCartButton)
     private let tabBarView = TabBarView()
-    private let bottomCTAButton = BottomCTAButton(type: .buy)
+    private let bottomBarView = DetailBottomBarView()
     
     private let detailView = DetailView()
     
@@ -25,6 +25,7 @@ final class DetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindModel()
+        setTarget()
     }
     
     override func loadView() {
@@ -36,8 +37,8 @@ final class DetailViewController: BaseViewController {
     }
     
     override func setLayout() {
-        view.addSubviews(navigationBar, tabBarView, bottomCTAButton)
-    
+        view.addSubviews(navigationBar, tabBarView, bottomBarView)
+        
         navigationBar.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.horizontalEdges.equalToSuperview()
@@ -49,10 +50,14 @@ final class DetailViewController: BaseViewController {
             $0.height.equalTo(45)
         }
         
-        bottomCTAButton.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(73)
-            $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-11)
+        bottomBarView.snp.makeConstraints {
+            $0.horizontalEdges.equalToSuperview()
+            $0.bottom.equalToSuperview()
         }
+    }
+    
+    private func setTarget() {
+        bottomBarView.bottomDibsButton.addTarget(self, action: #selector(tapDibsButton), for: .touchUpInside)
     }
     
     override func setDelegates() {
@@ -64,14 +69,14 @@ final class DetailViewController: BaseViewController {
         detailView.detailCollectionView.register(FirstSectionCollectionViewCell.self, forCellWithReuseIdentifier: FirstSectionCollectionViewCell.identifier)
         detailView.detailCollectionView.register(SecondSectionCollectionViewCell.self, forCellWithReuseIdentifier: SecondSectionCollectionViewCell.identifier)
         detailView.detailCollectionView.register(ThridSectionHorizontalCollectionViewCell.self,
-                                                              forCellWithReuseIdentifier: ThridSectionHorizontalCollectionViewCell.identifier)
+                                                 forCellWithReuseIdentifier: ThridSectionHorizontalCollectionViewCell.identifier)
         detailView.detailCollectionView.register(FourthSectionCollectionViewCell.self,
-                                                              forCellWithReuseIdentifier: FourthSectionCollectionViewCell.identifier)
+                                                 forCellWithReuseIdentifier: FourthSectionCollectionViewCell.identifier)
         detailView.detailCollectionView.register(RecommendHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: RecommendHeaderView.identifier)
         detailView.detailCollectionView.register(FifthSectionCollectionViewCell.self,
-                                                              forCellWithReuseIdentifier: FifthSectionCollectionViewCell.identifier)
+                                                 forCellWithReuseIdentifier: FifthSectionCollectionViewCell.identifier)
         detailView.detailCollectionView.register(SixthSectionCollectionViewCell.self,
-                                                              forCellWithReuseIdentifier: SixthSectionCollectionViewCell.identifier)
+                                                 forCellWithReuseIdentifier: SixthSectionCollectionViewCell.identifier)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,6 +86,15 @@ final class DetailViewController: BaseViewController {
 }
 
 extension DetailViewController {
+    
+    @objc func tapDibsButton(_ sender: UIButton) {
+        sender.isSelected.toggle()
+        if sender.isSelected {
+            sender.setImage(ImageLiterals.Home.icn.heartButtonLine, for: .normal)
+        } else {
+            sender.setImage(ImageLiterals.Home.icn.heartButtonPressed, for: .normal)
+        }
+    }
     
     private func bindModel() {
         sections = [[dummy]]
@@ -99,7 +113,7 @@ extension DetailViewController: UICollectionViewDataSource {
         switch section {
         case 0:
             return sections.count
-        
+            
         default:
             return 1
         }
@@ -159,7 +173,7 @@ extension DetailViewController: UICollectionViewDelegateFlowLayout {
             
         case 5:
             return CGSize(width: collectionView.frame.width, height: SizeLiterals.Screen.screenHeight * 514 / 812)
-
+            
         default:
             return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
         }
