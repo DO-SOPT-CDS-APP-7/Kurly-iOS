@@ -70,6 +70,8 @@ final class DetailViewController: BaseViewController {
     
     private func setTarget() {
         bottomBarView.bottomDibsButton.addTarget(self, action: #selector(tapDibsButton), for: .touchUpInside)
+        upFloatingButton.addTarget(self, action: #selector(tapFloatingButton), for: .touchUpInside)
+        downFloatingButton.addTarget(self, action: #selector(tapFloatingButton), for: .touchUpInside)
     }
     
     override func setDelegates() {
@@ -106,6 +108,18 @@ extension DetailViewController {
         } else {
             sender.setImage(ImageLiterals.Home.icn.heartButtonPressed, for: .normal)
         }
+    }
+    
+    @objc func tapFloatingButton(_ sender: FloatingButton) {
+        let indexPath: IndexPath
+        if sender.titleType == .up {
+            indexPath = IndexPath(item: 0, section: 0)
+        } else {
+            let lastSection = detailView.detailCollectionView.numberOfSections - 1
+            let lastItem = detailView.detailCollectionView.numberOfItems(inSection: lastSection) - 1
+            indexPath = IndexPath(item: lastItem, section: lastSection)
+        }
+        detailView.detailCollectionView.scrollToItem(at: indexPath, at: .top, animated: true)
     }
     
     private func bindModel() {

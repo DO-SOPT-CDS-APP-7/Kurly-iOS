@@ -49,6 +49,7 @@ extension FloatingButton {
             $0.backgroundColor = .white
             $0.setImage(titleType.image, for: .normal)
             $0.layer.cornerRadius = 19
+            $0.isUserInteractionEnabled = true
             $0.adjustsImageWhenHighlighted = false
             switch titleType {
             case .down:
