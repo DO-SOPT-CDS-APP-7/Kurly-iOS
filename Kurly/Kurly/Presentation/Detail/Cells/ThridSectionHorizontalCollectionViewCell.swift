@@ -1,5 +1,5 @@
 //
-//  ThridThridSectionHorizontalCollectionViewCellHorizontalCollectionViewCell.swift
+//  ThridSectionHorizontalCollectionViewCell.swift
 //  Kurly
 //
 //  Created by 김보연 on 11/23/23.
@@ -9,7 +9,7 @@ import UIKit
 
 class ThridSectionHorizontalCollectionViewCell: UICollectionViewCell {
     
-    static let identifier: String = "SectionThridHorizontalCollectionViewCell"
+    static let identifier: String = "ThridSectionHorizontalCollectionViewCell"
     
     private lazy var horizontalCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
     
@@ -25,22 +25,26 @@ class ThridSectionHorizontalCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        basicSetup()
         setUI()
         setLayout()
+        setDelegates()
+        setRegister()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func basicSetup() {
+    private func setDelegates() {
+        self.horizontalCollectionView.delegate = self
+        self.horizontalCollectionView.dataSource = self
+    }
+    
+    private func setRegister() {
         self.horizontalCollectionView.register(RecommendCollectionViewCell.self,
                                                forCellWithReuseIdentifier: RecommendCollectionViewCell.identifier)
         relatedFoodModalView.recommendCollectionView.register(RecommendCollectionViewCell.self,
                                                               forCellWithReuseIdentifier: RecommendCollectionViewCell.identifier)
-        self.horizontalCollectionView.delegate = self
-        self.horizontalCollectionView.dataSource = self
     }
     
     private func setUI() {
@@ -53,7 +57,7 @@ class ThridSectionHorizontalCollectionViewCell: UICollectionViewCell {
     }
     
     private func setLayout() {
-        self.addSubview(horizontalCollectionView)
+        self.contentView.addSubview(horizontalCollectionView)
         
         horizontalCollectionView.snp.makeConstraints {
             $0.edges.equalToSuperview()
@@ -62,15 +66,16 @@ class ThridSectionHorizontalCollectionViewCell: UICollectionViewCell {
 }
 
 extension ThridSectionHorizontalCollectionViewCell: UICollectionViewDelegate {}
+
 extension ThridSectionHorizontalCollectionViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return relatedFoodList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendCollectionViewCell.identifier, for: indexPath) as? RecommendCollectionViewCell else { return UICollectionViewCell()}
-        item.bindData(cellData: relatedFoodList[indexPath.row])
+        guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendCollectionViewCell.identifier, for: indexPath) as? RecommendCollectionViewCell else { return UICollectionViewCell() }
+        item.bindData(cellData: relatedFoodList[indexPath.item])
         return item
     }
 }
