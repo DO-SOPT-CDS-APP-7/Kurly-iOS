@@ -15,6 +15,8 @@ final class DetailViewController: BaseViewController {
     private let navigationBar = CustomNavigationBar(type: .backCartButton)
     private let tabBarView = TabBarView()
     private let bottomBarView = DetailBottomBarView()
+    let upFloatingButton = FloatingButton(type: .up)
+    let downFloatingButton = FloatingButton(type: .down)
     
     private let detailView = DetailView()
     
@@ -37,7 +39,7 @@ final class DetailViewController: BaseViewController {
     }
     
     override func setLayout() {
-        view.addSubviews(navigationBar, tabBarView, bottomBarView)
+        view.addSubviews(navigationBar, tabBarView, bottomBarView, upFloatingButton, downFloatingButton)
         
         navigationBar.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide)
@@ -54,10 +56,22 @@ final class DetailViewController: BaseViewController {
             $0.horizontalEdges.equalToSuperview()
             $0.bottom.equalToSuperview()
         }
+        
+        upFloatingButton.snp.makeConstraints {
+            $0.trailing.equalToSuperview().inset(16)
+            $0.top.equalTo(tabBarView.snp.bottom).offset(SizeLiterals.Screen.screenHeight * 482 / 812)
+        }
+        
+        downFloatingButton.snp.makeConstraints {
+            $0.trailing.equalToSuperview().inset(16)
+            $0.top.equalTo(upFloatingButton.snp.bottom).offset(6)
+        }
     }
     
     private func setTarget() {
         bottomBarView.bottomDibsButton.addTarget(self, action: #selector(tapDibsButton), for: .touchUpInside)
+        upFloatingButton.addTarget(self, action: #selector(tapFloatingButton), for: .touchUpInside)
+        downFloatingButton.addTarget(self, action: #selector(tapFloatingButton), for: .touchUpInside)
     }
     
     override func setDelegates() {
@@ -94,6 +108,18 @@ extension DetailViewController {
         } else {
             sender.setImage(ImageLiterals.Home.icn.heartButtonPressed, for: .normal)
         }
+    }
+    
+    @objc func tapFloatingButton(_ sender: FloatingButton) {
+        let indexPath: IndexPath
+        if sender.titleType == .up {
+            indexPath = IndexPath(item: 0, section: 0)
+        } else {
+            let lastSection = detailView.detailCollectionView.numberOfSections - 1
+            let lastItem = detailView.detailCollectionView.numberOfItems(inSection: lastSection) - 1
+            indexPath = IndexPath(item: lastItem, section: lastSection)
+        }
+        detailView.detailCollectionView.scrollToItem(at: indexPath, at: .top, animated: true)
     }
     
     private func bindModel() {
