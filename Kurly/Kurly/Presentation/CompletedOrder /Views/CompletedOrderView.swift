@@ -47,7 +47,7 @@ class CompletedOrderView: BaseView {
         
         completedImageView.snp.makeConstraints{
             $0.top.equalTo(self.safeAreaLayoutGuide).offset(48)
-            $0.horizontalEdges.equalToSuperview().inset(153)
+            $0.centerX.equalToSuperview()
         }
         
         completedTitelLabel.snp.makeConstraints{
