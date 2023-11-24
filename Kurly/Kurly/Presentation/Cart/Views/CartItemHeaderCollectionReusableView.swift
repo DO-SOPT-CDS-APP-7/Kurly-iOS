@@ -29,6 +29,7 @@ class CartItemHeaderCollectionReusableView: UICollectionReusableView {
 }
 
 extension CartItemHeaderCollectionReusableView {
+    
     private func setUI() {
         self.backgroundColor = .white
         
@@ -42,9 +43,7 @@ extension CartItemHeaderCollectionReusableView {
             $0.textColor = .gray6
         }
     }
-}
-
-extension CartItemHeaderCollectionReusableView {
+    
     private func setLayout() {
         self.addSubviews(ItemKindImage, cartItemLabel)
         
