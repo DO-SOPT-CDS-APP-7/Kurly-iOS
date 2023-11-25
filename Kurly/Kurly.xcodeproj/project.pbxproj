@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		095AB57A2B11AD9000DA246F /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095AB5792B11AD9000DA246F /* AlertBuilder.swift */; };
+		095AB57C2B11ADB400DA246F /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095AB57B2B11ADB400DA246F /* CustomAlertViewController.swift */; };
 		097266F62B0A134B00FB6E54 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097266F52B0A134B00FB6E54 /* BaseViewController.swift */; };
 		097F58052B0E73C400918304 /* RelatedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F58042B0E73C400918304 /* RelatedModel.swift */; };
 		097F58082B0EFE6B00918304 /* RelatedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F58072B0EFE6B00918304 /* RelatedCollectionViewCell.swift */; };
@@ -101,6 +103,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		095AB5792B11AD9000DA246F /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
+		095AB57B2B11ADB400DA246F /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 		097266F52B0A134B00FB6E54 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		097F58042B0E73C400918304 /* RelatedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedModel.swift; sourceTree = "<group>"; };
 		097F58072B0EFE6B00918304 /* RelatedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -314,6 +318,7 @@
 			children = (
 				09EAE9852B0B05170079CAC4 /* AddCartViewController.swift */,
 				09EAE9872B0B05C70079CAC4 /* TestViewController.swift */,
+				095AB57B2B11ADB400DA246F /* CustomAlertViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				09EAE98E2B0B0C880079CAC4 /* AddCartView.swift */,
+				095AB5792B11AD9000DA246F /* AlertBuilder.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -854,6 +860,7 @@
 				17A870C42B0873C200D5162C /* ImageLiterals.swift in Sources */,
 				F15DD1E82B0DD7D100984E6D /* RecommendModel.swift in Sources */,
 				17A870D62B08A6B000D5162C /* UITableView+.swift in Sources */,
+				095AB57C2B11ADB400DA246F /* CustomAlertViewController.swift in Sources */,
 				17A870992B0864B000D5162C /* Base.swift in Sources */,
 				09EAE98F2B0B0C880079CAC4 /* AddCartView.swift in Sources */,
 				09EAE9912B0B22080079CAC4 /* Stepper.swift in Sources */,
@@ -868,6 +875,7 @@
 				097F58082B0EFE6B00918304 /* RelatedCollectionViewCell.swift in Sources */,
 				3FE4CCEC2B10C4D7009C9029 /* CompletedOrderView.swift in Sources */,
 				09BA86BB2B0A6F0E00BF85D9 /* BottomCTAButton.swift in Sources */,
+				095AB57A2B11AD9000DA246F /* AlertBuilder.swift in Sources */,
 				174713732B0FDAFC00E8EC51 /* DetailBottomBarView.swift in Sources */,
 				09EAE9972B0B3CB40079CAC4 /* AfterAddCartViewController.swift in Sources */,
 				1783360A2B0E8843000DF127 /* FourthSectionCollectionViewCell.swift in Sources */,
