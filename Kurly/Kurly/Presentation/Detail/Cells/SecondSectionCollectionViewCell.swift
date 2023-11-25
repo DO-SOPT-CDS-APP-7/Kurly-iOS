@@ -24,7 +24,6 @@ class SecondSectionCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        basicSetup()
         setUI()
         setLayout()
     }
@@ -32,12 +31,10 @@ class SecondSectionCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    private func basicSetup() {
-        self.backgroundColor = .white
-    }
-    
+
     private func setUI() {
+        self.backgroundColor = .white
+        
         deliveryMethodLabel.do {
             $0.text = "배송"
             $0.font = .fontGuide(.body_medium_14)
