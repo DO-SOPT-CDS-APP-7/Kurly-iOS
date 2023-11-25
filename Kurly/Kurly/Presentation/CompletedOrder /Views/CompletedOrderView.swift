@@ -56,7 +56,6 @@ class CompletedOrderView: BaseView {
             $0.axis = .vertical
             $0.distribution = .fillProportionally
             $0.spacing = 8
-            $0.addArrangedSubviews(benefitsInfoView1, benefitsInfoView2)
         }
         
         divider.do {
@@ -162,5 +161,7 @@ extension CompletedOrderView {
         benefitsInfoView1.bindData(title: "첫 구매 감사혜택 1", benefit: "10,590분 무료배송", subBenefit: "15,000원 이상 주문 시, 지금부터 바로 적용")
         
         benefitsInfoView2.bindData(title: "첫 구매 감사혜택 2", benefit: "결제금액 5% 적립", subBenefit: "첫 주문 다음 날 오전부터 한 달간 적용")
+        
+        benefitStackView.addArrangedSubviews(benefitsInfoView1, benefitsInfoView2)
     }
 }
