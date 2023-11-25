@@ -77,13 +77,6 @@ final class DetailViewController: BaseViewController {
         }
     }
     
-    private func setTarget() {
-        bottomBarView.bottomDibsButton.addTarget(self, action: #selector(tapDibsButton), for: .touchUpInside)
-        upFloatingButton.addTarget(self, action: #selector(tapFloatingButton), for: .touchUpInside)
-        downFloatingButton.addTarget(self, action: #selector(tapFloatingButton), for: .touchUpInside)
-        bottomBarView.bottomCTAButton.addTarget(self, action: #selector(presentaddCartViewController), for: .touchUpInside)
-    }
-    
     override func setDelegates() {
         detailView.detailCollectionView.delegate = self
         detailView.detailCollectionView.dataSource = self
@@ -149,6 +142,20 @@ extension DetailViewController {
         addCartViewController.delegate = self
         present(addCartViewController, animated: true, completion: nil)
     }
+}
+
+extension DetailViewController {
+    
+    private func setTarget() {
+        bottomBarView.bottomDibsButton.addTarget(self, action: #selector(tapDibsButton), for: .touchUpInside)
+        upFloatingButton.addTarget(self, action: #selector(tapFloatingButton), for: .touchUpInside)
+        downFloatingButton.addTarget(self, action: #selector(tapFloatingButton), for: .touchUpInside)
+        bottomBarView.bottomCTAButton.addTarget(self, action: #selector(presentaddCartViewController), for: .touchUpInside)
+    }
+    
+    private func bindModel() {
+        sections = [[dummy]]
+    }
     
     private func presentAfterAddCartViewController() {
         let detentIdentifier = UISheetPresentationController.Detent.Identifier("customDetent")
@@ -161,10 +168,6 @@ extension DetailViewController {
             sheet.prefersGrabberVisible = true
         }
         present(afterAddCartViewController, animated: true, completion: nil)
-    }
-    
-    private func bindModel() {
-        sections = [[dummy]]
     }
 }
 
