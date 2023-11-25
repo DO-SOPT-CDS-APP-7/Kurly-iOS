@@ -55,10 +55,16 @@ extension AddCartViewController {
     @objc func updateValue(_ sender: UIButton) {
         if(addCartView.stepper.value == 1 && sender.tag == -1) {
             print("최소구매수량 1")
+            AlertBuilder(viewController: self)
+                .setTitle("알림")
+                .setMessage("최소 구매수량은 1개 입니다.")
+                .addActionConfirm("확인")
+                .show()
+            
         }
         else {
             addCartView.stepper.value += sender.tag
-            addCartView.bindPrice(price: dummy.salePrice, value: addCartView.stepper.value)
+            addCartView.bindPrice(salePrice: dummy.salePrice, price: dummy.price, value: addCartView.stepper.value)
         }
     }
 }
