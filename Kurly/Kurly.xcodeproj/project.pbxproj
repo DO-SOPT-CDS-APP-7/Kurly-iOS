@@ -86,13 +86,11 @@
 		3F6E80F32B0C5E1E00D89606 /* CartHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E80F22B0C5E1E00D89606 /* CartHeaderView.swift */; };
 		3F6E80F62B0DE77F00D89606 /* CartItemHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E80F52B0DE77F00D89606 /* CartItemHeaderCollectionReusableView.swift */; };
 		3F6E80F82B0DEAD200D89606 /* CartItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E80F72B0DEAD100D89606 /* CartItemCollectionViewCell.swift */; };
-
 		3FE4CCE32B103244009C9029 /* SavePointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4CCE22B103244009C9029 /* SavePointView.swift */; };
 		3FE4CCE52B108B67009C9029 /* CartItemFooterCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4CCE42B108B67009C9029 /* CartItemFooterCollectionReusableView.swift */; };
-
 		3FE4CCEA2B10C4AF009C9029 /* CompletedOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4CCE92B10C4AF009C9029 /* CompletedOrderViewController.swift */; };
 		3FE4CCEC2B10C4D7009C9029 /* CompletedOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4CCEB2B10C4D7009C9029 /* CompletedOrderView.swift */; };
-
+		3FE4CCF02B11024D009C9029 /* BenefitsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4CCEF2B11024D009C9029 /* BenefitsInfoView.swift */; };
 		F15DD1D32B0C8C3C00984E6D /* sampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1D22B0C8C3C00984E6D /* sampleViewController.swift */; };
 		F15DD1D52B0C8C6600984E6D /* NotifyAddToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1D42B0C8C6600984E6D /* NotifyAddToastView.swift */; };
 		F15DD1D72B0C8C7E00984E6D /* NotifyRemoveToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1D62B0C8C7E00984E6D /* NotifyRemoveToastView.swift */; };
@@ -183,13 +181,11 @@
 		3F6E80F22B0C5E1E00D89606 /* CartHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartHeaderView.swift; sourceTree = "<group>"; };
 		3F6E80F52B0DE77F00D89606 /* CartItemHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		3F6E80F72B0DEAD100D89606 /* CartItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCollectionViewCell.swift; sourceTree = "<group>"; };
-
 		3FE4CCE22B103244009C9029 /* SavePointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePointView.swift; sourceTree = "<group>"; };
 		3FE4CCE42B108B67009C9029 /* CartItemFooterCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemFooterCollectionReusableView.swift; sourceTree = "<group>"; };
-
 		3FE4CCE92B10C4AF009C9029 /* CompletedOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedOrderViewController.swift; sourceTree = "<group>"; };
 		3FE4CCEB2B10C4D7009C9029 /* CompletedOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedOrderView.swift; sourceTree = "<group>"; };
-
+		3FE4CCEF2B11024D009C9029 /* BenefitsInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitsInfoView.swift; sourceTree = "<group>"; };
 		F15DD1D22B0C8C3C00984E6D /* sampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleViewController.swift; sourceTree = "<group>"; };
 		F15DD1D42B0C8C6600984E6D /* NotifyAddToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyAddToastView.swift; sourceTree = "<group>"; };
 		F15DD1D62B0C8C7E00984E6D /* NotifyRemoveToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyRemoveToastView.swift; sourceTree = "<group>"; };
@@ -693,6 +689,7 @@
 			isa = PBXGroup;
 			children = (
 				3FE4CCEB2B10C4D7009C9029 /* CompletedOrderView.swift */,
+				3FE4CCEF2B11024D009C9029 /* BenefitsInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -886,6 +883,7 @@
 				F15DD1DE2B0C970700984E6D /* RelatedFoodModalView.swift in Sources */,
 				09BA86AD2B0A4C9200BF85D9 /* TabBarView.swift in Sources */,
 				09BA86B32B0A4E4D00BF85D9 /* UICollectionView+.swift in Sources */,
+				3FE4CCF02B11024D009C9029 /* BenefitsInfoView.swift in Sources */,
 				17A870CE2B08A4CB00D5162C /* NSObject+.swift in Sources */,
 				3FE4CCE32B103244009C9029 /* SavePointView.swift in Sources */,
 				097F58052B0E73C400918304 /* RelatedModel.swift in Sources */,
