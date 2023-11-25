@@ -156,6 +156,7 @@ class CompletedOrderView: BaseView {
 }
 
 extension CompletedOrderView {
+    
     private func bindDataBenefitsInfo() {
         benefitsInfoView1.bindData(title: "첫 구매 감사혜택 1", benefit: "10,590분 무료배송", subBenefit: "15,000원 이상 주문 시, 지금부터 바로 적용")
         
