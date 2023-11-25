@@ -32,13 +32,11 @@ class RelatedFoodModalViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setSheetPresentation()
-        setDelegates()
-        setRegister()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        relatedFoodModalView.notifyAddToastView.viewToastView()
+        viewToastView()
     }
     
     override func setDelegates() {
@@ -60,6 +58,20 @@ class RelatedFoodModalViewController: BaseViewController {
     }
 }
 
+extension RelatedFoodModalViewController {
+    
+    func viewToastView() {
+        UIView.animate(withDuration: 0.5) {
+            self.relatedFoodModalView.notifyAddToastView.upToastView()
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            UIView.animate(withDuration: 0.5) {
+                self.relatedFoodModalView.notifyAddToastView.downToastView()
+            }
+        }
+    }
+}
 
 extension RelatedFoodModalViewController: UICollectionViewDelegate {}
 

@@ -19,8 +19,6 @@ final class NotifyAddToastView: BaseView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setUI()
-        setLayout()
     }
     
     required init?(coder: NSCoder) {
@@ -89,26 +87,21 @@ final class NotifyAddToastView: BaseView {
 }
 
 extension NotifyAddToastView {
+    func upToastView() {
+        self.backgroundView.snp.remakeConstraints {
+            $0.bottom.equalToSuperview().inset(42)
+            $0.height.equalTo(51)
+            $0.leading.trailing.equalToSuperview().inset(8)
+        }
+        self.layoutIfNeeded()
+    }
     
-    func viewToastView() {
-        UIView.animate(withDuration: 0.5) {
-            self.backgroundView.snp.remakeConstraints {
-                $0.bottom.equalToSuperview().inset(42)
-                $0.height.equalTo(51)
-                $0.leading.trailing.equalToSuperview().inset(8)
-            }
-            self.layoutIfNeeded()
+    func downToastView() {
+        self.backgroundView.snp.remakeConstraints {
+            $0.top.equalTo(self.snp.bottom)
+            $0.height.equalTo(51)
+            $0.leading.trailing.equalToSuperview().inset(8)
         }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            UIView.animate(withDuration: 0.5) {
-                self.backgroundView.snp.remakeConstraints {
-                    $0.top.equalTo(self.snp.bottom)
-                    $0.height.equalTo(51)
-                    $0.leading.trailing.equalToSuperview().inset(8)
-                }
-                self.layoutIfNeeded()
-            }
-        }
+        self.layoutIfNeeded()
     }
 }
