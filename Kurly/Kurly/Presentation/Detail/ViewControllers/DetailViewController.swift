@@ -18,6 +18,8 @@ final class DetailViewController: BaseViewController {
     private let notifyRemoveToastView = NotifyRemoveToastView()
     let upFloatingButton = FloatingButton(type: .up)
     let downFloatingButton = FloatingButton(type: .down)
+    private let addCartViewController = AddCartViewController()
+    private let afterAddCartViewController = AfterAddCartViewController()
     
     private let detailView = DetailView()
     
@@ -79,6 +81,7 @@ final class DetailViewController: BaseViewController {
         bottomBarView.bottomDibsButton.addTarget(self, action: #selector(tapDibsButton), for: .touchUpInside)
         upFloatingButton.addTarget(self, action: #selector(tapFloatingButton), for: .touchUpInside)
         downFloatingButton.addTarget(self, action: #selector(tapFloatingButton), for: .touchUpInside)
+        bottomBarView.bottomCTAButton.addTarget(self, action: #selector(presentaddCartViewController), for: .touchUpInside)
     }
     
     override func setDelegates() {
@@ -131,6 +134,33 @@ extension DetailViewController {
             indexPath = IndexPath(item: lastItem, section: lastSection)
         }
         detailView.detailCollectionView.scrollToItem(at: indexPath, at: .top, animated: true)
+    }
+    
+    @objc private func presentaddCartViewController() {
+        let detentIdentifier = UISheetPresentationController.Detent.Identifier("customDetent")
+        let customDetent = UISheetPresentationController.Detent.custom(identifier: detentIdentifier) { _ in
+            return 361
+        }
+        
+        if let sheet = addCartViewController.sheetPresentationController {
+            sheet.detents = [customDetent]
+            sheet.prefersGrabberVisible = true
+        }
+        addCartViewController.delegate = self
+        present(addCartViewController, animated: true, completion: nil)
+    }
+    
+    private func presentAfterAddCartViewController() {
+        let detentIdentifier = UISheetPresentationController.Detent.Identifier("customDetent")
+        let customDetent = UISheetPresentationController.Detent.custom(identifier: detentIdentifier) { _ in
+            return 495
+        }
+        
+        if let sheet = afterAddCartViewController.sheetPresentationController {
+            sheet.detents = [customDetent]
+            sheet.prefersGrabberVisible = true
+        }
+        present(afterAddCartViewController, animated: true, completion: nil)
     }
     
     private func bindModel() {
@@ -242,5 +272,12 @@ extension DetailViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+}
+
+extension DetailViewController: DismissProtocol {
+    
+    func tapButton() {
+        presentAfterAddCartViewController()
     }
 }
