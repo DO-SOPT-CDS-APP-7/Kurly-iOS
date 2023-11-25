@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		095AB57A2B11AD9000DA246F /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095AB5792B11AD9000DA246F /* AlertBuilder.swift */; };
 		095AB57C2B11ADB400DA246F /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095AB57B2B11ADB400DA246F /* CustomAlertViewController.swift */; };
+		095AB5872B11CAC500DA246F /* CustomCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095AB5862B11CAC500DA246F /* CustomCollectionView.swift */; };
 		097266F62B0A134B00FB6E54 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097266F52B0A134B00FB6E54 /* BaseViewController.swift */; };
 		097F58052B0E73C400918304 /* RelatedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F58042B0E73C400918304 /* RelatedModel.swift */; };
 		097F58082B0EFE6B00918304 /* RelatedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F58072B0EFE6B00918304 /* RelatedCollectionViewCell.swift */; };
@@ -103,6 +104,7 @@
 /* Begin PBXFileReference section */
 		095AB5792B11AD9000DA246F /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
 		095AB57B2B11ADB400DA246F /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
+		095AB5862B11CAC500DA246F /* CustomCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionView.swift; sourceTree = "<group>"; };
 		097266F52B0A134B00FB6E54 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		097F58042B0E73C400918304 /* RelatedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedModel.swift; sourceTree = "<group>"; };
 		097F58072B0EFE6B00918304 /* RelatedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			children = (
 				09BA86B72B0A616500BF85D9 /* CustomNavigationBar.swift */,
 				09BA86BA2B0A6F0E00BF85D9 /* BottomCTAButton.swift */,
+				095AB5862B11CAC500DA246F /* CustomCollectionView.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -891,6 +894,7 @@
 				17A870852B0863A600D5162C /* Protocols.swift in Sources */,
 				178336022B0B6832000DF127 /* DetailProduct.swift in Sources */,
 				17A870DA2B08A6E200D5162C /* UITextView+.swift in Sources */,
+				095AB5872B11CAC500DA246F /* CustomCollectionView.swift in Sources */,
 				09BA86B12B0A4DB100BF85D9 /* TabBarCollectionViewCell.swift in Sources */,
 				3F6E80F82B0DEAD200D89606 /* CartItemCollectionViewCell.swift in Sources */,
 				3F52DDCC2B0B531E00BD216E /* CartViewController.swift in Sources */,

@@ -98,9 +98,9 @@ extension RelatedCollectionViewCell {
     
     func bindData(model: RelatedModel) {
         
-        foodImageView.image = model.image
-        shippingLabel.text = model.shipping
-        foodNameLabel.text = model.name
-        foodPriceLabel.text = model.price.priceText
+        foodImageView.image = model.imageURL
+        shippingLabel.text = model.deliveryType
+        foodNameLabel.text = model.productName
+        foodPriceLabel.text = model.originalPrice.priceText
     }
 }

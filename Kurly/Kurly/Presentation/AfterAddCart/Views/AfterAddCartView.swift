@@ -19,7 +19,7 @@ final class AfterAddCartView: BaseView {
     private let progressView = UIProgressView()
     private let divisionLabel = UILabel()
     private let headerView = UILabel()
-    let relatedCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    let relatedCollectionView = CustomCollectionView()
     
     override func setUI() {
         self.backgroundColor = .white
@@ -63,13 +63,6 @@ final class AfterAddCartView: BaseView {
             $0.text = "다른 고객이 함께 본 상품"
             $0.font = .fontGuide(.title_semibold_16)
             $0.textColor = .gray6
-        }
-        
-        relatedCollectionView.do {
-            $0.backgroundColor = .white
-            let flowLayout = UICollectionViewFlowLayout()
-            flowLayout.scrollDirection = .vertical
-            $0.collectionViewLayout = flowLayout
         }
     }
     
