@@ -26,7 +26,6 @@ class CompletedOrderView: BaseView {
     private let pointTitleLabel = UILabel()
     private let subPointTitleLabel = UILabel()
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         bindDataBenefitsInfo()
