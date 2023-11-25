@@ -15,6 +15,7 @@ final class DetailViewController: BaseViewController {
     private let navigationBar = CustomNavigationBar(type: .backCartButton)
     private let tabBarView = TabBarView()
     private let bottomBarView = DetailBottomBarView()
+    private let notifyRemoveToastView = NotifyRemoveToastView()
     let upFloatingButton = FloatingButton(type: .up)
     let downFloatingButton = FloatingButton(type: .down)
     
@@ -39,7 +40,7 @@ final class DetailViewController: BaseViewController {
     }
     
     override func setLayout() {
-        view.addSubviews(navigationBar, tabBarView, bottomBarView, upFloatingButton, downFloatingButton)
+        view.addSubviews(navigationBar, tabBarView, bottomBarView, notifyRemoveToastView, upFloatingButton, downFloatingButton)
         
         navigationBar.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide)
@@ -55,6 +56,12 @@ final class DetailViewController: BaseViewController {
         bottomBarView.snp.makeConstraints {
             $0.horizontalEdges.equalToSuperview()
             $0.bottom.equalToSuperview()
+        }
+        
+        notifyRemoveToastView.snp.makeConstraints {
+            $0.bottom.equalTo(view.snp.bottom)
+            $0.height.equalTo(51)
+            $0.leading.trailing.equalToSuperview().inset(8)
         }
         
         upFloatingButton.snp.makeConstraints {
@@ -103,10 +110,14 @@ extension DetailViewController {
     
     @objc func tapDibsButton(_ sender: UIButton) {
         sender.isSelected.toggle()
-        if sender.isSelected {
+        if !sender.isSelected {
             sender.setImage(ImageLiterals.Home.icn.heartButtonLine, for: .normal)
+            notifyRemoveToastView.viewToastView()
         } else {
             sender.setImage(ImageLiterals.Home.icn.heartButtonPressed, for: .normal)
+            let relatedFoodModalViewController = RelatedFoodModalViewController()
+            relatedFoodModalViewController.modalPresentationStyle = .automatic
+            self.present(relatedFoodModalViewController, animated: true)
         }
     }
     
