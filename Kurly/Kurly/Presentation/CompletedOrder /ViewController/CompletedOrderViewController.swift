@@ -13,6 +13,7 @@ class CompletedOrderViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTarget()
     }
     
     override func loadView() {
