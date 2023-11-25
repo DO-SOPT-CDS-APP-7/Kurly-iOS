@@ -164,14 +164,13 @@ extension AddCartView {
         self.salePriceLabel.text = "\(salePrice)원"
         self.priceLabel.text = "\(price)원"
         self.priceLabel.attributedText = priceLabel.text?.strikeThrough()
-        bindPrice(price: model.salePrice, value: 1)
+        bindPrice(salePrice: model.salePrice, price: model.price, value: 1)
     }
     
-    func bindPrice(price: Int, value: Int) {
-        let numberFormatter: NumberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        let buttonString: String = numberFormatter.string(for: price * value) ?? "0"
-        self.addCartButton.setTitle("\(buttonString)원 장바구니 담기", for: .normal)
+    func bindPrice(salePrice: Int, price: Int, value: Int) {
+        self.addCartButton.setTitle("\((salePrice * value).priceText) 장바구니 담기", for: .normal)
+        self.salePriceLabel.text = "\((salePrice * value).priceText)"
+        self.priceLabel.text = "\((price * value).priceText)"
     }
     
 }
