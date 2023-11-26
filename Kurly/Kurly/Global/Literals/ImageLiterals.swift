@@ -39,6 +39,7 @@ enum ImageLiterals {
             static var closeButtonGray: UIImage { .load(name: "ic_close_gray") }
             static var closeButton: UIImage { .load(name: "ic_close") }
             static var downFloatingButton: UIImage { .load(name: "ic_down_floating") }
+            static var errorButton: UIImage { .load(name: "ic_Error_defult")}
             static var filterButton: UIImage { .load(name: "ic_filter") }
             static var heartButtonLine: UIImage { .load(name: "ic_heart_line") }
             static var heartButtonPressed: UIImage { .load(name: "ic_heart_pressed") }
