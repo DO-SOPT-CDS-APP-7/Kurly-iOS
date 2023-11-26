@@ -9,9 +9,14 @@ import UIKit
 
 import SnapKit
 
+enum CartViewType {
+    case emptyCart
+    case order
+}
+
 final class CartViewController: BaseViewController {
 
-    private let cartView = CartView()
+    private let cartView = CartView(type: .emptyCart)
     
     override func viewDidLoad() {
         super.viewDidLoad()
