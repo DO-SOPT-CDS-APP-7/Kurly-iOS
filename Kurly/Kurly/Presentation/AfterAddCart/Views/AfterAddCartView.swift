@@ -18,8 +18,8 @@ final class AfterAddCartView: BaseView {
     private let priceLabel = UILabel()
     private let progressView = UIProgressView()
     private let divisionLabel = UILabel()
-    private let headerView = UILabel()
-    let relatedCollectionView = CustomCollectionView()
+    
+    var relatedCollectionView = CustomCollectionView(type: .withHeader, model: RelatedModel.dummy(), model2: nil)
     
     override func setUI() {
         self.backgroundColor = .white
@@ -58,16 +58,10 @@ final class AfterAddCartView: BaseView {
         divisionLabel.do {
             $0.backgroundColor = .gray2
         }
-        
-        headerView.do {
-            $0.text = "다른 고객이 함께 본 상품"
-            $0.font = .fontGuide(.title_semibold_16)
-            $0.textColor = .gray6
-        }
     }
     
     override func setLayout() {
-        self.addSubviews(imageView, descriptionLabel, buyButton, priceLabel, progressView, divisionLabel, headerView, relatedCollectionView)
+        self.addSubviews(imageView, descriptionLabel, buyButton, priceLabel, progressView, divisionLabel, relatedCollectionView)
         
         imageView.snp.makeConstraints {
             $0.top.equalToSuperview().inset(33)
@@ -104,15 +98,10 @@ final class AfterAddCartView: BaseView {
             $0.height.equalTo(0.5)
         }
         
-        headerView.snp.makeConstraints {
-            $0.top.equalTo(divisionLabel.snp.bottom).offset(18)
-            $0.leading.equalToSuperview().inset(16)
-        }
-        
         relatedCollectionView.snp.makeConstraints {
-            $0.top.equalTo(headerView.snp.bottom).offset(17)
+            $0.top.equalTo(divisionLabel.snp.bottom)
             $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(257)
+            $0.height.equalTo(327)
         }
     }
 }
