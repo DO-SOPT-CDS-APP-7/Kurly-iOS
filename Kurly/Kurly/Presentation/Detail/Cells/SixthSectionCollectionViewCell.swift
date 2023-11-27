@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SixthSectionCollectionViewCell: UICollectionViewCell {
+class SixthSectionCollectionViewCell: UICollectionViewCell, CollectionViewCellRegisterDequeueProtocol {
     
     static let identifier: String = "SixthSectionCollectionViewCell"
     

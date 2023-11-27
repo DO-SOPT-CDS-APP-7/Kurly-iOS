@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class OrderPriceCollectionViewCell: UICollectionViewCell {
+class OrderPriceCollectionViewCell: UICollectionViewCell, CollectionViewCellRegisterDequeueProtocol {
     
     static let identifier: String = className
 

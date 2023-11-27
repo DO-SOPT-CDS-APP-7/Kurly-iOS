@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class CartItemCollectionViewCell: UICollectionViewCell {
+final class CartItemCollectionViewCell: UICollectionViewCell, CollectionViewCellRegisterDequeueProtocol {
     
     static let identifier: String = "CartItemCollectionViewCell"
     
