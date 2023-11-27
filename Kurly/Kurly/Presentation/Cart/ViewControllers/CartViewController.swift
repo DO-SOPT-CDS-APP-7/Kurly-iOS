@@ -16,7 +16,9 @@ enum CartViewType {
 
 final class CartViewController: BaseViewController {
 
-    private let cartView = CartView(type: .emptyCart)
+    private let cartView = CartView(type: .order)
+    
+    private let dummy = CartModel.dummy()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -108,6 +110,20 @@ extension CartViewController {
     @objc func tapDeleteItemButton() {
         print("개별 상품 삭제하기!")
     }
+    
+    @objc func tapUpdateValueStepper(_ sender: UIButton) {
+        
+        if let cell = sender.superview?.superview as? CartItemCollectionViewCell, let indexPath = cartView.cartItemCollectionView.indexPath(for: cell) {
+
+            if(cell.stepper.value == 1 && sender.tag == -1) {
+                print("최소구매수량 1")
+            } else {
+                cell.stepper.value += sender.tag
+                
+                cell.bindPrice(originalPrice: dummy[indexPath.row].originalPrice, discountedPrice: dummy[indexPath.row].discountedPrice)
+            }
+        }
+    }
 }
 
 extension CartViewController: UICollectionViewDelegate {}
@@ -122,7 +138,7 @@ extension CartViewController: UICollectionViewDataSource {
 
         switch section {
         case 0 :
-            return 1
+            return dummy.count
         case 1 :
             return 1
         default:
@@ -137,11 +153,20 @@ extension CartViewController: UICollectionViewDataSource {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CartItemCollectionViewCell.identifier, for: indexPath) as? CartItemCollectionViewCell else { return UICollectionViewCell() }
             
             cell.selectItemButton.addTarget(self, action: #selector(tapSelectItemButton), for: .touchUpInside)
+            
             cell.deleteItemButton.addTarget(self, action: #selector(tapDeleteItemButton), for: .touchUpInside)
+            
+            cell.stepper.minusButton.addTarget(self, action: #selector(tapUpdateValueStepper), for: .touchUpInside)
+            
+            cell.stepper.plusButton.addTarget(self, action: #selector(tapUpdateValueStepper), for: .touchUpInside)
+            
+            cell.bindModel(model: dummy[indexPath.row])
             
             return cell
         case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OrderPriceCollectionViewCell.identifier, for: indexPath) as? OrderPriceCollectionViewCell else { return UICollectionViewCell() }
+            
+            cell.bindModel(model: dummy[indexPath.row])
             
             return cell
         default:
