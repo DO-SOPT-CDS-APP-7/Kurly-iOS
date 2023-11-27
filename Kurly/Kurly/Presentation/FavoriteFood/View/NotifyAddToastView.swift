@@ -58,7 +58,6 @@ final class NotifyAddToastView: BaseView {
         backgroundView.addSubviews(notifyMessageLabel, shortcutButton, shortcutImageView)
         
         self.snp.makeConstraints {
-            $0.width.equalTo(SizeLiterals.Screen.screenWidth)
             $0.height.equalTo(51)
         }
         

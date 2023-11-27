@@ -134,7 +134,11 @@ extension CartViewController {
 extension CartViewController {
     
     @objc func tapBackButton() {
-        self.dismiss(animated: true)
+        if self.navigationController == nil {
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     @objc func tapOrderButton() {
@@ -183,7 +187,7 @@ extension CartViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
+        
         switch section {
         case 0 :
             return dummy.count
@@ -221,7 +225,7 @@ extension CartViewController: UICollectionViewDataSource {
 }
 
 extension CartViewController: UICollectionViewDelegateFlowLayout {
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         
         if section == 0 {
@@ -232,7 +236,7 @@ extension CartViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-    
+        
         if section == 0 {
             return CGSize(width: SizeLiterals.Screen.screenWidth, height: 8)
         } else {
@@ -254,7 +258,7 @@ extension CartViewController: UICollectionViewDelegateFlowLayout {
             
         } else if kind == UICollectionView.elementKindSectionFooter {
             guard let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CartItemFooterCollectionReusableView.identifier, for: indexPath) as? CartItemFooterCollectionReusableView else { return UICollectionReusableView() }
-           
+            
             switch indexPath.section {
             case 0:
                 return footerView
