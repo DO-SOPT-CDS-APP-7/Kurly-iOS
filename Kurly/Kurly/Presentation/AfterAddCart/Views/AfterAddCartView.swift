@@ -19,7 +19,7 @@ final class AfterAddCartView: BaseView {
     private let progressView = UIProgressView()
     private let divisionLabel = UILabel()
     
-    var relatedCollectionView = CustomCollectionView(type: .withHeader, model: RelatedModel.dummy(), model2: nil)
+    private let collectionView = CustomCollectionView(type: .withHeader, model: RelatedModel.dummy(), model2: nil)
     
     override func setUI() {
         self.backgroundColor = .white
@@ -61,7 +61,7 @@ final class AfterAddCartView: BaseView {
     }
     
     override func setLayout() {
-        self.addSubviews(imageView, descriptionLabel, buyButton, priceLabel, progressView, divisionLabel, relatedCollectionView)
+        self.addSubviews(imageView, descriptionLabel, buyButton, priceLabel, progressView, divisionLabel, collectionView)
         
         imageView.snp.makeConstraints {
             $0.top.equalToSuperview().inset(33)
@@ -98,7 +98,7 @@ final class AfterAddCartView: BaseView {
             $0.height.equalTo(0.5)
         }
         
-        relatedCollectionView.snp.makeConstraints {
+        collectionView.snp.makeConstraints {
             $0.top.equalTo(divisionLabel.snp.bottom)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(327)
