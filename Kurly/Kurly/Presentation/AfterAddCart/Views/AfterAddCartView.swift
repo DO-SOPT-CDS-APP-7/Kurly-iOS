@@ -19,7 +19,7 @@ final class AfterAddCartView: BaseView {
     private let progressView = UIProgressView()
     private let divisionLabel = UILabel()
     
-    var relatedCollectionView = CustomCollectionView(type: .withHeaderFooter, model: RelatedModel.dummy(), model2: RelatedModel.dummy())
+    var relatedCollectionView = CustomCollectionView(type: .withHeader, model: RelatedModel.dummy(), model2: nil)
     
     override func setUI() {
         self.backgroundColor = .white
