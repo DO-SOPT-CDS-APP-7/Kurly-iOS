@@ -126,7 +126,7 @@ extension CustomCollectionView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         if collectionViewType == .withHeaderFooter && section == 0 {
-            return CGSize(width: SizeLiterals.Screen.screenWidth, height: 8)
+            return CGSize(width: SizeLiterals.Screen.screenWidth, height: 24)
         }
         return .zero
     }

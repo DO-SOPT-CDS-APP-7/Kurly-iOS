@@ -13,10 +13,13 @@ import Then
 class CustomFooterView: UICollectionReusableView {
     
     let identifier: String = className
+    
+    let label = UILabel()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUI()
+        setLayout()
     }
     
     required init?(coder: NSCoder) {
@@ -27,8 +30,17 @@ class CustomFooterView: UICollectionReusableView {
 extension CustomFooterView {
     
     private func setUI() {
-        self.do {
+        label.do {
             $0.backgroundColor = .gray1
+        }
+    }
+    
+    private func setLayout() {
+        self.addSubview(label)
+        label.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(16)
+            $0.horizontalEdges.equalToSuperview()
+            $0.height.equalTo(8)
         }
     }
 }
