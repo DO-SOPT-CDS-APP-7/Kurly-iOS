@@ -77,7 +77,6 @@ final class CartHeaderView: BaseView {
             }
             
             selectItemCountLabel.do {
-                $0.text = "전체선택 (1/1)"
                 $0.font = .fontGuide(.title_semibold_16)
                 $0.textColor = .gray5
             }
@@ -140,6 +139,18 @@ final class CartHeaderView: BaseView {
                 $0.trailing.equalToSuperview().inset(20)
                 $0.bottom.equalToSuperview().inset(6)
             }
+        }
+    }
+}
+
+extension CartHeaderView {
+    func bindData(seletedItemCount: Int, AllItemCount: Int) {
+        selectItemCountLabel.text = "전체선택 (\(seletedItemCount)/\(AllItemCount))"
+        
+        if seletedItemCount == AllItemCount {
+            selectAllItemButton.isSelected = true
+        } else {
+            selectAllItemButton.isSelected = false
         }
     }
 }

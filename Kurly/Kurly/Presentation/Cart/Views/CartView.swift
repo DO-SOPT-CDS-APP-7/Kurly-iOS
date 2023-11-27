@@ -91,3 +91,10 @@ final class CartView: BaseView {
         }
     }
 }
+
+extension CartView {
+    
+    func bindPrice(totalPrice: Int) {
+        self.bottomCTAButton.setTitle("\(totalPrice.priceText) 주문하기", for: .normal)
+    }
+}
