@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ThridSectionHorizontalCollectionViewCell: UICollectionViewCell {
+class ThridSectionHorizontalCollectionViewCell: UICollectionViewCell, CollectionViewCellRegisterDequeueProtocol {
     
     static let identifier: String = "ThridSectionHorizontalCollectionViewCell"
     
