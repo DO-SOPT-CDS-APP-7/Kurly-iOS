@@ -14,7 +14,7 @@
 		095AB5872B11CAC500DA246F /* CustomCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095AB5862B11CAC500DA246F /* CustomCollectionView.swift */; };
 		097266F62B0A134B00FB6E54 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097266F52B0A134B00FB6E54 /* BaseViewController.swift */; };
 		097F58052B0E73C400918304 /* RelatedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F58042B0E73C400918304 /* RelatedModel.swift */; };
-		097F58082B0EFE6B00918304 /* RelatedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F58072B0EFE6B00918304 /* RelatedCollectionViewCell.swift */; };
+		097F58082B0EFE6B00918304 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F58072B0EFE6B00918304 /* CustomCollectionViewCell.swift */; };
 		09BA868B2B0A231000BF85D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DE08402B05B70200D7DF3D /* LaunchScreen.storyboard */; };
 		09BA86942B0A3BF200BF85D9 /* SizeLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA86932B0A3BF200BF85D9 /* SizeLiterals.swift */; };
 		09BA86992B0A3C6400BF85D9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA86982B0A3C6400BF85D9 /* DetailViewController.swift */; };
@@ -112,7 +112,7 @@
 		095AB5862B11CAC500DA246F /* CustomCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionView.swift; sourceTree = "<group>"; };
 		097266F52B0A134B00FB6E54 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		097F58042B0E73C400918304 /* RelatedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedModel.swift; sourceTree = "<group>"; };
-		097F58072B0EFE6B00918304 /* RelatedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedCollectionViewCell.swift; sourceTree = "<group>"; };
+		097F58072B0EFE6B00918304 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		09BA868C2B0A23B100BF85D9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09BA86932B0A3BF200BF85D9 /* SizeLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeLiterals.swift; sourceTree = "<group>"; };
 		09BA86982B0A3C6400BF85D9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +215,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		092DC5482B1496EF008746A6 /* CustomCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				095AB5862B11CAC500DA246F /* CustomCollectionView.swift */,
+				092DC5442B14822B008746A6 /* CustomHeaderView.swift */,
+				092DC5462B1482C0008746A6 /* CustomFooterView.swift */,
+				097F58072B0EFE6B00918304 /* CustomCollectionViewCell.swift */,
+			);
+			path = CustomCollectionView;
+			sourceTree = "<group>";
+		};
 		097F58032B0E739000918304 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,12 +267,9 @@
 		09BA86B62B0A614400BF85D9 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				092DC5482B1496EF008746A6 /* CustomCollectionView */,
 				09BA86B72B0A616500BF85D9 /* CustomNavigationBar.swift */,
 				09BA86BA2B0A6F0E00BF85D9 /* BottomCTAButton.swift */,
-				095AB5862B11CAC500DA246F /* CustomCollectionView.swift */,
-				097F58072B0EFE6B00918304 /* RelatedCollectionViewCell.swift */,
-				092DC5442B14822B008746A6 /* CustomHeaderView.swift */,
-				092DC5462B1482C0008746A6 /* CustomFooterView.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -872,7 +880,7 @@
 				178336062B0E2159000DF127 /* SecondSectionCollectionViewCell.swift in Sources */,
 				17A870C02B086DE900D5162C /* ColorLiterals.swift in Sources */,
 				09CE00FB2B0E12BC00CB42C4 /* Int+.swift in Sources */,
-				097F58082B0EFE6B00918304 /* RelatedCollectionViewCell.swift in Sources */,
+				097F58082B0EFE6B00918304 /* CustomCollectionViewCell.swift in Sources */,
 				3FE4CCEC2B10C4D7009C9029 /* CompletedOrderView.swift in Sources */,
 				09BA86BB2B0A6F0E00BF85D9 /* BottomCTAButton.swift in Sources */,
 				095AB57A2B11AD9000DA246F /* AlertBuilder.swift in Sources */,

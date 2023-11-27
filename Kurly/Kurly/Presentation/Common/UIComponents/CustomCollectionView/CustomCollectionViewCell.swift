@@ -1,5 +1,5 @@
 //
-//  RelatedCollectionViewCell.swift
+//  CustomCollectionViewCell.swift
 //  Kurly
 //
 //  Created by Minjoo Kim on 11/23/23.
