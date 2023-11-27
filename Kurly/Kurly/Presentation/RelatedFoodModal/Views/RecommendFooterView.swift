@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class RecommendFooterView: UICollectionReusableView {
+class RecommendFooterView: UICollectionReusableView, CollectionSectionViewRegisterDequeueProtocol {
     
     static let identifier: String = "RecommendFooterView"
     

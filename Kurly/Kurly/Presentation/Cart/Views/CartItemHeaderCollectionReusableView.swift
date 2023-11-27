@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class CartItemHeaderCollectionReusableView: UICollectionReusableView {
+class CartItemHeaderCollectionReusableView: UICollectionReusableView, CollectionSectionViewRegisterDequeueProtocol {
     
     static let identifier: String = className
     

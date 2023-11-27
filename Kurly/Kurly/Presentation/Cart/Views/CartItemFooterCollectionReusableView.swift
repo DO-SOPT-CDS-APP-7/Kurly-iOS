@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CartItemFooterCollectionReusableView: UICollectionReusableView {
+class CartItemFooterCollectionReusableView: UICollectionReusableView, CollectionSectionViewRegisterDequeueProtocol {
         
     static let identifier: String = className
     
