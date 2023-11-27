@@ -1,5 +1,5 @@
 //
-//  RelatedCollectionViewCell.swift
+//  CustomCollectionViewCell.swift
 //  Kurly
 //
 //  Created by Minjoo Kim on 11/23/23.
@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class RelatedCollectionViewCell: UICollectionViewCell {
+class CustomCollectionViewCell: UICollectionViewCell {
     
     static let identifier: String = className
     
@@ -31,7 +31,7 @@ class RelatedCollectionViewCell: UICollectionViewCell {
     }
 }
 
-extension RelatedCollectionViewCell {
+extension CustomCollectionViewCell {
     
     func setUI() {
         
@@ -98,9 +98,9 @@ extension RelatedCollectionViewCell {
     
     func bindData(model: RelatedModel) {
         
-        foodImageView.image = model.image
-        shippingLabel.text = model.shipping
-        foodNameLabel.text = model.name
-        foodPriceLabel.text = model.price.priceText
+        foodImageView.image = model.imageURL
+        shippingLabel.text = model.deliveryType
+        foodNameLabel.text = model.productName
+        foodPriceLabel.text = model.originalPrice.priceText
     }
 }
