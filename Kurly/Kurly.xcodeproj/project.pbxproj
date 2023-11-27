@@ -82,6 +82,7 @@
 		17A870DC2B08A6F700D5162C /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870DB2B08A6F700D5162C /* UIView+.swift */; };
 		17A870DE2B08A70F00D5162C /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870DD2B08A70F00D5162C /* UIViewController+.swift */; };
 		17D2D2D12B14CE9C00013B05 /* CollectionViewCellRegisterDequeueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D2D2D02B14CE9C00013B05 /* CollectionViewCellRegisterDequeueProtocol.swift */; };
+		17D2D2D32B14F86200013B05 /* CollectionHeaderViewRegisterDequeueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D2D2D22B14F86200013B05 /* CollectionHeaderViewRegisterDequeueProtocol.swift */; };
 		3F52DDCC2B0B531E00BD216E /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52DDCB2B0B531E00BD216E /* CartViewController.swift */; };
 		3F52DDCE2B0B53B200BD216E /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52DDCD2B0B53B200BD216E /* CartView.swift */; };
 		3F5F8AB52B0F6B8600FC01BF /* OrderPriceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5F8AB42B0F6B8600FC01BF /* OrderPriceCollectionViewCell.swift */; };
@@ -181,6 +182,7 @@
 		17A870DB2B08A6F700D5162C /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		17A870DD2B08A70F00D5162C /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		17D2D2D02B14CE9C00013B05 /* CollectionViewCellRegisterDequeueProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellRegisterDequeueProtocol.swift; sourceTree = "<group>"; };
+		17D2D2D22B14F86200013B05 /* CollectionHeaderViewRegisterDequeueProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderViewRegisterDequeueProtocol.swift; sourceTree = "<group>"; };
 		3F52DDCB2B0B531E00BD216E /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		3F52DDCD2B0B53B200BD216E /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		3F5F8AB42B0F6B8600FC01BF /* OrderPriceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPriceCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -528,6 +530,7 @@
 			isa = PBXGroup;
 			children = (
 				17D2D2D02B14CE9C00013B05 /* CollectionViewCellRegisterDequeueProtocol.swift */,
+				17D2D2D22B14F86200013B05 /* CollectionHeaderViewRegisterDequeueProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -887,6 +890,7 @@
 				092DC5472B1482C0008746A6 /* CustomFooterView.swift in Sources */,
 				09EAE9912B0B22080079CAC4 /* Stepper.swift in Sources */,
 				3FE4CCE52B108B67009C9029 /* CartItemFooterCollectionReusableView.swift in Sources */,
+				17D2D2D32B14F86200013B05 /* CollectionHeaderViewRegisterDequeueProtocol.swift in Sources */,
 				3F5F8AB52B0F6B8600FC01BF /* OrderPriceCollectionViewCell.swift in Sources */,
 				174713772B0FE55D00E8EC51 /* BottomDibsButton.swift in Sources */,
 				17A8709D2B0864CB00D5162C /* Service.swift in Sources */,
