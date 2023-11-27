@@ -84,17 +84,13 @@ final class DetailViewController: BaseViewController {
     }
     
     override func setRegister() {
-        detailView.detailCollectionView.register(FirstSectionCollectionViewCell.self, forCellWithReuseIdentifier: FirstSectionCollectionViewCell.identifier)
-        detailView.detailCollectionView.register(SecondSectionCollectionViewCell.self, forCellWithReuseIdentifier: SecondSectionCollectionViewCell.identifier)
-        detailView.detailCollectionView.register(ThridSectionHorizontalCollectionViewCell.self,
-                                                 forCellWithReuseIdentifier: ThridSectionHorizontalCollectionViewCell.identifier)
-        detailView.detailCollectionView.register(FourthSectionCollectionViewCell.self,
-                                                 forCellWithReuseIdentifier: FourthSectionCollectionViewCell.identifier)
+        FirstSectionCollectionViewCell.register(to: detailView.detailCollectionView)
+        SecondSectionCollectionViewCell.register(to: detailView.detailCollectionView)
+        ThridSectionHorizontalCollectionViewCell.register(to: detailView.detailCollectionView)
+        FourthSectionCollectionViewCell.register(to: detailView.detailCollectionView)
+        FifthSectionCollectionViewCell.register(to: detailView.detailCollectionView)
+        SixthSectionCollectionViewCell.register(to: detailView.detailCollectionView)
         detailView.detailCollectionView.register(RecommendHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: RecommendHeaderView.identifier)
-        detailView.detailCollectionView.register(FifthSectionCollectionViewCell.self,
-                                                 forCellWithReuseIdentifier: FifthSectionCollectionViewCell.identifier)
-        detailView.detailCollectionView.register(SixthSectionCollectionViewCell.self,
-                                                 forCellWithReuseIdentifier: SixthSectionCollectionViewCell.identifier)
     }
     
     override func viewWillAppear(_ animated: Bool) {
