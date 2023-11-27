@@ -32,7 +32,7 @@ final class CustomNavigationBar: UIView {
     private lazy var titleLabel = UILabel()
     private lazy var backButton = UIButton()
     lazy var closeButton = UIButton()
-    private lazy var cartButton = UIButton()
+    lazy var cartButton = UIButton()
     
     
     init(type: NavigationType) {

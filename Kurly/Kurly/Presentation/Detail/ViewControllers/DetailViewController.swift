@@ -20,6 +20,7 @@ final class DetailViewController: BaseViewController {
     let downFloatingButton = FloatingButton(type: .down)
     private let addCartViewController = AddCartViewController()
     private let afterAddCartViewController = AfterAddCartViewController()
+    private let cartViewController = CartViewController()
     
     private let detailView = DetailView()
     
@@ -142,6 +143,10 @@ extension DetailViewController {
         addCartViewController.delegate = self
         present(addCartViewController, animated: true, completion: nil)
     }
+    
+    @objc private func cartButtonTapped() {
+        pushToCartViewController()
+    }
 }
 
 extension DetailViewController {
@@ -165,6 +170,7 @@ extension DetailViewController {
         upFloatingButton.addTarget(self, action: #selector(tapFloatingButton), for: .touchUpInside)
         downFloatingButton.addTarget(self, action: #selector(tapFloatingButton), for: .touchUpInside)
         bottomBarView.bottomCTAButton.addTarget(self, action: #selector(presentaddCartViewController), for: .touchUpInside)
+        navigationBar.cartButton.addTarget(self, action: #selector(cartButtonTapped), for: .touchUpInside)
     }
     
     private func bindModel() {
@@ -182,6 +188,10 @@ extension DetailViewController {
             sheet.prefersGrabberVisible = true
         }
         present(afterAddCartViewController, animated: true, completion: nil)
+    }
+    
+    func pushToCartViewController() {
+        navigationController?.pushViewController(cartViewController, animated: true)
     }
 }
 
