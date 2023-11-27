@@ -90,7 +90,7 @@ final class DetailViewController: BaseViewController {
         FourthSectionCollectionViewCell.register(to: detailView.detailCollectionView)
         FifthSectionCollectionViewCell.register(to: detailView.detailCollectionView)
         SixthSectionCollectionViewCell.register(to: detailView.detailCollectionView)
-        detailView.detailCollectionView.register(RecommendHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: RecommendHeaderView.identifier)
+        RecommendHeaderView.registerHeaderView(to: detailView.detailCollectionView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
