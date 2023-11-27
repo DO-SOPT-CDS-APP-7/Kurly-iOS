@@ -226,9 +226,6 @@
 		097F58062B0EFE5500918304 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				097F58072B0EFE6B00918304 /* RelatedCollectionViewCell.swift */,
-				092DC5442B14822B008746A6 /* CustomHeaderView.swift */,
-				092DC5462B1482C0008746A6 /* CustomFooterView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -262,6 +259,9 @@
 				09BA86B72B0A616500BF85D9 /* CustomNavigationBar.swift */,
 				09BA86BA2B0A6F0E00BF85D9 /* BottomCTAButton.swift */,
 				095AB5862B11CAC500DA246F /* CustomCollectionView.swift */,
+				097F58072B0EFE6B00918304 /* RelatedCollectionViewCell.swift */,
+				092DC5442B14822B008746A6 /* CustomHeaderView.swift */,
+				092DC5462B1482C0008746A6 /* CustomFooterView.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";

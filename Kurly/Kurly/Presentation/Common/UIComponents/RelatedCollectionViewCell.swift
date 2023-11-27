@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class RelatedCollectionViewCell: UICollectionViewCell {
+class CustomCollectionViewCell: UICollectionViewCell {
     
     static let identifier: String = className
     
@@ -31,7 +31,7 @@ class RelatedCollectionViewCell: UICollectionViewCell {
     }
 }
 
-extension RelatedCollectionViewCell {
+extension CustomCollectionViewCell {
     
     func setUI() {
         
