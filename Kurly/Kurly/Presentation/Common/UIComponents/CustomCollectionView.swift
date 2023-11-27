@@ -86,7 +86,6 @@ extension CustomCollectionView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        return collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CustomFooterView.className, for: indexPath)
         if kind == UICollectionView.elementKindSectionHeader {
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CustomHeaderView.className, for: indexPath) as? CustomHeaderView else { 
                 return UICollectionReusableView() }
@@ -126,7 +125,7 @@ extension CustomCollectionView: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        if section == 1 {
+        if collectionViewType == .withHeaderFooter && section == 0 {
             return CGSize(width: SizeLiterals.Screen.screenWidth, height: 8)
         }
         return .zero
