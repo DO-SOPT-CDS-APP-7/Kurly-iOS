@@ -44,7 +44,6 @@ final class NotifyRemoveToastView: BaseView {
         backgroundView.addSubview(notifyMessageLabel)
         
         self.snp.makeConstraints {
-            $0.width.equalTo(SizeLiterals.Screen.screenWidth)
             $0.height.equalTo(51)
         }
         
