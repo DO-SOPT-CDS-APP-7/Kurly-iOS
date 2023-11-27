@@ -108,7 +108,7 @@ extension DetailViewController {
         sender.isSelected.toggle()
         if !sender.isSelected {
             sender.setImage(ImageLiterals.Home.icn.heartButtonLine, for: .normal)
-            notifyRemoveToastView.viewToastView()
+            viewToastView()
         } else {
             sender.setImage(ImageLiterals.Home.icn.heartButtonPressed, for: .normal)
             let relatedFoodModalViewController = RelatedFoodModalViewController()
@@ -141,6 +141,20 @@ extension DetailViewController {
         }
         addCartViewController.delegate = self
         present(addCartViewController, animated: true, completion: nil)
+    }
+}
+
+extension DetailViewController {
+    func viewToastView() {
+        UIView.animate(withDuration: 0.5) {
+            self.notifyRemoveToastView.upToastView()
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            UIView.animate(withDuration: 0.5) {
+                self.notifyRemoveToastView.downToastView()
+            }
+        }
     }
 }
 
