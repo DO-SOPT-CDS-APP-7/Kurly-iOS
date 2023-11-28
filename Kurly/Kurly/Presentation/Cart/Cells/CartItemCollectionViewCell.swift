@@ -81,7 +81,7 @@ final class CartItemCollectionViewCell: UICollectionViewCell, CollectionViewCell
         
         topStackView.do {
             $0.axis = .horizontal
-            $0.distribution = .fillProportionally
+            $0.distribution = .fill
             $0.spacing = 6
             $0.addArrangedSubviews(selectItemButton, itemLabel, deleteItemButton)
             itemLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)

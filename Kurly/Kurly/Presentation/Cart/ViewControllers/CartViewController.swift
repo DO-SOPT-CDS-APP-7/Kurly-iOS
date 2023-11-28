@@ -287,5 +287,6 @@ extension CartViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let yOffset = scrollView.contentOffset.y
         self.cartView.updateView(forScrollOffset: yOffset)
+        self.view.layoutIfNeeded()
     }
 }
