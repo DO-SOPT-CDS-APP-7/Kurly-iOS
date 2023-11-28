@@ -15,7 +15,8 @@ protocol DismissProtocol: AnyObject {
 
 final class AddCartViewController: BaseViewController {
     
-    private let dummy = Product.dummy()
+    private let productService = ProductService(apiService: APIService().self)
+    private var productModel = Product(image: "", name: "", description: "", salePrice: 0, price: 0)
     
     weak var delegate: DismissProtocol?
     
@@ -24,8 +25,9 @@ final class AddCartViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindModel()
+        //        bindModel()
         setTarget()
+        getProduct()
     }
     
     override func loadView() {
@@ -34,14 +36,27 @@ final class AddCartViewController: BaseViewController {
 }
 
 extension AddCartViewController {
-    private func bindModel() {
-        addCartView.bindModel(model: dummy)
-    }
     
     private func setTarget() {
         addCartView.addCartButton.addTarget(self, action: #selector(tapAddCartButton), for: .touchUpInside)
         addCartView.stepper.minusButton.addTarget(self, action: #selector(updateValue(_:)), for: .touchUpInside)
         addCartView.stepper.plusButton.addTarget(self, action: #selector(updateValue(_:)), for: .touchUpInside)
+    }
+    
+    private func getProduct() {
+        
+        Task {
+            do {
+                let result = try await productService.fetchProduct()
+                productModel = result
+                self.addCartView.bindModel(model: productModel)
+                
+            }
+            catch {
+                guard let error = error as? NetworkError else { return }
+                print(error.description)
+            }
+        }
     }
 }
 
@@ -65,7 +80,7 @@ extension AddCartViewController {
         }
         else {
             addCartView.stepper.value += sender.tag
-            addCartView.bindPrice(salePrice: dummy.salePrice, price: dummy.price, value: addCartView.stepper.value)
+            addCartView.bindPrice(salePrice: productModel.salePrice, price: productModel.price, value: addCartView.stepper.value)
         }
     }
 }
