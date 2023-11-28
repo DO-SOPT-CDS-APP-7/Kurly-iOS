@@ -16,7 +16,17 @@ enum CartViewType {
 
 final class CartViewController: BaseViewController {
     
-    private let cartView = CartView(type: .emptyCart)
+    private let cartView = CartView(type: .order)
+    private var dummy = CartModel.dummy()
+    private var selectedItem: [CartModel] = [] {
+        didSet {
+            cartView.cartHeaderView.bindData(seletedItemCount: selectedItem.count, AllItemCount: dummy.count)
+            
+            let result = calculateSelectedItemPrice(seletedItem: self.selectedItem)
+            cartView.bindPrice(totalPrice: result.totalPrice)
+            cartView.cartItemCollectionView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +34,7 @@ final class CartViewController: BaseViewController {
         setUI()
         setDelegates()
         setRegister()
+        bindModel()
     }
     
     override func loadView() {
@@ -40,27 +51,71 @@ final class CartViewController: BaseViewController {
     }
     
     override func setRegister() {
-        cartView.cartItemCollectionView.register(CartItemCollectionViewCell.self, forCellWithReuseIdentifier: CartItemCollectionViewCell.identifier)
-        
-        cartView.cartItemCollectionView.register(OrderPriceCollectionViewCell.self, forCellWithReuseIdentifier: OrderPriceCollectionViewCell.identifier)
-        
+        CartItemCollectionViewCell.register(to: cartView.cartItemCollectionView)
+        OrderPriceCollectionViewCell.register(to: cartView.cartItemCollectionView)
+
         cartView.cartItemCollectionView.register(CartItemHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CartItemHeaderCollectionReusableView.identifier)
         
         cartView.cartItemCollectionView.register(CartItemFooterCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: CartItemFooterCollectionReusableView.identifier)
     }
+}
+
+extension CartViewController {
     
-    private func changeStateButtonImage(_ sender: UIButton) {
-        sender.isSelected.toggle()
+    private func calculateSelectedItemPrice(seletedItem: [CartModel]) -> OrderModel {
+        let numberFormatter: NumberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
         
-        if sender.isSelected {
-            sender.setImage(ImageLiterals.Home.icn.checkButtonPressed, for: .normal)
+        var sumItemPrice = 0
+        var sumDiscountPrice = 0
+        
+        seletedItem.filter { $0.isSelect == true }.forEach { data in
+            sumItemPrice += Int(data.originalPrice * Double(data.itemCount))
+            sumDiscountPrice += Int(data.discountedPrice)
+        }
+        
+        return OrderModel(itemPrice: sumItemPrice, discountedPrice: sumDiscountPrice, deliveryPrice: 0, totalPrice: sumItemPrice - sumDiscountPrice)
+    }
+}
+
+extension CartViewController: SelectedItemProtocol {
+    
+    func getButtonState(state: Bool, row: Int) {
+        if state == true {
+            dummy[row].isSelect = state
+            
+            selectedItem.append(dummy[row])
         } else {
-            sender.setImage(ImageLiterals.Home.icn.checkButtonDefault, for: .normal)
+            dummy[row].isSelect = state
+            
+            if let index = selectedItem.firstIndex(where: { $0.id == row }) {
+                selectedItem.remove(at: index)
+            }
+        }
+    }
+}
+
+extension CartViewController: UpdatingStepperProtocol {
+    
+    func updateStepperValue(value: Int, row: Int) {
+        dummy[row].itemCount = value
+        print(dummy[row])
+        
+        if dummy[row].isSelect == true {
+            if let index = selectedItem.firstIndex(where: { $0.id == row }) {
+                selectedItem[index] = dummy[row]
+            }
+        } else {
+            cartView.cartItemCollectionView.reloadData()
         }
     }
 }
 
 extension CartViewController {
+    
+    private func bindModel() {
+        cartView.cartHeaderView.bindData(seletedItemCount: selectedItem.count, AllItemCount: dummy.count)
+    }
     
     private func setTarget() {
         cartView.navigationBar.closeButton.addTarget(self, action: #selector(tapBackButton), for: .touchUpInside)
@@ -96,17 +151,25 @@ extension CartViewController {
     @objc func tapSelectAllItemButton(_ sender: UIButton) {
         print("구매 상품 전체 선택하기!")
         
-        changeStateButtonImage(sender)
+        sender.isSelected.toggle()
+        
+        if sender.isSelected == true {
+            for i in 0..<dummy.count {
+                if dummy[i].isSelect == false {
+                    dummy[i].isSelect = true
+                    selectedItem.append(dummy[i])
+                }
+            }
+        } else {
+            for i in 0..<dummy.count {
+                dummy[i].isSelect = false
+                selectedItem.removeAll()
+            }
+        }
     }
     
     @objc func tapSelectDeleteItemButton() {
         print("선택 상품 삭제하기!")
-    }
-    
-    @objc func tapSelectItemButton(_ sender: UIButton) {
-        print("개별 상품 선택하기!")
-        
-        changeStateButtonImage(sender)
     }
     
     @objc func tapDeleteItemButton() {
@@ -126,7 +189,7 @@ extension CartViewController: UICollectionViewDataSource {
         
         switch section {
         case 0 :
-            return 1
+            return dummy.count
         case 1 :
             return 1
         default:
@@ -140,12 +203,18 @@ extension CartViewController: UICollectionViewDataSource {
         case 0:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CartItemCollectionViewCell.identifier, for: indexPath) as? CartItemCollectionViewCell else { return UICollectionViewCell() }
             
-            cell.selectItemButton.addTarget(self, action: #selector(tapSelectItemButton), for: .touchUpInside)
+            cell.itemDelegate = self
+            cell.stepperDelegate = self
+            
             cell.deleteItemButton.addTarget(self, action: #selector(tapDeleteItemButton), for: .touchUpInside)
+            
+            cell.bindModel(model: dummy[indexPath.row])
             
             return cell
         case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OrderPriceCollectionViewCell.identifier, for: indexPath) as? OrderPriceCollectionViewCell else { return UICollectionViewCell() }
+            
+            cell.bindModel(model: calculateSelectedItemPrice(seletedItem: selectedItem))
             
             return cell
         default:

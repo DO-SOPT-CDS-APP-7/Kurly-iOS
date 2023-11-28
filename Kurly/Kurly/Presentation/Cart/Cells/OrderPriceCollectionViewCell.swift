@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class OrderPriceCollectionViewCell: UICollectionViewCell {
+class OrderPriceCollectionViewCell: UICollectionViewCell, CollectionViewCellRegisterDequeueProtocol {
     
     static let identifier: String = className
 
@@ -69,25 +69,21 @@ extension OrderPriceCollectionViewCell {
         }
         
         itemPrice.do {
-            $0.text = "5,900 원"
             $0.font = .fontGuide(.body_medium_16)
             $0.textColor = .gray6
         }
         
         itemDiscountPrice.do {
-            $0.text = "-1,180 원"
             $0.font = .fontGuide(.body_medium_16)
             $0.textColor = .gray6
         }
         
         deliveryPrice.do {
-            $0.text = "0 원"
             $0.font = .fontGuide(.body_medium_16)
             $0.textColor = .gray6
         }
         
         orderPrice.do {
-            $0.text = "4,720원"
             $0.font = .fontGuide(.title_semibold_20)
             $0.textColor = .gray6
         }
@@ -162,5 +158,18 @@ extension OrderPriceCollectionViewCell {
             $0.centerX.equalToSuperview()
             $0.height.equalTo(SizeLiterals.Screen.screenHeight * 42 / 812)
         }
+    }
+}
+
+extension OrderPriceCollectionViewCell {
+    
+    func bindModel(model: OrderModel) {
+        let numberFormatter: NumberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        
+        self.itemPrice.text = "\(numberFormatter.string(for: model.itemPrice) ?? "0") 원"
+        self.itemDiscountPrice.text = model.discountedPrice == 0 ? "\(model.discountedPrice) 원" : "-\(numberFormatter.string(for: model.discountedPrice) ?? "0") 원"
+        self.deliveryPrice.text = "\(model.deliveryPrice) 원"
+        self.orderPrice.text = "\((model.totalPrice).priceText)"
     }
 }
