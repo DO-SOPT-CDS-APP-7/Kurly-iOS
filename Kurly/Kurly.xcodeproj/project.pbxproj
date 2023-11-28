@@ -21,6 +21,7 @@
 		092DC5642B14F9E7008746A6 /* KingfisherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092DC5632B14F9E7008746A6 /* KingfisherService.swift */; };
 		092DC5662B14FBC0008746A6 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092DC5652B14FBC0008746A6 /* APIService.swift */; };
 		092DC56C2B15106A008746A6 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092DC56B2B15106A008746A6 /* Encodable.swift */; };
+		092DC5712B15B81E008746A6 /* CartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092DC5702B15B81E008746A6 /* CartService.swift */; };
 		095AB57A2B11AD9000DA246F /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095AB5792B11AD9000DA246F /* AlertBuilder.swift */; };
 		095AB57C2B11ADB400DA246F /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095AB57B2B11ADB400DA246F /* CustomAlertViewController.swift */; };
 		095AB5872B11CAC500DA246F /* CustomCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095AB5862B11CAC500DA246F /* CustomCollectionView.swift */; };
@@ -133,6 +134,7 @@
 		092DC5652B14FBC0008746A6 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		092DC56B2B15106A008746A6 /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
 		092DC56F2B156956008746A6 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		092DC5702B15B81E008746A6 /* CartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartService.swift; sourceTree = "<group>"; };
 		095AB5792B11AD9000DA246F /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
 		095AB57B2B11ADB400DA246F /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 		095AB5862B11CAC500DA246F /* CustomCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionView.swift; sourceTree = "<group>"; };
@@ -633,6 +635,7 @@
 			children = (
 				092DC55E2B14F829008746A6 /* ProductService.swift */,
 				092DC5632B14F9E7008746A6 /* KingfisherService.swift */,
+				092DC5702B15B81E008746A6 /* CartService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -979,6 +982,7 @@
 				F15DD1E12B0C9CAB00984E6D /* RecommendCollectionViewCell.swift in Sources */,
 				178336022B0B6832000DF127 /* DetailProduct.swift in Sources */,
 				17A870DA2B08A6E200D5162C /* UITextView+.swift in Sources */,
+				092DC5712B15B81E008746A6 /* CartService.swift in Sources */,
 				095AB5872B11CAC500DA246F /* CustomCollectionView.swift in Sources */,
 				09BA86B12B0A4DB100BF85D9 /* TabBarCollectionViewCell.swift in Sources */,
 				3F6E80F82B0DEAD200D89606 /* CartItemCollectionViewCell.swift in Sources */,

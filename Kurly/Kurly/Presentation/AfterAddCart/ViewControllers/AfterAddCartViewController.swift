@@ -9,11 +9,12 @@ import UIKit
 
 final class AfterAddCartViewController: BaseViewController {
     
-    private var price: Int = 10000
-    
     private let afterAddCartView = AfterAddCartView()
     
     private let dummy = RelatedModel.dummy()
+    
+    private let cartService = CartService(apiService: APIService().self)
+    private var price: Int = 10000
     
     override func loadView() {
         self.view = afterAddCartView
@@ -23,6 +24,7 @@ final class AfterAddCartViewController: BaseViewController {
         super.viewDidLoad()
         bindModel()
         setTarget()
+        getFreeShipping()
     }
 }
 
@@ -34,6 +36,21 @@ extension AfterAddCartViewController {
     
     private func setTarget() {
         afterAddCartView.buyButton.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
+    }
+    
+    private func getFreeShipping() {
+        Task {
+            do {
+                let result = try await cartService.fetchFreeShipping(xAuthId: 1)
+                price = result
+                self.afterAddCartView.bindPrice(buyPrice: price)
+                
+            }
+            catch {
+                guard let error = error as? NetworkError else { return }
+                print(error.description)
+            }
+        }
     }
 }
 

@@ -40,6 +40,7 @@ struct NetworkRequest {
         var urlRequest = URLRequest(url: urlRequestURL)
         urlRequest.httpMethod = self.httpMethod.rawValue
         urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
+        urlRequest.addValue("1" , forHTTPHeaderField: "X-Auth-id")
         urlRequest.httpBody = self.body
         return urlRequest
     }
