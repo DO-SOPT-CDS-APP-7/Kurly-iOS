@@ -64,9 +64,7 @@
 		17A870932B08649300D5162C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870922B08649300D5162C /* View.swift */; };
 		17A870952B08649D00D5162C /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870942B08649D00D5162C /* Models.swift */; };
 		17A870972B0864A600D5162C /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870962B0864A600D5162C /* Cell.swift */; };
-		17A870992B0864B000D5162C /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870982B0864B000D5162C /* Base.swift */; };
 		17A8709B2B0864BB00D5162C /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A8709A2B0864BB00D5162C /* DataModel.swift */; };
-		17A8709D2B0864CB00D5162C /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A8709C2B0864CB00D5162C /* Service.swift */; };
 		17A870A52B08653300D5162C /* Base1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870A42B08653300D5162C /* Base1.swift */; };
 		17A870A72B08657500D5162C /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870A62B08657500D5162C /* Font.swift */; };
 		17A870AC2B08668E00D5162C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 17A870AB2B08668E00D5162C /* SnapKit */; };
@@ -177,9 +175,7 @@
 		17A870922B08649300D5162C /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		17A870942B08649D00D5162C /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		17A870962B0864A600D5162C /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
-		17A870982B0864B000D5162C /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 		17A8709A2B0864BB00D5162C /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		17A8709C2B0864CB00D5162C /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		17A870A42B08653300D5162C /* Base1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base1.swift; sourceTree = "<group>"; };
 		17A870A62B08657500D5162C /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		17A870B32B08687700D5162C /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
@@ -628,7 +624,6 @@
 		17A8708F2B08646100D5162C /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				17A8709C2B0864CB00D5162C /* Service.swift */,
 				092DC55E2B14F829008746A6 /* ProductService.swift */,
 				092DC5632B14F9E7008746A6 /* KingfisherService.swift */,
 			);
@@ -646,7 +641,6 @@
 		17A870912B08647400D5162C /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				17A870982B0864B000D5162C /* Base.swift */,
 				092DC54E2B14F507008746A6 /* BaseResponse.swift */,
 				092DC5502B14F523008746A6 /* HTTPHeaderField.swift */,
 				092DC5522B14F536008746A6 /* HTTPMethod.swift */,
@@ -921,14 +915,12 @@
 				17A870D62B08A6B000D5162C /* UITableView+.swift in Sources */,
 				092DC55F2B14F829008746A6 /* ProductService.swift in Sources */,
 				095AB57C2B11ADB400DA246F /* CustomAlertViewController.swift in Sources */,
-				17A870992B0864B000D5162C /* Base.swift in Sources */,
 				09EAE98F2B0B0C880079CAC4 /* AddCartView.swift in Sources */,
 				092DC5472B1482C0008746A6 /* CustomFooterView.swift in Sources */,
 				09EAE9912B0B22080079CAC4 /* Stepper.swift in Sources */,
 				3FE4CCE52B108B67009C9029 /* CartItemFooterCollectionReusableView.swift in Sources */,
 				3F5F8AB52B0F6B8600FC01BF /* OrderPriceCollectionViewCell.swift in Sources */,
 				174713772B0FE55D00E8EC51 /* BottomDibsButton.swift in Sources */,
-				17A8709D2B0864CB00D5162C /* Service.swift in Sources */,
 				17A870D42B08A69800D5162C /* UITabBar+.swift in Sources */,
 				178336062B0E2159000DF127 /* SecondSectionCollectionViewCell.swift in Sources */,
 				17A870C02B086DE900D5162C /* ColorLiterals.swift in Sources */,
