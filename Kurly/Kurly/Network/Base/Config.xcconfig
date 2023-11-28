@@ -1,0 +1,11 @@
+//
+//  Config.xcconfig
+//  Kurly
+//
+//  Created by Minjoo Kim on 11/28/23.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+BASE_URL = https:/$()/api.dosopt-kurly.store/

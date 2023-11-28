@@ -157,7 +157,11 @@ extension AddCartView {
         numberFormatter.numberStyle = .decimal
         let salePrice: String = numberFormatter.string(for: model.salePrice) ?? "0"
         let price: String = numberFormatter.string(for: model.price) ?? "0"
-        self.imageView.image = model.image
+        
+        Task {
+            let image = try await KingfisherService.fetchImage(with: model.image)
+            self.imageView.image = image
+                }
         self.nameLabel.text = model.name
         self.descriptionLabel.text = model.description
         self.orderNameLabel.text = model.name
