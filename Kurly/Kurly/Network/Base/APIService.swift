@@ -13,12 +13,10 @@ protocol Requestable {
 
 final class APIService: Requestable {
     func request<T: Decodable>(_ request: URLRequest) async throws -> T? {
-        print("\(T.self)sss")
         let (data, _) = try await URLSession.shared.data(for: request)
         let decoder = JSONDecoder()
         
         guard let decodedData = try? decoder.decode(BaseResponse<T>.self, from: data) else {
-            print(BaseResponse<T>.self)
             throw NetworkError.jsonDecodingError
         }
         

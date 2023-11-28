@@ -41,7 +41,6 @@ struct NetworkRequest {
         urlRequest.httpMethod = self.httpMethod.rawValue
         urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
         urlRequest.httpBody = self.body
-        print(urlRequest)
         return urlRequest
     }
 
