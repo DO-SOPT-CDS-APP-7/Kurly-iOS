@@ -10,11 +10,15 @@ import UIKit
 import SnapKit
 import Then
 
-final class CartItemCollectionViewCell: UICollectionViewCell {
+final class CartItemCollectionViewCell: UICollectionViewCell, CollectionViewCellRegisterDequeueProtocol {
     
     static let identifier: String = "CartItemCollectionViewCell"
     
-    let selectItemButton = UIButton()
+    weak var itemDelegate: SelectedItemProtocol?
+    weak var stepperDelegate: UpdatingStepperProtocol?
+
+    var itemRow: Int?
+    lazy var selectItemButton = UIButton()
     private let itemLabel = UILabel()
     let deleteItemButton = UIButton()
     private let itemImageView = UIImageView()
@@ -40,10 +44,10 @@ final class CartItemCollectionViewCell: UICollectionViewCell {
         selectItemButton.do {
             $0.setImage(ImageLiterals.Home.icn.checkButtonDefault, for: .normal)
             $0.setImage(ImageLiterals.Home.icn.checkButtonPressed, for: .selected)
+            $0.addTarget(self, action: #selector(tapSelectItemButton), for: .touchUpInside)
         }
         
         itemLabel.do {
-            $0.text = "[전주 베테랑] 칼국수"
             $0.font = .fontGuide(.body_medium_15)
             $0.textColor = .gray6
         }
@@ -58,7 +62,6 @@ final class CartItemCollectionViewCell: UICollectionViewCell {
         }
         
         itemDiscountPrice.do {
-            $0.text = "4,720원"
             $0.font = .fontGuide(.title_semibold_16)
             $0.textColor = .gray6
         }
@@ -66,7 +69,12 @@ final class CartItemCollectionViewCell: UICollectionViewCell {
         itemPrice.do {
             $0.font = .fontGuide(.body_medium_15)
             $0.textColor = .gray4
-            $0.attributedText = "5,900원".strikeThrough()
+        }
+        
+        stepper.do {
+            $0.minusButton.addTarget(self, action: #selector(tapUpdateValueStepper), for: .touchUpInside)
+            
+            $0.plusButton.addTarget(self, action: #selector(tapUpdateValueStepper), for: .touchUpInside)
         }
         
         topStackView.do {
@@ -113,4 +121,47 @@ final class CartItemCollectionViewCell: UICollectionViewCell {
             $0.leading.equalTo(itemImageView.snp.trailing).offset(20)
         }
     }
+}
+
+extension CartItemCollectionViewCell {
+    
+    func bindModel(model: CartModel) {
+        self.itemRow = model.id
+        self.itemLabel.text = model.productName
+        self.itemDiscountPrice.text = "\(Int(model.discountedPrice).priceText)"
+        self.itemPrice.text = "\(Int(model.calculatePrice).priceText)"
+        self.itemPrice.attributedText = itemPrice.text?.strikeThrough()
+        
+        self.selectItemButton.isSelected = model.isSelect
+        self.stepper.value = model.itemCount
+    }
+}
+
+extension CartItemCollectionViewCell {
+    
+    @objc func tapSelectItemButton(_ sender: UIButton) {
+        print("개별 상품 선택하기!")
+        sender.isSelected.toggle()
+        
+        self.itemDelegate?.getButtonState(state: self.selectItemButton.isSelected, row: itemRow ?? 0)
+    }
+    
+    @objc func tapUpdateValueStepper(_ sender: UIButton) {
+        if(stepper.value == 1 && sender.tag == -1) {
+            print("최소구매수량 1")
+        } else {
+            stepper.value += sender.tag
+            print(stepper.value)
+
+            self.stepperDelegate?.updateStepperValue(value: stepper.value, row: itemRow ?? 0)
+        }
+    }
+}
+
+protocol SelectedItemProtocol: NSObject {
+    func getButtonState(state: Bool, row: Int)
+}
+
+protocol UpdatingStepperProtocol: NSObject {
+    func updateStepperValue(value: Int, row: Int)
 }

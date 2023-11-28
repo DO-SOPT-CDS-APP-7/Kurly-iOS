@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class FourthSectionCollectionViewCell: UICollectionViewCell {
+class FourthSectionCollectionViewCell: UICollectionViewCell, CollectionViewCellRegisterDequeueProtocol {
     
     static let identifier: String = "FourthSectionCollectionViewCell"
     
