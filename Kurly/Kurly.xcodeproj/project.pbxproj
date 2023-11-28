@@ -97,6 +97,8 @@
 		3FE6C36E2B11CFA400209599 /* EmptyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE6C36D2B11CFA400209599 /* EmptyItemView.swift */; };
 		3FE6C3712B14333B00209599 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE6C3702B14333B00209599 /* CartModel.swift */; };
 		3FE6C3732B14CE0A00209599 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE6C3722B14CE0A00209599 /* OrderModel.swift */; };
+		3FE6C3752B15007000209599 /* CartAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE6C3742B15007000209599 /* CartAddressView.swift */; };
+		3FE6C3772B15C53A00209599 /* AllSelectedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE6C3762B15C53A00209599 /* AllSelectedItemView.swift */; };
 		F15DD1D52B0C8C6600984E6D /* NotifyAddToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1D42B0C8C6600984E6D /* NotifyAddToastView.swift */; };
 		F15DD1D72B0C8C7E00984E6D /* NotifyRemoveToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1D62B0C8C7E00984E6D /* NotifyRemoveToastView.swift */; };
 		F15DD1DC2B0C96E700984E6D /* RelatedFoodModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1DB2B0C96E700984E6D /* RelatedFoodModalViewController.swift */; };
@@ -197,6 +199,8 @@
 		3FE6C36D2B11CFA400209599 /* EmptyItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyItemView.swift; sourceTree = "<group>"; };
 		3FE6C3702B14333B00209599 /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 		3FE6C3722B14CE0A00209599 /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
+		3FE6C3742B15007000209599 /* CartAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartAddressView.swift; sourceTree = "<group>"; };
+		3FE6C3762B15C53A00209599 /* AllSelectedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSelectedItemView.swift; sourceTree = "<group>"; };
 		F15DD1D42B0C8C6600984E6D /* NotifyAddToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyAddToastView.swift; sourceTree = "<group>"; };
 		F15DD1D62B0C8C7E00984E6D /* NotifyRemoveToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyRemoveToastView.swift; sourceTree = "<group>"; };
 		F15DD1DB2B0C96E700984E6D /* RelatedFoodModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedFoodModalViewController.swift; sourceTree = "<group>"; };
@@ -670,6 +674,8 @@
 				3FE4CCE42B108B67009C9029 /* CartItemFooterCollectionReusableView.swift */,
 				3FE4CCE22B103244009C9029 /* SavePointView.swift */,
 				3FE6C36D2B11CFA400209599 /* EmptyItemView.swift */,
+				3FE6C3742B15007000209599 /* CartAddressView.swift */,
+				3FE6C3762B15C53A00209599 /* AllSelectedItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -919,6 +925,7 @@
 				09DE08362B05B70100D7DF3D /* AppDelegate.swift in Sources */,
 				F15DD1D52B0C8C6600984E6D /* NotifyAddToastView.swift in Sources */,
 				09BA86942B0A3BF200BF85D9 /* SizeLiterals.swift in Sources */,
+				3FE6C3772B15C53A00209599 /* AllSelectedItemView.swift in Sources */,
 				178336002B0B61E3000DF127 /* FirstSectionCollectionViewCell.swift in Sources */,
 				174713712B0FA05400E8EC51 /* SixthSectionCollectionViewCell.swift in Sources */,
 				09BA86B52B0A4E7C00BF85D9 /* TabBarRect.swift in Sources */,
@@ -960,6 +967,7 @@
 				17A870C82B08A43A00D5162C /* UIButton+.swift in Sources */,
 				09EAE9862B0B05170079CAC4 /* AddCartViewController.swift in Sources */,
 				F15DD1DC2B0C96E700984E6D /* RelatedFoodModalViewController.swift in Sources */,
+				3FE6C3752B15007000209599 /* CartAddressView.swift in Sources */,
 				F15DD1D72B0C8C7E00984E6D /* NotifyRemoveToastView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
