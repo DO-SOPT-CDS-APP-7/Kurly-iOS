@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class RecommendHeaderView: UICollectionReusableView {
+class RecommendHeaderView: UICollectionReusableView, CollectionSectionViewRegisterDequeueProtocol {
     
     static let identifier: String = "RecommendHeaderView"
     

@@ -46,9 +46,8 @@ class RelatedFoodModalViewController: BaseViewController {
     
     override func setRegister() {
         RecommendCollectionViewCell.register(to: relatedFoodModalView.recommendCollectionView)
-
-        relatedFoodModalView.recommendCollectionView.register(RecommendHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: RecommendHeaderView.identifier)
-        relatedFoodModalView.recommendCollectionView.register(RecommendFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: RecommendFooterView.identifier)
+        RecommendHeaderView.registerHeaderView(to: relatedFoodModalView.recommendCollectionView)
+        RecommendFooterView.registerFooterView(to: relatedFoodModalView.recommendCollectionView)
     }
     
     private func setSheetPresentation() {
