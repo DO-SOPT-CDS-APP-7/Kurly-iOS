@@ -25,7 +25,6 @@ final class AddCartViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        bindModel()
         setTarget()
         getProduct()
     }
@@ -44,7 +43,6 @@ extension AddCartViewController {
     }
     
     private func getProduct() {
-        
         Task {
             do {
                 let result = try await productService.fetchProduct()
