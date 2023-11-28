@@ -54,10 +54,8 @@ final class CartViewController: BaseViewController {
     override func setRegister() {
         CartItemCollectionViewCell.register(to: cartView.cartItemCollectionView)
         OrderPriceCollectionViewCell.register(to: cartView.cartItemCollectionView)
-
-        cartView.cartItemCollectionView.register(CartItemHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CartItemHeaderCollectionReusableView.identifier)
-        
-        cartView.cartItemCollectionView.register(CartItemFooterCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: CartItemFooterCollectionReusableView.identifier)
+        CartItemHeaderCollectionReusableView.registerHeaderView(to: cartView.cartItemCollectionView)
+        CartItemFooterCollectionReusableView.registerFooterView(to: cartView.cartItemCollectionView)
     }
 }
 
