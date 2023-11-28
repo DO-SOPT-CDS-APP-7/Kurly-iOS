@@ -22,8 +22,6 @@ final class CartHeaderView: BaseView {
     init(type: CartViewType) {
         self.cartType = type
         super.init(frame: .zero)
-        setUI()
-        setLayout()
     }
     
     required init?(coder: NSCoder) {
@@ -58,7 +56,7 @@ final class CartHeaderView: BaseView {
             }
             
             allSelectedItemView.snp.makeConstraints {
-                self.headerTopConstraint = $0.top.equalToSuperview().offset(72).constraint
+                self.headerTopConstraint = $0.top.equalToSuperview().offset(73).constraint
                 $0.horizontalEdges.equalToSuperview()
                 $0.bottom.equalToSuperview()
             }

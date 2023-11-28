@@ -23,13 +23,13 @@ final class CartView: BaseView {
     private var cartAddressViewHeight: CGFloat?
     private var navigationBarViewHeight: CGFloat?
     
+    private var dividerHeightConstraint: Constraint?
+    
     init(type: CartViewType) {
         self.cartType = type
         self.cartHeaderView = CartHeaderView(type: type)
         self.bottomCTAButton = BottomCTAButton(type: type == .emptyCart ? .emptyCart : .order)
         super.init(frame: .zero)
-        setUI()
-        setLayout()
         layoutSubviews()
     }
     
@@ -85,7 +85,7 @@ final class CartView: BaseView {
         divider.snp.makeConstraints {
             $0.top.equalTo(cartHeaderView.snp.bottom)
             $0.horizontalEdges.equalToSuperview()
-            $0.height.equalTo(8)
+            self.dividerHeightConstraint = $0.height.equalTo(8).constraint
         }
 
         bottomCTAButton.snp.makeConstraints {
@@ -117,14 +117,19 @@ extension CartView {
     func updateView(forScrollOffset yOffset: CGFloat) {
     
         let scrollyOffset = -yOffset - 175
-        
+
         let cartAddressViewAlpha = max((30 + scrollyOffset) / (30 - 0), 0)
         let dividerAlpha = max((10 + scrollyOffset) / (10 - 0), 0)
         
         cartHeaderView.cartAddressView.alpha = cartAddressViewAlpha
         cartHeaderView.divider.alpha = dividerAlpha
 
-        let allSecletedItemViewTopConstraint = max(72 + scrollyOffset, 0)
+        let allSecletedItemViewTopConstraint = max(73 + scrollyOffset, 0)
+        let dividerHeigthConstraint = max(8 + scrollyOffset, 0)
+        
+        if dividerHeigthConstraint >= 0 && dividerHeigthConstraint <= 8 {
+            dividerHeightConstraint?.update(offset: dividerHeigthConstraint)
+        }
 
         if cartHeaderView.cartAddressView.alpha == 0 {
             cartHeaderView.cartAddressView.isHidden = true
@@ -135,5 +140,7 @@ extension CartView {
 
             cartHeaderView.headerTopConstraint?.update(offset: allSecletedItemViewTopConstraint)
         }
+        
+        self.layoutIfNeeded()
     }
 }
