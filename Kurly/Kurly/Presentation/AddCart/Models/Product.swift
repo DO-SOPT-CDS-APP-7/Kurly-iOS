@@ -8,8 +8,7 @@
 import UIKit
 
 struct Product {
-    let id: Int
-    let image: UIImage
+    let image: String
     let name: String
     let description: String
     let salePrice: Int
@@ -18,8 +17,7 @@ struct Product {
 
 extension Product {
     static func dummy() -> Product {
-        return Product(id: 0,
-                       image: ImageLiterals.addCart.smallCart,
+        return Product(image: "",
                        name: "[전주 베테랑] 칼국수",
                        description: "베테랑의 대표메뉴를 집에서",
                        salePrice: 4720,
@@ -27,3 +25,13 @@ extension Product {
     }
 }
 
+struct ProductModel {
+    let productData: Product
+}
+
+
+extension ProductModel {
+    static var empty: Self {
+        return .init(productData: Product(image: "", name: "", description: "", salePrice: 0, price: 0))
+    }
+}
