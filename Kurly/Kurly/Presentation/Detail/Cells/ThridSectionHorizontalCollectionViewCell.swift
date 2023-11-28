@@ -13,7 +13,6 @@ class ThridSectionHorizontalCollectionViewCell: UICollectionViewCell, Collection
     
     private lazy var horizontalCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
     
-    private let relatedFoodModalView = RelatedFoodModalView()
     private var relatedFoodList: [RecommendModel] = [
         .init(foodImage: ImageLiterals.Home.img.activityTop01, foodName: "[시골보쌈과 감자옹심이 감자...", foodPrice: "10,500원"),
         .init(foodImage: ImageLiterals.Home.img.activityTop02, foodName: "[이연복의 목란] 짬뽕 2인분...", foodPrice: "13,800원"),
@@ -43,8 +42,6 @@ class ThridSectionHorizontalCollectionViewCell: UICollectionViewCell, Collection
     private func setRegister() {
         self.horizontalCollectionView.register(RecommendCollectionViewCell.self,
                                                forCellWithReuseIdentifier: RecommendCollectionViewCell.identifier)
-        relatedFoodModalView.recommendCollectionView.register(RecommendCollectionViewCell.self,
-                                                              forCellWithReuseIdentifier: RecommendCollectionViewCell.identifier)
     }
     
     private func setUI() {

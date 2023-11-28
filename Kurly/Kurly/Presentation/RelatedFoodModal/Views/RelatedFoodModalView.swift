@@ -13,15 +13,12 @@ import Then
 class RelatedFoodModalView: BaseView {
     
     private let grabberView = UIView()
-    let recommendCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    private let collectionView = CustomCollectionView(type: .withHeaderFooter, model: RelatedModel.dummy(), model2: RelatedModel.dummy())
     let relatedProductButton = BottomCTAButton(type: .more)
     let notifyAddToastView = NotifyAddToastView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setUI()
-        setLayout()
-        setCollectionViewLayout()
     }
     
     required init?(coder: NSCoder) {
@@ -38,14 +35,14 @@ class RelatedFoodModalView: BaseView {
             $0.makeCornerRound(radius: 2)
         }
         
-        recommendCollectionView.do {
+        collectionView.do {
             $0.backgroundColor = .white
             $0.showsVerticalScrollIndicator = false
         }
     }
     
     override func setLayout() {
-        addSubviews(grabberView, recommendCollectionView, relatedProductButton, notifyAddToastView)
+        addSubviews(grabberView, collectionView, relatedProductButton, notifyAddToastView)
         
         grabberView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(14)
@@ -54,14 +51,14 @@ class RelatedFoodModalView: BaseView {
             $0.height.equalTo(4)
         }
         
-        recommendCollectionView.snp.makeConstraints {
+        collectionView.snp.makeConstraints {
             $0.top.equalTo(grabberView.snp.bottom).offset(10)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(657)
         }
         
         relatedProductButton.snp.makeConstraints {
-            $0.top.equalTo(recommendCollectionView.snp.bottom).offset(8)
+            $0.top.equalTo(collectionView.snp.bottom).offset(8)
             $0.leading.equalToSuperview().inset(16)
         }
         
@@ -70,14 +67,5 @@ class RelatedFoodModalView: BaseView {
             $0.height.equalTo(51)
             $0.leading.trailing.equalToSuperview().inset(8)
         }
-    }
-    
-    func setCollectionViewLayout() {
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: (SizeLiterals.Screen.screenWidth - 48) / 3 , height: 273)
-        flowLayout.scrollDirection = .vertical
-        flowLayout.minimumInteritemSpacing = 8
-        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-        recommendCollectionView.collectionViewLayout = flowLayout
     }
 }
