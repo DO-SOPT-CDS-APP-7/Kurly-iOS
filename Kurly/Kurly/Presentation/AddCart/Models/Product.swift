@@ -24,14 +24,3 @@ extension Product {
                        price: 5900)
     }
 }
-
-struct ProductModel {
-    let productData: Product
-}
-
-
-extension ProductModel {
-    static var empty: Self {
-        return .init(productData: Product(image: "", name: "", description: "", salePrice: 0, price: 0))
-    }
-}
