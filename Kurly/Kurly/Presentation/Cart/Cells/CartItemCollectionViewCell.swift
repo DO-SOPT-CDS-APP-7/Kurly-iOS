@@ -135,8 +135,8 @@ final class CartItemCollectionViewCell: UICollectionViewCell, CollectionViewCell
 
 extension CartItemCollectionViewCell {
     
-    func bindModel(model: CartModel) {
-        self.itemRow = model.id
+    func bindModel(model: CartModel, row: Int) {
+        self.itemRow = row
         self.itemLabel.text = model.productName
         self.itemDiscountPrice.text = "\(Int(model.discountedPrice).priceText)"
         self.itemPrice.text = "\(Int(model.calculatePrice).priceText)"
