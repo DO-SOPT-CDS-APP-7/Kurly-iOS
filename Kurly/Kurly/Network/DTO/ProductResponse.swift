@@ -12,7 +12,7 @@ struct ProductResponse: Response {
     let productName: String
     let discountRate: Int
     let originalPrice: Int
-    let discountedPrice: String
+    let discountedPrice: String?
     let sellerName: String
-    let imageURL: String
+    let imageURL: String?
 }

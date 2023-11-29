@@ -109,10 +109,10 @@ final class AfterAddCartView: BaseView {
 extension AfterAddCartView {
     
     func bindPrice(buyPrice: Int) {
-        let price: String = (40000 - buyPrice).priceText
+        let price: String = (50000 - buyPrice).priceText
         priceLabel.text = "\(price) 더 담으면 무료배송"
         priceLabel.asFontColor(targetString: "\(price)", font: .fontGuide(.body_semibold_13), color: .kuPurple)
-        let progress = Float(buyPrice) / 40000
+        let progress = Float(buyPrice) / 50000
         progressView.setProgress(progress, animated: true)
     }
     
