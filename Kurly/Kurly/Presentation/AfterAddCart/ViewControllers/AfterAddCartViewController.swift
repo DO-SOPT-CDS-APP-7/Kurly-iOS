@@ -20,7 +20,13 @@ final class AfterAddCartViewController: BaseViewController {
         self.view = afterAddCartView
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        getFreeShipping()
+    }
+    
     override func viewDidLoad() {
+        print("🍎🍎🍎🍎🍎🍎🍎🍎🍎모달2🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎")
         super.viewDidLoad()
         bindModel()
         setTarget()

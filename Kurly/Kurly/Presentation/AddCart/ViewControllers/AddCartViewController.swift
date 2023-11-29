@@ -16,6 +16,7 @@ protocol DismissProtocol: AnyObject {
 final class AddCartViewController: BaseViewController {
     
     private let productService = ProductService(apiService: APIService().self)
+    private let cartService = CartService(apiService: APIService().self)
     private var productModel = Product(image: "", name: "", description: "", salePrice: 0, price: 0)
     
     weak var delegate: DismissProtocol?
@@ -24,6 +25,7 @@ final class AddCartViewController: BaseViewController {
     private let afterAddCartViewController = AfterAddCartViewController()
     
     override func viewDidLoad() {
+        print("🍎🍎🍎🍎🍎🍎🍎🍎🍎모달1🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎")
         super.viewDidLoad()
         setTarget()
         getProduct()
@@ -56,12 +58,26 @@ extension AddCartViewController {
             }
         }
     }
+    
+    private func postCart() {
+        Task {
+            do {
+                let result = try await cartService.addCart(xAuthId: 1, productId: 1, count: addCartView.stepper.value)
+                
+            }
+            catch {
+                guard let error = error as? NetworkError else { return }
+                print(error.description)
+            }
+        }
+    }
 }
 
 extension AddCartViewController {
     
     @objc func tapAddCartButton() {
         print("\(addCartView.stepper.value)")
+        postCart()
         self.dismiss(animated: true)
         delegate?.tapButton()
     }
