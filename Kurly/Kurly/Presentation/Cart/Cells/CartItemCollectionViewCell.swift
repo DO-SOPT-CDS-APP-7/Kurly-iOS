@@ -50,6 +50,8 @@ final class CartItemCollectionViewCell: UICollectionViewCell, CollectionViewCell
         itemLabel.do {
             $0.font = .fontGuide(.body_medium_15)
             $0.textColor = .gray6
+            $0.numberOfLines = 2
+            $0.lineBreakMode = .byWordWrapping
         }
         
         deleteItemButton.do {
@@ -79,7 +81,7 @@ final class CartItemCollectionViewCell: UICollectionViewCell, CollectionViewCell
         
         topStackView.do {
             $0.axis = .horizontal
-            $0.distribution = .fillProportionally
+            $0.distribution = .fill
             $0.spacing = 6
             $0.addArrangedSubviews(selectItemButton, itemLabel, deleteItemButton)
             itemLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
@@ -97,6 +99,14 @@ final class CartItemCollectionViewCell: UICollectionViewCell, CollectionViewCell
     
     private func setLayout() {
         self.addSubviews(topStackView, itemImageView, priceStackView, stepper)
+        
+        selectItemButton.snp.makeConstraints {
+            $0.width.equalTo(36)
+        }
+        
+        deleteItemButton.snp.makeConstraints {
+            $0.width.equalTo(36)
+        }
         
         topStackView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(14)

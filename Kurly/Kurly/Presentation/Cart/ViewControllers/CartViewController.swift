@@ -20,10 +20,11 @@ final class CartViewController: BaseViewController {
     private var dummy = CartModel.dummy()
     private var selectedItem: [CartModel] = [] {
         didSet {
-            cartView.cartHeaderView.bindData(seletedItemCount: selectedItem.count, AllItemCount: dummy.count)
+            cartView.cartHeaderView.allSelectedItemView.bindData(seletedItemCount: selectedItem.count, AllItemCount: dummy.count)
             
             let result = calculateSelectedItemPrice(seletedItem: self.selectedItem)
             cartView.bindPrice(totalPrice: result.totalPrice)
+            
             cartView.cartItemCollectionView.reloadData()
         }
     }
@@ -112,7 +113,9 @@ extension CartViewController: UpdatingStepperProtocol {
 extension CartViewController {
     
     private func bindModel() {
-        cartView.cartHeaderView.bindData(seletedItemCount: selectedItem.count, AllItemCount: dummy.count)
+        cartView.cartHeaderView.allSelectedItemView.bindData(seletedItemCount: selectedItem.count, AllItemCount: dummy.count)
+        
+        cartView.bindPrice(totalPrice: 0)
     }
     
     private func setTarget() {
@@ -120,11 +123,11 @@ extension CartViewController {
         
         cartView.bottomCTAButton.addTarget(self, action: #selector(tapOrderButton), for: .touchUpInside)
         
-        cartView.cartHeaderView.changeAddressButton.addTarget(self, action: #selector(tapChangeAddressButton), for: .touchUpInside)
+        cartView.cartHeaderView.cartAddressView.changeAddressButton.addTarget(self, action: #selector(tapChangeAddressButton), for: .touchUpInside)
         
-        cartView.cartHeaderView.selectAllItemButton.addTarget(self, action: #selector(tapSelectAllItemButton), for: .touchUpInside)
+        cartView.cartHeaderView.allSelectedItemView.selectAllItemButton.addTarget(self, action: #selector(tapSelectAllItemButton), for: .touchUpInside)
         
-        cartView.cartHeaderView.selectDeleteItemButton.addTarget(self, action: #selector(tapSelectDeleteItemButton), for: .touchUpInside)
+        cartView.cartHeaderView.allSelectedItemView.selectDeleteItemButton.addTarget(self, action: #selector(tapSelectDeleteItemButton), for: .touchUpInside)
     }
 }
 
@@ -276,5 +279,14 @@ extension CartViewController: UICollectionViewDelegateFlowLayout {
         } else {
             return CGSize(width: collectionView.bounds.width, height: 0)
         }
+    }
+}
+
+extension CartViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let yOffset = scrollView.contentOffset.y
+        self.cartView.updateView(forScrollOffset: yOffset)
+        self.view.layoutIfNeeded()
     }
 }
