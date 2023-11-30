@@ -26,6 +26,7 @@ class ThridSectionHorizontalCollectionViewCell: UICollectionViewCell, Collection
     private func setUI() {
         horizontalCollectionView.do {
             $0.backgroundColor = .clear
+            $0.delegate = self
             let flowLayout = UICollectionViewFlowLayout()
             flowLayout.scrollDirection = .horizontal
             $0.collectionViewLayout = flowLayout
@@ -41,3 +42,25 @@ class ThridSectionHorizontalCollectionViewCell: UICollectionViewCell, Collection
     }
 }
 
+extension ThridSectionHorizontalCollectionViewCell: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (SizeLiterals.Screen.screenWidth - 52) / 3 , height: 257)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout flowLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 8.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return .zero
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return .zero
+    }
+}
