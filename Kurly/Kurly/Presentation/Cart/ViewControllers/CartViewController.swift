@@ -8,6 +8,7 @@
 import UIKit
 
 import SnapKit
+import Kingfisher
 
 enum CartViewType {
     case emptyCart
@@ -16,9 +17,17 @@ enum CartViewType {
 
 final class CartViewController: BaseViewController {
     
-    private let cartView = CartView(type: .order)
+    private var cartView = CartView(type: .emptyCart)
+    private var cartCheckService = CartCheckService(apiService: APIService().self)
     
-    private var cartItemData: [CartModel] = []
+    private var cartItemData: [CartModel] = [] {
+        didSet {
+            cartView.cartHeaderView.allSelectedItemView.bindData(seletedItemCount: selectedItem.count, AllItemCount: cartItemData.count)
+            
+            cartView.cartItemCollectionView.reloadData()
+        }
+    }
+    
     private var selectedItem: [CartModel] = [] {
         didSet {
             cartView.cartHeaderView.allSelectedItemView.bindData(seletedItemCount: selectedItem.count, AllItemCount: cartItemData.count)
@@ -33,14 +42,20 @@ final class CartViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTarget()
-        setUI()
-        setDelegates()
-        setRegister()
         bindModel()
     }
     
+    deinit {
+       // Notification 구독 해제
+       NotificationCenter.default.removeObserver(self, name: CartView.cartTypeDidChangeNotification, object: nil)
+   }
+    
     override func loadView() {
-        self.view = cartView
+        self.view = self.cartView
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getCartItem()
     }
     
     override func setUI() {
@@ -67,14 +82,37 @@ extension CartViewController {
         numberFormatter.numberStyle = .decimal
         
         var sumItemPrice = 0
+        var sumTotalPrice = 0
         var sumDiscountPrice = 0
         
         seletedItem.filter { $0.isSelect == true }.forEach { data in
             sumItemPrice += Int(data.originalPrice * Double(data.itemCount))
-            sumDiscountPrice += Int(data.discountedPrice)
+            sumDiscountPrice += Int(Double(data.discountPrice) * Double(data.itemCount))
+            sumTotalPrice += Int(data.discountedPrice)
         }
         
-        return OrderModel(itemPrice: sumItemPrice, discountedPrice: sumDiscountPrice, deliveryPrice: 0, totalPrice: sumItemPrice - sumDiscountPrice)
+        return OrderModel(itemPrice: sumItemPrice, discountPrice: sumDiscountPrice, deliveryPrice: 0, totalPrice: sumTotalPrice)
+    }
+    
+    private func getCartItem() {
+        Task {
+            do {
+                let result = try await cartCheckService.fetchCart(xAuthId: 1)
+                print("결과", result)
+                cartItemData = result
+                
+                if result.isEmpty {
+                    
+                    cartView.cartType = .emptyCart
+                } else {
+                    
+                    cartView.cartType = .order
+                }
+            } catch {
+                guard let error = error as? NetworkError else { return }
+                print(error.description)
+            }
+        }
     }
 }
 
