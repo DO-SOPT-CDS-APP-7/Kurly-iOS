@@ -46,7 +46,7 @@ class CustomCollectionView: UICollectionView {
 
 extension CustomCollectionView {
     
-    func updateModel(with newModel: [RelatedModel], newModel2: [RelatedModel]) {
+    func updateModel(with newModel: [RelatedModel], newModel2: [RelatedModel]?) {
         self.product = newModel
         self.product2 = newModel2
         reloadData()
