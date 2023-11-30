@@ -28,9 +28,12 @@ final class DetailViewController: BaseViewController {
     
     private var sections: [[DetailProduct]] = []
     
+    private let productService = ProductService(apiService: APIService().self)
+    private var detailProductModel = DetailProduct(image: "", delivery: "", name: "", description: "", salePrice: 0, price: 0)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindModel()
+        getDetailProduct()
         setTarget()
     }
     
@@ -169,9 +172,9 @@ extension DetailViewController {
         navigationBar.cartButton.addTarget(self, action: #selector(cartButtonTapped), for: .touchUpInside)
     }
     
-    private func bindModel() {
-        sections = [[dummy]]
-    }
+//    private func bindModel() {
+//        sections = [[result]]
+//    }
     
     private func presentAfterAddCartViewController() {
         let detentIdentifier = UISheetPresentationController.Detent.Identifier("customDetent")
@@ -188,6 +191,23 @@ extension DetailViewController {
     
     func pushToCartViewController() {
         navigationController?.pushViewController(cartViewController, animated: true)
+    }
+    
+    private func getDetailProduct() {
+        Task {
+            do {
+                let result = try await productService.mainFoodProduct()
+                detailProductModel = result
+                sections = [[result]]
+                DispatchQueue.main.async {
+                    self.detailView.detailCollectionView.reloadData()
+                }
+            }
+            catch {
+                guard let error = error as? NetworkError else { return }
+                print(error.description)
+            }
+        }
     }
 }
 
