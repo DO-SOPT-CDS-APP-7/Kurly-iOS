@@ -24,4 +24,9 @@ final class ProductService {
         guard let model = try await self.getProductResponse(productId: 1) else { throw NetworkError.badCasting }
         return Product(image: model.imageURL ?? "", name: model.productName, description: "베테랑의 대표메뉴를 집에서", salePrice: Int(Double(model.originalPrice) - Double(model.originalPrice * model.discountRate) * 0.01), price: model.originalPrice)
     }
+    
+    func mainFoodProduct() async throws -> DetailProduct {
+        guard let model = try await self.getProductResponse(productId: 1) else { throw NetworkError.badCasting }
+        return DetailProduct(image: model.imageURL ?? "", delivery: model.deliveryType, name: model.productName, description: "베테랑의 대표메뉴를 집에서", discountRate: model.discountRate, salePrice: Int(Double(model.originalPrice * model.discountRate) * 0.01), price: model.originalPrice)
+    }
 }
