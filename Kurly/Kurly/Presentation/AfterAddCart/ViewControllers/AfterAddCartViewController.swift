@@ -19,8 +19,9 @@ final class AfterAddCartViewController: BaseViewController {
     override func loadView() {
         self.view = afterAddCartView
     }
-    
+
     override func viewDidLoad() {
+        print("🍎🍎🍎🍎🍎🍎🍎🍎🍎모달2🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎")
         super.viewDidLoad()
         bindModel()
         setTarget()

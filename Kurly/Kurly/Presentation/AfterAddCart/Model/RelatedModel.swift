@@ -11,7 +11,7 @@ struct RelatedModel {
     let deliveryType: String
     let productName: String
     let originalPrice: Int
-    let imageURL: UIImage
+    let imageURL: String
 }
 
 extension RelatedModel {
@@ -19,15 +19,15 @@ extension RelatedModel {
         return [RelatedModel(deliveryType: "샛별배송",
                              productName: "[시골보쌈과 감자옹심이 감자",
                              originalPrice: 5900,
-                             imageURL: ImageLiterals.Home.img.activityTop01),
+                             imageURL: "ImageLiterals.Home.img.activityTop01"),
                 RelatedModel(deliveryType: "샛별배송",
                              productName: "[시골보쌈과 감자옹심이 감자",
                              originalPrice: 5900,
-                             imageURL: ImageLiterals.Home.img.activityTop02),
+                             imageURL: "ImageLiterals.Home.img.activityTop02"),
                 RelatedModel(deliveryType: "샛별배송",
                              productName: "[시골보쌈과 감자옹심이 감자",
                              originalPrice: 5900,
-                             imageURL: ImageLiterals.Home.img.activityTop03)]
+                             imageURL: "ImageLiterals.Home.img.activityTop03")]
     }
 }
 

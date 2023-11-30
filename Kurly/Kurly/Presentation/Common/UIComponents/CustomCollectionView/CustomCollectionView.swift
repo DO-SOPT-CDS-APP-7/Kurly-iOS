@@ -46,6 +46,15 @@ class CustomCollectionView: UICollectionView {
 
 extension CustomCollectionView {
     
+    func updateModel(with newModel: [RelatedModel], newModel2: [RelatedModel]) {
+        self.product = newModel
+        self.product2 = newModel2
+        reloadData()
+    }
+}
+
+extension CustomCollectionView {
+    
     private func setUI() {
         self.do {
             let flowLayout = UICollectionViewFlowLayout()
