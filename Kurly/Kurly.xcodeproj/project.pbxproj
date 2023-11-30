@@ -22,6 +22,7 @@
 		092DC5662B14FBC0008746A6 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092DC5652B14FBC0008746A6 /* APIService.swift */; };
 		092DC56C2B15106A008746A6 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092DC56B2B15106A008746A6 /* Encodable.swift */; };
 		092DC5712B15B81E008746A6 /* CartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092DC5702B15B81E008746A6 /* CartService.swift */; };
+		092DC5752B164B79008746A6 /* CartRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092DC5742B164B79008746A6 /* CartRequest.swift */; };
 		095AB57A2B11AD9000DA246F /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095AB5792B11AD9000DA246F /* AlertBuilder.swift */; };
 		095AB57C2B11ADB400DA246F /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095AB57B2B11ADB400DA246F /* CustomAlertViewController.swift */; };
 		095AB5872B11CAC500DA246F /* CustomCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095AB5862B11CAC500DA246F /* CustomCollectionView.swift */; };
@@ -137,6 +138,7 @@
 		092DC56B2B15106A008746A6 /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
 		092DC56F2B156956008746A6 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		092DC5702B15B81E008746A6 /* CartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartService.swift; sourceTree = "<group>"; };
+		092DC5742B164B79008746A6 /* CartRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartRequest.swift; sourceTree = "<group>"; };
 		095AB5792B11AD9000DA246F /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
 		095AB57B2B11ADB400DA246F /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 		095AB5862B11CAC500DA246F /* CustomCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionView.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				092DC5612B14F86F008746A6 /* ProductResponse.swift */,
+				092DC5742B164B79008746A6 /* CartRequest.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -998,6 +1001,7 @@
 				092DC5572B14F562008746A6 /* NetworkErrorCode.swift in Sources */,
 				092DC5622B14F86F008746A6 /* ProductResponse.swift in Sources */,
 				17A8709B2B0864BB00D5162C /* DataModel.swift in Sources */,
+				092DC5752B164B79008746A6 /* CartRequest.swift in Sources */,
 				092DC5662B14FBC0008746A6 /* APIService.swift in Sources */,
 				178336082B0E5790000DF127 /* ThridSectionHorizontalCollectionViewCell.swift in Sources */,
 				17A870932B08649300D5162C /* View.swift in Sources */,

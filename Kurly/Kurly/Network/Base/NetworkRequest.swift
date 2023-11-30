@@ -32,17 +32,20 @@ struct NetworkRequest {
             }
             urlComponents?.queryItems = queryItemArray
         }
-
+        
         guard let urlRequestURL = urlComponents?.url?.appendingPathComponent(self.path) else {
             throw NetworkError.urlEncodingError
         }
-
+        
         var urlRequest = URLRequest(url: urlRequestURL)
         urlRequest.httpMethod = self.httpMethod.rawValue
         urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
-        urlRequest.addValue("1" , forHTTPHeaderField: "X-Auth-id")
+        if(header != nil) {
+            urlRequest.addValue(header?["X-Auth-id"] ?? "" , forHTTPHeaderField: "X-Auth-id")
+        }
+        
         urlRequest.httpBody = self.body
+        
         return urlRequest
     }
-
 }
