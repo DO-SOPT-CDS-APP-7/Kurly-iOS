@@ -51,6 +51,11 @@ extension CustomCollectionView {
         self.product2 = newModel2
         reloadData()
     }
+    
+    func updateModel2(with newModel: [RelatedModel]) {
+        self.product = newModel
+        reloadData()
+    }
 }
 
 extension CustomCollectionView {
