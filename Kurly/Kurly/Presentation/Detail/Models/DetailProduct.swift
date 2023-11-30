@@ -12,6 +12,7 @@ struct DetailProduct {
     let delivery: String
     let name: String
     let description: String
+    let discountRate: Int
     let salePrice: Int
     let price: Int
 }
@@ -22,6 +23,7 @@ extension DetailProduct {
                              delivery: "샛별배송",
                              name: "[전주 베테랑] 칼국수",
                              description: "베테랑의 대표메뉴를 집에서",
+                             discountRate: 20,
                              salePrice: 4720,
                              price: 5900)
     }
