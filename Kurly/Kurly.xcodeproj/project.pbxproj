@@ -119,6 +119,8 @@
 		F15DD1E32B0CBBB800984E6D /* RecommendHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1E22B0CBBB800984E6D /* RecommendHeaderView.swift */; };
 		F15DD1E52B0CD37E00984E6D /* RecommendFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1E42B0CD37E00984E6D /* RecommendFooterView.swift */; };
 		F15DD1E82B0DD7D100984E6D /* RecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1E72B0DD7D100984E6D /* RecommendModel.swift */; };
+		F1F8792A2B18AFC300A5692A /* RelatedFoodService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F879292B18AFC300A5692A /* RelatedFoodService.swift */; };
+		F1F8792C2B18AFDE00A5692A /* RelatedFoodResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F8792B2B18AFDE00A5692A /* RelatedFoodResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -234,6 +236,8 @@
 		F15DD1E22B0CBBB800984E6D /* RecommendHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendHeaderView.swift; sourceTree = "<group>"; };
 		F15DD1E42B0CD37E00984E6D /* RecommendFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendFooterView.swift; sourceTree = "<group>"; };
 		F15DD1E72B0DD7D100984E6D /* RecommendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendModel.swift; sourceTree = "<group>"; };
+		F1F879292B18AFC300A5692A /* RelatedFoodService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RelatedFoodService.swift; path = "../../../../../../.Trash/Kurly-iOS 오후 8.50.42/Kurly/Kurly/Network/Service/RelatedFoodService.swift"; sourceTree = "<group>"; };
+		F1F8792B2B18AFDE00A5692A /* RelatedFoodResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedFoodResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +270,7 @@
 			children = (
 				092DC5612B14F86F008746A6 /* ProductResponse.swift */,
 				092DC5742B164B79008746A6 /* CartRequest.swift */,
+				F1F8792B2B18AFDE00A5692A /* RelatedFoodResponse.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -643,6 +648,7 @@
 				092DC55E2B14F829008746A6 /* ProductService.swift */,
 				092DC5632B14F9E7008746A6 /* KingfisherService.swift */,
 				092DC5702B15B81E008746A6 /* CartService.swift */,
+				F1F879292B18AFC300A5692A /* RelatedFoodService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -927,6 +933,7 @@
 			files = (
 				092DC5592B14F574008746A6 /* NetworkRequest.swift in Sources */,
 				F15DD1E52B0CD37E00984E6D /* RecommendFooterView.swift in Sources */,
+				F1F8792A2B18AFC300A5692A /* RelatedFoodService.swift in Sources */,
 				092DC55D2B14F635008746A6 /* Config.swift in Sources */,
 				3FE6C36E2B11CFA400209599 /* EmptyItemView.swift in Sources */,
 				17A870D22B08A67900D5162C /* UIStackView+.swift in Sources */,
@@ -1016,6 +1023,7 @@
 				09EAE9992B0B42F00079CAC4 /* AfterAddCartView.swift in Sources */,
 				17A870952B08649D00D5162C /* Models.swift in Sources */,
 				17A870DC2B08A6F700D5162C /* UIView+.swift in Sources */,
+				F1F8792C2B18AFDE00A5692A /* RelatedFoodResponse.swift in Sources */,
 				17D2D2D12B14CE9C00013B05 /* CollectionViewCellRegisterDequeueProtocol.swift in Sources */,
 				17A870D82B08A6CC00D5162C /* UITextField+.swift in Sources */,
 				17A870CC2B08A4A000D5162C /* String+.swift in Sources */,
