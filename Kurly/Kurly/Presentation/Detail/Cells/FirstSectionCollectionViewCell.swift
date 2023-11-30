@@ -220,6 +220,7 @@ extension FirstSectionCollectionViewCell {
     func bindModel(model: DetailProduct) {
         let numberFormatter: NumberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
+        let discountRate: String = numberFormatter.string(for: model.discountRate) ?? "0"
         let salePrice: String = numberFormatter.string(for: model.salePrice) ?? "0"
         let price: String = numberFormatter.string(for: model.price) ?? "0"
         Task {
@@ -229,7 +230,7 @@ extension FirstSectionCollectionViewCell {
         self.deliveryLabel.text = model.delivery
         self.nameLabel.text = model.name
         self.descriptionLabel.text = model.description
-//        self.salePercentLabel.text = model.salePercent
+        self.salePercentLabel.text = "\(discountRate)%"
         self.salePriceLabel.text = "\(salePrice)원"
         self.priceLabel.text = "\(price)원"
         self.priceLabel.attributedText = priceLabel.text?.strikeThrough()

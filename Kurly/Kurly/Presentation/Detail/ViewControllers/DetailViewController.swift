@@ -29,7 +29,7 @@ final class DetailViewController: BaseViewController {
     private var sections: [[DetailProduct]] = []
     
     private let productService = ProductService(apiService: APIService().self)
-    private var detailProductModel = DetailProduct(image: "", delivery: "", name: "", description: "", salePrice: 0, price: 0)
+    private var detailProductModel = DetailProduct(image: "", delivery: "", name: "", description: "", discountRate:0, salePrice: 0, price: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
