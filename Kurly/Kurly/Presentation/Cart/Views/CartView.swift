@@ -12,9 +12,20 @@ import Then
 
 final class CartView: BaseView {
     
-    var cartType: CartViewType
-    let cartHeaderView: CartHeaderView
-    let bottomCTAButton: BottomCTAButton
+    static let cartTypeDidChangeNotification = Notification.Name("CartTypeDidChangeNotification")
+    
+    var cartType: CartViewType = .emptyCart {
+        didSet {
+            print("CartType 바뀜: ", self.cartType)
+            NotificationCenter.default.post(name: CartView.cartTypeDidChangeNotification, object: cartType)
+            bottomCTAButton.titleType = self.cartType == .emptyCart ? .emptyCart : .order
+
+            setLayout()
+        }
+    }
+    
+    var cartHeaderView: CartHeaderView
+    var bottomCTAButton: BottomCTAButton
     let navigationBar = CustomNavigationBar(type: .closeButton)
     let cartItemCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     private let divider = UIView()
@@ -36,7 +47,7 @@ final class CartView: BaseView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         cartAddressViewHeight = cartHeaderView.cartAddressView.frame.size.height
@@ -50,16 +61,18 @@ final class CartView: BaseView {
             $0.backgroundColor = . gray2
         }
         
-        if cartType == .order {
-            cartItemCollectionView.do {
-                $0.backgroundColor = .white
-                $0.showsVerticalScrollIndicator = false
-                $0.contentInset = UIEdgeInsets(top: 167 + 8, left: 0, bottom: 0, right: 0)
-            }
+        cartItemCollectionView.do {
+            $0.backgroundColor = .white
+            $0.showsVerticalScrollIndicator = false
+            $0.contentInset = UIEdgeInsets(top: 167 + 8, left: 0, bottom: 0, right: 0)
         }
     }
     
     override func setLayout() {
+        dividerHeightConstraint = nil
+        divider.removeFromSuperview()
+        cartItemCollectionView.removeFromSuperview()
+        emptyItemView.removeFromSuperview()
         
         if cartType == .order {
             self.addSubview(cartItemCollectionView)
@@ -103,6 +116,10 @@ final class CartView: BaseView {
             }
         }
     }
+    
+    deinit {
+       NotificationCenter.default.removeObserver(self, name: CartView.cartTypeDidChangeNotification, object: nil)
+   }
 }
 
 extension CartView {
@@ -117,27 +134,27 @@ extension CartView {
     func updateView(forScrollOffset yOffset: CGFloat) {
     
         let scrollyOffset = -yOffset - 175
-
+        print(scrollyOffset)
         let cartAddressViewAlpha = max((30 + scrollyOffset) / (30 - 0), 0)
         let dividerAlpha = max((10 + scrollyOffset) / (10 - 0), 0)
         
         cartHeaderView.cartAddressView.alpha = cartAddressViewAlpha
         cartHeaderView.divider.alpha = dividerAlpha
-
+        
         let allSecletedItemViewTopConstraint = max(73 + scrollyOffset, 0)
         let dividerHeigthConstraint = max(8 + scrollyOffset, 0)
         
         if dividerHeigthConstraint >= 0 && dividerHeigthConstraint <= 8 {
             dividerHeightConstraint?.update(offset: dividerHeigthConstraint)
         }
-
+        
         if cartHeaderView.cartAddressView.alpha == 0 {
             cartHeaderView.cartAddressView.isHidden = true
             
             cartHeaderView.headerTopConstraint?.update(offset: allSecletedItemViewTopConstraint)
         } else {
             cartHeaderView.cartAddressView.isHidden = false
-
+            
             cartHeaderView.headerTopConstraint?.update(offset: allSecletedItemViewTopConstraint)
         }
         
