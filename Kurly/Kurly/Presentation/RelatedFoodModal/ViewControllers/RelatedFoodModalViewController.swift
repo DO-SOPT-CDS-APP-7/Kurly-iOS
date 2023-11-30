@@ -14,6 +14,7 @@ class RelatedFoodModalViewController: BaseViewController {
     
     private let relatedFoodModalView = RelatedFoodModalView()
     private let relatedFoodService = RelatedFoodService(apiService: APIService().self)
+    private let recommendService = RecommendService(apiService: APIService().self)
     
     override func loadView() {
         self.view = relatedFoodModalView
@@ -26,7 +27,7 @@ class RelatedFoodModalViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        getRelatedFood()
+        getRelatedFoodInfo()
         viewToastView()
     }
     
@@ -39,11 +40,13 @@ class RelatedFoodModalViewController: BaseViewController {
 
 extension RelatedFoodModalViewController {
     
-    private func getRelatedFood() {
+    private func getRelatedFoodInfo() {
         Task {
             do {
-                let result = try await relatedFoodService.fetchProduct()
-                relatedFoodModalView.collectionView.updateModel(with: result, newModel2: result)
+                let relatedResult = try await relatedFoodService.fetchProduct()
+                let recommendResult = try await recommendService.fetchProduct()
+                
+                relatedFoodModalView.collectionView.updateModel(with: relatedResult, newModel2: recommendResult)
             }
             catch {
                 guard let error = error as? NetworkError else { return }
