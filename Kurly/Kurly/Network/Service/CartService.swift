@@ -20,9 +20,22 @@ final class CartService {
         return try await apiService.request(urlRequest)
     }
     
+    func makePostCartUrlRequest(xAuthId: Int, model: CartRequest) async throws -> URLRequest {
+        let param = model.toDictionary()
+        let body = try JSONSerialization.data(withJSONObject: param)
+        return try NetworkRequest(path: "cart", httpMethod: .post, body: body, header: ["X-Auth-id": "\(xAuthId)"]).makeURLRequest()
+    }
+    
+    
     func fetchFreeShipping(xAuthId: Int) async throws -> Int {
         guard let model = try await self.getFreeShippingResponse(xAuthId: xAuthId)
         else { throw NetworkError.badCasting }
         return model
+    }
+    
+    func addCart(xAuthId: Int, productId: Int, count: Int) async throws -> Int? {
+        let request = try await self.makePostCartUrlRequest(xAuthId: xAuthId, model: CartRequest(productId: "\(productId)", count: "\(count)"))
+        print(productId, count, "😊😊😊😊😊😊😊😊😊")
+        return try await apiService.request(request)
     }
 }

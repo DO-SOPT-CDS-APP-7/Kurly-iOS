@@ -13,17 +13,8 @@ import Then
 class RelatedFoodModalViewController: BaseViewController {
     
     private let relatedFoodModalView = RelatedFoodModalView()
-    private var relatedFoodList: [RecommendModel] = [
-        .init(foodImage: ImageLiterals.Home.img.activityTop01, foodName: "[시골보쌈과 감자옹심이 감자...", foodPrice: "10,500원"),
-        .init(foodImage: ImageLiterals.Home.img.activityTop02, foodName: "[이연복의 목란] 짬뽕 2인분...", foodPrice: "13,800원"),
-        .init(foodImage: ImageLiterals.Home.img.activityTop03, foodName: "[방방곡곡] 비빔국수 키트(2인...", foodPrice: "9,900원")
-    ]
-
-    private var recommendFoodList: [RecommendModel] = [
-        .init(foodImage: ImageLiterals.Home.img.activityBottom01, foodName: "[시골보쌈과 감자옹심이 감자...", foodPrice: "10,500원"),
-        .init(foodImage: ImageLiterals.Home.img.activityBottom02, foodName: "[이연복의 목란] 짬뽕 2인분...", foodPrice: "13,800원"),
-        .init(foodImage: ImageLiterals.Home.img.activityBottom03, foodName: "[방방곡곡] 비빔국수 키트(2인...", foodPrice: "9,900원")
-    ]
+    private let relatedFoodService = RelatedFoodService(apiService: APIService().self)
+    private let recommendService = RecommendService(apiService: APIService().self)
     
     override func loadView() {
         self.view = relatedFoodModalView
@@ -36,12 +27,31 @@ class RelatedFoodModalViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        getRelatedFoodInfo()
         viewToastView()
     }
     
     private func setSheetPresentation() {
         if let sheetPresentationController = sheetPresentationController {
             sheetPresentationController.detents = [.medium(), .large()]
+        }
+    }
+}
+
+extension RelatedFoodModalViewController {
+    
+    private func getRelatedFoodInfo() {
+        Task {
+            do {
+                let relatedResult = try await relatedFoodService.fetchProduct()
+                let recommendResult = try await recommendService.fetchProduct()
+                
+                relatedFoodModalView.collectionView.updateModel(with: relatedResult, newModel2: recommendResult)
+            }
+            catch {
+                guard let error = error as? NetworkError else { return }
+                print(error.description)
+            }
         }
     }
 }
