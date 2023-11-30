@@ -90,7 +90,6 @@ final class DetailViewController: BaseViewController {
         FourthSectionCollectionViewCell.register(to: detailView.detailCollectionView)
         FifthSectionCollectionViewCell.register(to: detailView.detailCollectionView)
         SixthSectionCollectionViewCell.register(to: detailView.detailCollectionView)
-        RecommendHeaderView.registerHeaderView(to: detailView.detailCollectionView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -267,30 +266,6 @@ extension DetailViewController: UICollectionViewDelegateFlowLayout {
         default:
             return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
         }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        switch section {
-        case 2:
-            return CGSize(width: collectionView.bounds.width, height: 61)
-            
-        default:
-            return .zero
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        switch indexPath.section {
-        case 2:
-            if kind == UICollectionView.elementKindSectionHeader {
-                guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: RecommendHeaderView.identifier, for: indexPath) as? RecommendHeaderView else { return UICollectionReusableView() }
-                headerView.bindData(sectionText: "다른 고객이 함께 본 상품")
-                return headerView
-            }
-        default:
-            return UICollectionReusableView()
-        }
-        return UICollectionReusableView()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
