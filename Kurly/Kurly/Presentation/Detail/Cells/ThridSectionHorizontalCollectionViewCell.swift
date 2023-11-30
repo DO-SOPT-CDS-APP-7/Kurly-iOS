@@ -22,7 +22,7 @@ class ThridSectionHorizontalCollectionViewCell: UICollectionViewCell, Collection
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     private func setUI() {
         horizontalCollectionView.do {
             $0.backgroundColor = .clear
@@ -40,3 +40,4 @@ class ThridSectionHorizontalCollectionViewCell: UICollectionViewCell, Collection
         }
     }
 }
+
