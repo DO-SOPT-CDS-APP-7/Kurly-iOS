@@ -28,6 +28,9 @@ final class DetailViewController: BaseViewController {
     
     private var sections: [[DetailProduct]] = []
     
+    private let productService = RelatedProductService(apiService: APIService().self)
+    private var productModel = RelatedModel(deliveryType: "", productName: "", originalPrice: 0, imageURL: UIImage())
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bindModel()
