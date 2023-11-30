@@ -30,8 +30,8 @@ final class DetailViewController: BaseViewController {
     
     private let productService = ProductService(apiService: APIService().self)
     private var detailProductModel = DetailProduct(image: "", delivery: "", name: "", description: "", discountRate:0, salePrice: 0, price: 0)
-    private let productService = RelatedProductService(apiService: APIService().self)
-    private var productModel = RelatedModel(deliveryType: "", productName: "", originalPrice: 0, imageURL: UIImage())
+    private let relatedService = RelatedProductService(apiService: APIService().self)
+    private var relatedModel = [RelatedModel(deliveryType: "", productName: "", originalPrice: 0, imageURL: "")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -173,10 +173,6 @@ extension DetailViewController {
         navigationBar.cartButton.addTarget(self, action: #selector(cartButtonTapped), for: .touchUpInside)
     }
     
-//    private func bindModel() {
-//        sections = [[result]]
-//    }
-    
     private func presentAfterAddCartViewController() {
         let detentIdentifier = UISheetPresentationController.Detent.Identifier("customDetent")
         let customDetent = UISheetPresentationController.Detent.custom(identifier: detentIdentifier) { _ in
@@ -200,6 +196,22 @@ extension DetailViewController {
                 let result = try await productService.mainFoodProduct()
                 detailProductModel = result
                 sections = [[result]]
+                DispatchQueue.main.async {
+                    self.detailView.detailCollectionView.reloadData()
+                }
+            }
+            catch {
+                guard let error = error as? NetworkError else { return }
+                print(error.description)
+            }
+        }
+    }
+    
+    private func getRelatedProduct() {
+        Task {
+            do {
+                let result = try await relatedService.fetchProduct()
+                relatedModel = result
                 DispatchQueue.main.async {
                     self.detailView.detailCollectionView.reloadData()
                 }
@@ -243,6 +255,7 @@ extension DetailViewController: UICollectionViewDataSource {
             
         case 2:
             guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: ThridSectionHorizontalCollectionViewCell.identifier, for: indexPath) as? ThridSectionHorizontalCollectionViewCell else { return UICollectionViewCell() }
+            item.horizontalCollectionView.updateModel2(with: relatedModel)
             return item
             
         case 3:

@@ -11,7 +11,7 @@ class ThridSectionHorizontalCollectionViewCell: UICollectionViewCell, Collection
     
     static let identifier: String = "ThridSectionHorizontalCollectionViewCell"
     
-    private lazy var horizontalCollectionView = CustomCollectionView(type: .withHeader, model: RelatedModel.dummy(), model2: nil)
+    lazy var horizontalCollectionView = CustomCollectionView(type: .withHeader, model: RelatedModel.dummy(), model2: nil)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
