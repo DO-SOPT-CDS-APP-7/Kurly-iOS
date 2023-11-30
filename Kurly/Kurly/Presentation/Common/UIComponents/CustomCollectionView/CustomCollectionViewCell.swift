@@ -71,7 +71,9 @@ extension CustomCollectionViewCell {
         self.addSubviews(foodImageView, putButton, shippingLabel, foodNameLabel, foodPriceLabel)
         
         foodImageView.snp.makeConstraints {
-            $0.top.horizontalEdges.equalToSuperview()
+//            $0.top.horizontalEdges.equalToSuperview()
+            $0.top.leading.trailing.equalToSuperview()
+            $0.height.equalTo(139)
         }
         
         putButton.snp.makeConstraints {
@@ -97,8 +99,11 @@ extension CustomCollectionViewCell {
     }
     
     func bindData(model: RelatedModel) {
-        
-        foodImageView.image = model.imageURL
+        Task {
+            let image = try await KingfisherService.fetchImage(with: model.imageURL)
+            print(model.imageURL)
+            self.foodImageView.image = image
+        }
         shippingLabel.text = model.deliveryType
         foodNameLabel.text = model.productName
         foodPriceLabel.text = model.originalPrice.priceText
