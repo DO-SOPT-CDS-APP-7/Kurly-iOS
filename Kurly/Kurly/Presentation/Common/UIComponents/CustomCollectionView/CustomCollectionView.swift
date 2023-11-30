@@ -85,12 +85,22 @@ extension CustomCollectionView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return product.count
+        if section == 0 {
+            return product.count
+        } else {
+            return product2?.count ?? 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as? CustomCollectionViewCell else { return UICollectionViewCell() }
-        cell.bindData(model: product[indexPath.row])
+        if indexPath.section == 0 {
+            cell.bindData(model: product[indexPath.row])
+        } else {
+            if let product2 = product2 {
+                cell.bindData(model: product2[indexPath.row])
+            }
+        }
         return cell
     }
     
