@@ -16,26 +16,18 @@ final class RelatedProductService {
         self.apiService = apiService
     }
 
-    func getRelatedProductResponse(productId: Int) async throws -> RelatedResponse? {
-        let urlRequest = try NetworkRequest(path: "product/\(productId)/related", httpMethod: .get).makeURLRequest()
+    func getRelatedProductResponse(productId: Int, page: Int, size: Int) async throws -> [RelatedResponse]? {
+        let query = RelatedFoodRequest(page: page, size: size)
+        let urlRequest = try NetworkRequest(path: "product/\(productId)/related", httpMethod: .get,  query: query).makeURLRequest()
         return try await apiService.request(urlRequest)
     }
-    
-//    func stringToImage(imageURL: String) async throws -> UIImage {
-//        do {
-//            guard let image = try await KingfisherService.fetchImage(with: imageURL) else { throw NetworkError.badCasting }
-//            return image
-//        } catch {
-//            throw error
-//        }
-//    }
-    
+
     func fetchProduct() async throws -> [RelatedModel] {
-        guard let model = try await self.getRelatedProductResponse(productId: 1) else { throw NetworkError.badCasting }
-//        let image = try await stringToImage(imageURL: model.imageURL)
-        guard let image = try await KingfisherService.fetchImage(with: model.imageURL) else {
-                    throw NetworkError.badCasting
-                }
-        return [RelatedModel(deliveryType: model.deliveryType, productName: model.productName, originalPrice: model.originalPrice, imageURL: image)]
+        guard let model = try await self.getRelatedProductResponse(productId: 1, page: 1, size: 6) else { throw NetworkError.badCasting }
+        var relatedProductList: [RelatedModel] = []
+        model.forEach {
+            relatedProductList.append(RelatedModel(deliveryType: $0.deliveryType, productName: $0.productName, originalPrice: $0.originalPrice, imageURL: $0.imageURL))
+        }
+        return relatedProductList
     }
 }
