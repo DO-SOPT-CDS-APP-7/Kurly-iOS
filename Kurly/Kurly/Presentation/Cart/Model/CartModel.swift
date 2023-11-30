@@ -9,13 +9,16 @@ import UIKit
 
 struct CartModel {
     let productName: String
-    var originalPrice: Double
-    var discountRate: Double
+    let originalPrice: Double
+    let discountRate: Double
     let imageURL: String
     var isSelect: Bool = false
+    var discountPrice: Int {
+        return Int(originalPrice * discountRate / 100)
+    }
+    
     var discountedPrice: Int {
-        let discountAmount = originalPrice * discountRate / 100
-        return Int(originalPrice - discountAmount) * itemCount
+        return Int(originalPrice - Double(discountPrice)) * itemCount
     }
     
     var calculatePrice: Int {
