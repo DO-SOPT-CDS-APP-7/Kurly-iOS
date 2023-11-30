@@ -12,8 +12,13 @@ import Then
 
 final class CartHeaderView: BaseView {
     
-    var cartType: CartViewType
-
+    var cartType: CartViewType {
+        didSet {
+            setUI()
+            setLayout()
+        }
+    }
+    
     let divider = UIView()
     let cartAddressView = CartAddressView()
     let allSelectedItemView = AllSelectedItemView()
@@ -22,6 +27,8 @@ final class CartHeaderView: BaseView {
     init(type: CartViewType) {
         self.cartType = type
         super.init(frame: .zero)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleCartTypeDidChange(_:)), name: CartView.cartTypeDidChangeNotification, object: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -39,6 +46,10 @@ final class CartHeaderView: BaseView {
     }
     
     override func setLayout() {
+        
+        divider.removeFromSuperview()
+        allSelectedItemView.removeFromSuperview()
+        
         self.addSubview(cartAddressView)
         
         cartAddressView.snp.makeConstraints {
@@ -61,5 +72,17 @@ final class CartHeaderView: BaseView {
                 $0.bottom.equalToSuperview()
             }
         }
+    }
+    
+    @objc private func handleCartTypeDidChange(_ notification: Notification) {
+        if let newCartType = notification.object as? CartViewType {
+            cartType = newCartType
+        }
+    }
+
+    deinit {
+        print("CartHeaderView NotificationCenter 연결 종료")
+        
+        NotificationCenter.default.removeObserver(self, name: CartView.cartTypeDidChangeNotification, object: nil)
     }
 }
