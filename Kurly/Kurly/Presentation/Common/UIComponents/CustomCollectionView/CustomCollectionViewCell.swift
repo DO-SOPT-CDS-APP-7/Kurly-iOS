@@ -97,8 +97,11 @@ extension CustomCollectionViewCell {
     }
     
     func bindData(model: RelatedModel) {
-        
-        foodImageView.image = model.imageURL
+        Task {
+            let image = try await KingfisherService.fetchImage(with: model.imageURL)
+            print(model.imageURL)
+            self.foodImageView.image = image
+        }
         shippingLabel.text = model.deliveryType
         foodNameLabel.text = model.productName
         foodPriceLabel.text = model.originalPrice.priceText

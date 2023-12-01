@@ -47,7 +47,7 @@ extension AddCartViewController {
     private func getProduct() {
         Task {
             do {
-                let result = try await productService.fetchProduct()
+                let result = try await productService.fetchProduct(productId: 1)
                 productModel = result
                 self.addCartView.bindModel(model: productModel)
                 
