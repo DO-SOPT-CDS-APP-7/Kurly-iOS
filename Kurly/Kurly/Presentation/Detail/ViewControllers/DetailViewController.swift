@@ -278,7 +278,7 @@ extension DetailViewController: UICollectionViewDataSource {
             
         case 2:
             guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: ThridSectionHorizontalCollectionViewCell.identifier, for: indexPath) as? ThridSectionHorizontalCollectionViewCell else { return UICollectionViewCell() }
-            item.horizontalCollectionView.updateModel2(with: relatedModel)
+            item.horizontalCollectionView.updateModel(with: relatedModel, newModel2: nil)
             item.horizontalCollectionView.reloadData()
             return item
             
