@@ -134,7 +134,7 @@ extension CartView {
     func updateView(forScrollOffset yOffset: CGFloat) {
     
         let scrollyOffset = -yOffset - 175
-        print(scrollyOffset)
+
         let cartAddressViewAlpha = max((30 + scrollyOffset) / (30 - 0), 0)
         let dividerAlpha = max((10 + scrollyOffset) / (10 - 0), 0)
         
