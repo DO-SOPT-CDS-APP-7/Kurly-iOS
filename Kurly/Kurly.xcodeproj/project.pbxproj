@@ -97,6 +97,8 @@
 		17A870DE2B08A70F00D5162C /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A870DD2B08A70F00D5162C /* UIViewController+.swift */; };
 		17D2D2D12B14CE9C00013B05 /* CollectionViewCellRegisterDequeueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D2D2D02B14CE9C00013B05 /* CollectionViewCellRegisterDequeueProtocol.swift */; };
 		17D2D2D32B14F86200013B05 /* CollectionHeaderViewRegisterDequeueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D2D2D22B14F86200013B05 /* CollectionHeaderViewRegisterDequeueProtocol.swift */; };
+		17D2D2EA2B1892BA00013B05 /* RelatedResponseV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D2D2E92B1892BA00013B05 /* RelatedResponseV2.swift */; };
+		17D2D2EC2B18930100013B05 /* RelatedProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D2D2EB2B18930100013B05 /* RelatedProductService.swift */; };
 		3F52DDCC2B0B531E00BD216E /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52DDCB2B0B531E00BD216E /* CartViewController.swift */; };
 		3F52DDCE2B0B53B200BD216E /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52DDCD2B0B53B200BD216E /* CartView.swift */; };
 		3F5F8AB52B0F6B8600FC01BF /* OrderPriceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5F8AB42B0F6B8600FC01BF /* OrderPriceCollectionViewCell.swift */; };
@@ -220,6 +222,8 @@
 		17A870DD2B08A70F00D5162C /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		17D2D2D02B14CE9C00013B05 /* CollectionViewCellRegisterDequeueProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellRegisterDequeueProtocol.swift; sourceTree = "<group>"; };
 		17D2D2D22B14F86200013B05 /* CollectionHeaderViewRegisterDequeueProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderViewRegisterDequeueProtocol.swift; sourceTree = "<group>"; };
+		17D2D2E92B1892BA00013B05 /* RelatedResponseV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedResponseV2.swift; sourceTree = "<group>"; };
+		17D2D2EB2B18930100013B05 /* RelatedProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedProductService.swift; sourceTree = "<group>"; };
 		3F52DDCB2B0B531E00BD216E /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		3F52DDCD2B0B53B200BD216E /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		3F5F8AB42B0F6B8600FC01BF /* OrderPriceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPriceCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -283,6 +287,7 @@
 				092DC5612B14F86F008746A6 /* ProductResponse.swift */,
 				092DC5742B164B79008746A6 /* CartRequest.swift */,
 				F1F8792B2B18AFDE00A5692A /* RelatedFoodResponse.swift */,
+				17D2D2E92B1892BA00013B05 /* RelatedResponseV2.swift */,
 				F1F879312B18C64400A5692A /* RecommendResponse.swift */,
 				092DC5762B17A3E7008746A6 /* RelatedResponse.swift */,
 				092DC5782B17A4A0008746A6 /* RelatedRequest.swift */,
@@ -664,6 +669,7 @@
 				092DC55E2B14F829008746A6 /* ProductService.swift */,
 				092DC5632B14F9E7008746A6 /* KingfisherService.swift */,
 				092DC5702B15B81E008746A6 /* CartService.swift */,
+				17D2D2EB2B18930100013B05 /* RelatedProductService.swift */,
 				F1F8792D2B18C3E600A5692A /* RelatedFoodService.swift */,
 				F1F8792F2B18C63500A5692A /* RecommendService.swift */,
 				3FE6C37E2B175AB800209599 /* CartCheckService.swift */,
@@ -1004,6 +1010,7 @@
 				09DE083A2B05B70100D7DF3D /* ViewController.swift in Sources */,
 				17A870BE2B08697E00D5162C /* FontLiterals.swift in Sources */,
 				09DE08362B05B70100D7DF3D /* AppDelegate.swift in Sources */,
+				17D2D2EC2B18930100013B05 /* RelatedProductService.swift in Sources */,
 				F15DD1D52B0C8C6600984E6D /* NotifyAddToastView.swift in Sources */,
 				09BA86942B0A3BF200BF85D9 /* SizeLiterals.swift in Sources */,
 				3FE6C3772B15C53A00209599 /* AllSelectedItemView.swift in Sources */,
@@ -1013,6 +1020,7 @@
 				09EAE98B2B0B0A8A0079CAC4 /* Product.swift in Sources */,
 				09BA86B82B0A616500BF85D9 /* CustomNavigationBar.swift in Sources */,
 				F15DD1E32B0CBBB800984E6D /* RecommendHeaderView.swift in Sources */,
+				17D2D2EA2B1892BA00013B05 /* RelatedResponseV2.swift in Sources */,
 				097266F62B0A134B00FB6E54 /* BaseViewController.swift in Sources */,
 				178335FE2B0B4DA1000DF127 /* DetailView.swift in Sources */,
 				3FE6C3732B14CE0A00209599 /* OrderModel.swift in Sources */,

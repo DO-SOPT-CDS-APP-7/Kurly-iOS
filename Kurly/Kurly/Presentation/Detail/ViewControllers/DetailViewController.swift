@@ -23,6 +23,7 @@ final class DetailViewController: BaseViewController {
     private let cartViewController = CartViewController()
     
     private let detailView = DetailView()
+    private let thridSectionCell = ThridSectionHorizontalCollectionViewCell()
     
     private let dummy = DetailProduct.dummy()
     
@@ -31,9 +32,13 @@ final class DetailViewController: BaseViewController {
     private let productService = ProductService(apiService: APIService().self)
     private var detailProductModel = DetailProduct(image: "", delivery: "", name: "", description: "", discountRate:0, salePrice: 0, price: 0)
     
+    private let relatedService = RelatedProductService(apiService: APIService().self)
+    private var relatedModel = [RelatedModel(deliveryType: "", productName: "", originalPrice: 0, imageURL: "")]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getDetailProduct()
+        getRelatedProduct()
         setTarget()
     }
     
@@ -93,7 +98,6 @@ final class DetailViewController: BaseViewController {
         FourthSectionCollectionViewCell.register(to: detailView.detailCollectionView)
         FifthSectionCollectionViewCell.register(to: detailView.detailCollectionView)
         SixthSectionCollectionViewCell.register(to: detailView.detailCollectionView)
-        RecommendHeaderView.registerHeaderView(to: detailView.detailCollectionView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -172,10 +176,6 @@ extension DetailViewController {
         navigationBar.cartButton.addTarget(self, action: #selector(cartButtonTapped), for: .touchUpInside)
     }
     
-//    private func bindModel() {
-//        sections = [[result]]
-//    }
-    
     private func presentAfterAddCartViewController() {
         let detentIdentifier = UISheetPresentationController.Detent.Identifier("customDetent")
         let customDetent = UISheetPresentationController.Detent.custom(identifier: detentIdentifier) { _ in
@@ -209,6 +209,22 @@ extension DetailViewController {
             }
         }
     }
+    
+    private func getRelatedProduct() {
+        Task {
+            do {
+                let result = try await relatedService.fetchProduct()
+                relatedModel = result
+                DispatchQueue.main.async {
+                    self.detailView.detailCollectionView.reloadData()
+                }
+            }
+            catch {
+                guard let error = error as? NetworkError else { return }
+                print(error.description)
+            }
+        }
+    }
 }
 
 extension DetailViewController: UICollectionViewDelegate {}
@@ -229,6 +245,26 @@ extension DetailViewController: UICollectionViewDataSource {
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if indexPath.section == 2 {
+            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
+                                                                               withReuseIdentifier: CustomHeaderView.className,
+                                                                               for: indexPath) as? CustomHeaderView else {return UICollectionReusableView()}
+            header.bindData(text: "다른 고객이 함께 본 상품")
+                    return header
+        } else {
+            return UICollectionReusableView()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if section == 2 {
+            return .init(width: UIScreen.main.bounds.width, height: 51)
+        } else {
+            return .zero
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
         case 0:
@@ -242,6 +278,8 @@ extension DetailViewController: UICollectionViewDataSource {
             
         case 2:
             guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: ThridSectionHorizontalCollectionViewCell.identifier, for: indexPath) as? ThridSectionHorizontalCollectionViewCell else { return UICollectionViewCell() }
+            item.horizontalCollectionView.updateModel(with: relatedModel, newModel2: nil)
+            item.horizontalCollectionView.reloadData()
             return item
             
         case 3:
@@ -267,50 +305,26 @@ extension DetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch indexPath.section {
         case 0:
-            return CGSize(width: collectionView.frame.width, height: SizeLiterals.Screen.screenHeight * 779 / 812)
+            return CGSize(width: collectionView.frame.width, height: 779)
             
         case 1:
-            return CGSize(width: collectionView.frame.width, height: SizeLiterals.Screen.screenHeight * 132 / 812)
+            return CGSize(width: collectionView.frame.width, height: 132)
             
         case 2:
-            return CGSize(width: collectionView.frame.width, height: SizeLiterals.Screen.screenHeight * 276 / 812)
+            return CGSize(width: collectionView.frame.width, height: 308)
             
         case 3:
-            return CGSize(width: collectionView.frame.width, height: SizeLiterals.Screen.screenHeight * 370 / 812)
+            return CGSize(width: collectionView.frame.width, height: 370)
             
         case 4:
-            return CGSize(width: collectionView.frame.width, height: SizeLiterals.Screen.screenHeight * 630 / 812)
+            return CGSize(width: collectionView.frame.width, height: 630)
             
         case 5:
-            return CGSize(width: collectionView.frame.width, height: SizeLiterals.Screen.screenHeight * 514 / 812)
+            return CGSize(width: collectionView.frame.width, height: 514)
             
         default:
             return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
         }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        switch section {
-        case 2:
-            return CGSize(width: collectionView.bounds.width, height: 61)
-            
-        default:
-            return .zero
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        switch indexPath.section {
-        case 2:
-            if kind == UICollectionView.elementKindSectionHeader {
-                guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: RecommendHeaderView.identifier, for: indexPath) as? RecommendHeaderView else { return UICollectionReusableView() }
-                headerView.bindData(sectionText: "다른 고객이 함께 본 상품")
-                return headerView
-            }
-        default:
-            return UICollectionReusableView()
-        }
-        return UICollectionReusableView()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

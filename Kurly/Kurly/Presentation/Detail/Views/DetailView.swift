@@ -29,6 +29,9 @@ final class DetailView: BaseView {
     
     override func setUI() {
         detailCollectionView.do {
+            $0.register(CustomHeaderView.self,
+                        forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                        withReuseIdentifier: CustomHeaderView.className)
             $0.backgroundColor = .white
             let flowLayout = UICollectionViewFlowLayout()
             flowLayout.scrollDirection = .vertical
