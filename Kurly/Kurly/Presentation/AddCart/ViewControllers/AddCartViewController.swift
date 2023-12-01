@@ -24,15 +24,18 @@ final class AddCartViewController: BaseViewController {
     private let addCartView = AddCartView()
     private let afterAddCartViewController = AfterAddCartViewController()
     
-    override func viewDidLoad() {
-        print("🍎🍎🍎🍎🍎🍎🍎🍎🍎모달1🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎")
-        super.viewDidLoad()
-        setTarget()
-        getProduct()
-    }
-    
     override func loadView() {
         self.view = addCartView
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setTarget()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getProduct()
     }
 }
 
@@ -50,7 +53,6 @@ extension AddCartViewController {
                 let result = try await productService.fetchProduct(productId: 1)
                 productModel = result
                 self.addCartView.bindModel(model: productModel)
-                
             }
             catch {
                 guard let error = error as? NetworkError else { return }
@@ -63,7 +65,6 @@ extension AddCartViewController {
         Task {
             do {
                 let result = try await cartService.addCart(xAuthId: 1, productId: 1, count: addCartView.stepper.value)
-                
             }
             catch {
                 guard let error = error as? NetworkError else { return }

@@ -120,7 +120,6 @@ extension AfterAddCartView {
     }
     
     func bindRelativeFood(model: [RelatedModel]) {
-        collectionView = CustomCollectionView(type: .withHeader, model: model, model2: nil)
-        collectionView.reloadData()
+        collectionView.updateModel(with: model, newModel2: nil)
     }
 }

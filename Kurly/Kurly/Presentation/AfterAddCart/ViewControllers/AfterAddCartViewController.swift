@@ -23,7 +23,6 @@ final class AfterAddCartViewController: BaseViewController {
     }
 
     override func viewDidLoad() {
-        print("🍎🍎🍎🍎🍎🍎🍎🍎🍎모달2🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎")
         super.viewDidLoad()
         bindModel()
         setTarget()
@@ -52,7 +51,6 @@ extension AfterAddCartViewController {
                 let result = try await cartService.fetchFreeShipping(xAuthId: 1)
                 price = result
                 self.afterAddCartView.bindPrice(buyPrice: price)
-                
             }
             catch {
                 guard let error = error as? NetworkError else { return }
@@ -66,7 +64,6 @@ extension AfterAddCartViewController {
             do {
                 let result = try await productService.fetchRelated(productId: 1, page: 1, size: 3)
                 self.afterAddCartView.bindRelativeFood(model: result)
-                
             }
             catch {
                 guard let error = error as? NetworkError else { return }
