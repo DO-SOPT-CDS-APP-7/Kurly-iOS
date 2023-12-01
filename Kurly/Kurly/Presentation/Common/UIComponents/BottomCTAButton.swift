@@ -28,7 +28,7 @@ enum BottomCTAButtonType {
         case .addCart:
             return "원 장바구니 담기"
         case .order:
-            return "원 주문하기"
+            return "0원 주문하기"
         case .orderDetail:
             return "주문 상세보기"
         case .shopping:

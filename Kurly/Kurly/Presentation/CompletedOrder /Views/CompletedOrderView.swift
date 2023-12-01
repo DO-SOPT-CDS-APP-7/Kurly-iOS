@@ -164,4 +164,8 @@ extension CompletedOrderView {
         
         benefitStackView.addArrangedSubviews(benefitsInfoView1, benefitsInfoView2)
     }
+    
+    func bindData(orderPrice: Int) {
+        paymentPrice.text = "\(orderPrice.priceText)"
+    }
 }

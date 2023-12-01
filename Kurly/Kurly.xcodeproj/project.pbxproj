@@ -117,6 +117,8 @@
 		3FE6C3772B15C53A00209599 /* AllSelectedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE6C3762B15C53A00209599 /* AllSelectedItemView.swift */; };
 		3FE6C37D2B175A9A00209599 /* CartResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE6C37C2B175A9A00209599 /* CartResponse.swift */; };
 		3FE6C37F2B175AB800209599 /* CartCheckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE6C37E2B175AB800209599 /* CartCheckService.swift */; };
+		3FE6C3812B19906100209599 /* CartResetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE6C3802B19906100209599 /* CartResetResponse.swift */; };
+		3FE6C3832B1990AC00209599 /* CartResetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE6C3822B1990AC00209599 /* CartResetService.swift */; };
 		F15DD1D52B0C8C6600984E6D /* NotifyAddToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1D42B0C8C6600984E6D /* NotifyAddToastView.swift */; };
 		F15DD1D72B0C8C7E00984E6D /* NotifyRemoveToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1D62B0C8C7E00984E6D /* NotifyRemoveToastView.swift */; };
 		F15DD1DC2B0C96E700984E6D /* RelatedFoodModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1DB2B0C96E700984E6D /* RelatedFoodModalViewController.swift */; };
@@ -242,6 +244,8 @@
 		3FE6C3762B15C53A00209599 /* AllSelectedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSelectedItemView.swift; sourceTree = "<group>"; };
 		3FE6C37C2B175A9A00209599 /* CartResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartResponse.swift; sourceTree = "<group>"; };
 		3FE6C37E2B175AB800209599 /* CartCheckService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCheckService.swift; sourceTree = "<group>"; };
+		3FE6C3802B19906100209599 /* CartResetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartResetResponse.swift; sourceTree = "<group>"; };
+		3FE6C3822B1990AC00209599 /* CartResetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartResetService.swift; sourceTree = "<group>"; };
 		F15DD1D42B0C8C6600984E6D /* NotifyAddToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyAddToastView.swift; sourceTree = "<group>"; };
 		F15DD1D62B0C8C7E00984E6D /* NotifyRemoveToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyRemoveToastView.swift; sourceTree = "<group>"; };
 		F15DD1DB2B0C96E700984E6D /* RelatedFoodModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedFoodModalViewController.swift; sourceTree = "<group>"; };
@@ -292,6 +296,7 @@
 				092DC5762B17A3E7008746A6 /* RelatedResponse.swift */,
 				092DC5782B17A4A0008746A6 /* RelatedRequest.swift */,
 				3FE6C37C2B175A9A00209599 /* CartResponse.swift */,
+				3FE6C3802B19906100209599 /* CartResetResponse.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -673,6 +678,7 @@
 				F1F8792D2B18C3E600A5692A /* RelatedFoodService.swift */,
 				F1F8792F2B18C63500A5692A /* RecommendService.swift */,
 				3FE6C37E2B175AB800209599 /* CartCheckService.swift */,
+				3FE6C3822B1990AC00209599 /* CartResetService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -956,6 +962,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				092DC5592B14F574008746A6 /* NetworkRequest.swift in Sources */,
+				3FE6C3812B19906100209599 /* CartResetResponse.swift in Sources */,
 				F15DD1E52B0CD37E00984E6D /* RecommendFooterView.swift in Sources */,
 				092DC55D2B14F635008746A6 /* Config.swift in Sources */,
 				3FE6C36E2B11CFA400209599 /* EmptyItemView.swift in Sources */,
@@ -1001,6 +1008,7 @@
 				09BA86AD2B0A4C9200BF85D9 /* TabBarView.swift in Sources */,
 				3FE6C37D2B175A9A00209599 /* CartResponse.swift in Sources */,
 				092DC5532B14F536008746A6 /* HTTPMethod.swift in Sources */,
+				3FE6C3832B1990AC00209599 /* CartResetService.swift in Sources */,
 				09BA86B32B0A4E4D00BF85D9 /* UICollectionView+.swift in Sources */,
 				3FE4CCF02B11024D009C9029 /* BenefitsInfoView.swift in Sources */,
 				17A870CE2B08A4CB00D5162C /* NSObject+.swift in Sources */,

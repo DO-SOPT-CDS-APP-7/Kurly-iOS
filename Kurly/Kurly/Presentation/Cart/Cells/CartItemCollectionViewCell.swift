@@ -59,9 +59,7 @@ final class CartItemCollectionViewCell: UICollectionViewCell, CollectionViewCell
         }
         
         itemImageView.do {
-//            $0.image = ImageLiterals.Home.img.large
             $0.sizeToFit()
-            $0.contentMode = .scaleAspectFit
         }
         
         itemDiscountPrice.do {
@@ -140,13 +138,19 @@ extension CartItemCollectionViewCell {
         self.itemRow = row
         self.itemLabel.text = model.productName
         self.itemDiscountPrice.text = "\(Int(model.discountedPrice).priceText)"
-        self.itemPrice.text = "\(Int(model.calculatePrice).priceText)"
-        self.itemPrice.attributedText = itemPrice.text?.strikeThrough()
+        
+        if model.discountedPrice == model.calculatePrice {
+            self.itemPrice.isHidden = true
+        } else {
+            self.itemPrice.isHidden = false
+            self.itemPrice.text = "\(Int(model.calculatePrice).priceText)"
+            self.itemPrice.attributedText = itemPrice.text?.strikeThrough()
+        }
         
         Task {
             let image = try await KingfisherService.fetchImage(with: model.imageURL)
             
-            DispatchQueue.main.async {
+            await MainActor.run {
                 self.itemImageView.image = image
             }
         }
@@ -170,7 +174,6 @@ extension CartItemCollectionViewCell {
             print("최소구매수량 1")
         } else {
             stepper.value += sender.tag
-            print(stepper.value)
 
             self.stepperDelegate?.updateStepperValue(value: stepper.value, row: itemRow ?? 0)
         }
