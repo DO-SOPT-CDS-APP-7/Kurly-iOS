@@ -19,7 +19,7 @@ final class CartViewController: BaseViewController {
     
     private var cartView = CartView(type: .emptyCart)
     private var cartCheckService = CartCheckService(apiService: APIService().self)
-    
+    private var cartResetService = CartResetService(apiService: APIService().self)
     private var cartItemData: [CartModel] = [] {
         didSet {
             cartView.cartHeaderView.allSelectedItemView.bindData(seletedItemCount: selectedItem.count, AllItemCount: cartItemData.count)
@@ -37,6 +37,8 @@ final class CartViewController: BaseViewController {
             cartView.cartItemCollectionView.reloadData()
         }
     }
+    
+    private var totalPrice = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,6 +92,8 @@ extension CartViewController {
             sumTotalPrice += Int(data.discountedPrice)
         }
         
+        self.totalPrice = sumTotalPrice
+        
         return OrderModel(itemPrice: sumItemPrice, discountPrice: sumDiscountPrice, deliveryPrice: 0, totalPrice: sumTotalPrice)
     }
     
@@ -99,12 +103,11 @@ extension CartViewController {
                 let result = try await cartCheckService.fetchCart(xAuthId: 1)
 
                 cartItemData = result
+                selectedItem.removeAll()
                 
                 if result.isEmpty {
-                    
                     cartView.cartType = .emptyCart
                 } else {
-                    
                     cartView.cartType = .order
                 }
             } catch {
@@ -136,7 +139,6 @@ extension CartViewController: UpdatingStepperProtocol {
     
     func updateStepperValue(value: Int, row: Int) {
         cartItemData[row].itemCount = value
-        print(cartItemData[row])
         
         if cartItemData[row].isSelect == true {
             if let index = selectedItem.firstIndex(where: { $0.productName == cartItemData[row].productName }) {
@@ -181,6 +183,25 @@ extension CartViewController {
     
     @objc func tapOrderButton() {
         print("주문하기!")
+        
+        Task {
+            do {
+                let result = try await cartResetService.fetchResetCart(xAuthId: 1)
+                
+                if result.message == "완료" {
+                    let nextViewController = CompletedOrderViewController()
+                    
+                    await MainActor.run {
+                        navigationController?.pushViewController(nextViewController, animated: true)
+                        
+                        nextViewController.completedOrderView.bindData(orderPrice: totalPrice)
+                    }
+                }
+            } catch {
+                guard let error = error as? NetworkError else { return }
+                print(error.description)
+            }
+        }
     }
     
     @objc func tapChangeAddressButton() {
