@@ -142,7 +142,7 @@ extension CartItemCollectionViewCell {
         self.itemDiscountPrice.text = "\(Int(model.discountedPrice).priceText)"
         self.itemPrice.text = "\(Int(model.calculatePrice).priceText)"
         self.itemPrice.attributedText = itemPrice.text?.strikeThrough()
-        print(model.imageURL)
+        
         Task {
             let image = try await KingfisherService.fetchImage(with: model.imageURL)
             
