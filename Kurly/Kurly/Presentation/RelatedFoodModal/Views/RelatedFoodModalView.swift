@@ -13,7 +13,7 @@ import Then
 class RelatedFoodModalView: BaseView {
     
     private let grabberView = UIView()
-    private let collectionView = CustomCollectionView(type: .withHeaderFooter, model: RelatedModel.dummy(), model2: RelatedModel.dummy())
+    var collectionView = CustomCollectionView(type: .withHeaderFooter, model: RelatedModel.dummy(), model2: RelatedModel.dummy())
     let relatedProductButton = BottomCTAButton(type: .more)
     let notifyAddToastView = NotifyAddToastView()
     

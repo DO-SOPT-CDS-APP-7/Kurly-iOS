@@ -71,7 +71,9 @@ extension CustomCollectionViewCell {
         self.addSubviews(foodImageView, putButton, shippingLabel, foodNameLabel, foodPriceLabel)
         
         foodImageView.snp.makeConstraints {
-            $0.top.horizontalEdges.equalToSuperview()
+//            $0.top.horizontalEdges.equalToSuperview()
+            $0.top.leading.trailing.equalToSuperview()
+            $0.height.equalTo(139)
         }
         
         putButton.snp.makeConstraints {
