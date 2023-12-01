@@ -138,13 +138,13 @@ extension CartItemCollectionViewCell {
         self.itemRow = row
         self.itemLabel.text = model.productName
         self.itemDiscountPrice.text = "\(Int(model.discountedPrice).priceText)"
-        self.itemPrice.attributedText = itemPrice.text?.strikeThrough()
         
         if model.discountedPrice == model.calculatePrice {
             self.itemPrice.isHidden = true
         } else {
             self.itemPrice.isHidden = false
             self.itemPrice.text = "\(Int(model.calculatePrice).priceText)"
+            self.itemPrice.attributedText = itemPrice.text?.strikeThrough()
         }
         
         Task {
