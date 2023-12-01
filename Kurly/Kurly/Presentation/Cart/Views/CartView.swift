@@ -16,7 +16,6 @@ final class CartView: BaseView {
     
     var cartType: CartViewType = .emptyCart {
         didSet {
-            print("CartType 바뀜: ", self.cartType)
             NotificationCenter.default.post(name: CartView.cartTypeDidChangeNotification, object: cartType)
             bottomCTAButton.titleType = self.cartType == .emptyCart ? .emptyCart : .order
 
