@@ -98,7 +98,7 @@ extension CartViewController {
         Task {
             do {
                 let result = try await cartCheckService.fetchCart(xAuthId: 1)
-                print("결과", result)
+
                 cartItemData = result
                 
                 if result.isEmpty {
