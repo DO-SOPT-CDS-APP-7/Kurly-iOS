@@ -186,6 +186,7 @@ extension DetailViewController {
             sheet.detents = [customDetent]
             sheet.prefersGrabberVisible = true
         }
+        afterAddCartViewController.delegate = self
         present(afterAddCartViewController, animated: true, completion: nil)
     }
     
@@ -336,5 +337,11 @@ extension DetailViewController: DismissProtocol {
     
     func tapButton() {
         presentAfterAddCartViewController()
+    }
+}
+
+extension DetailViewController: BuyButtonTapped {
+    func tapBuyButton() {
+        pushToCartViewController()
     }
 }

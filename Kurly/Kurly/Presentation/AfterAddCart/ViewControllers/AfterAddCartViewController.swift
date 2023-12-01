@@ -7,11 +7,17 @@
 
 import UIKit
 
+protocol BuyButtonTapped: AnyObject {
+    func tapBuyButton()
+}
+
 final class AfterAddCartViewController: BaseViewController {
     
     private let afterAddCartView = AfterAddCartView()
     
     private let dummy = RelatedModel.dummy()
+    
+    weak var delegate: BuyButtonTapped?
     
     private let cartService = CartService(apiService: APIService().self)
     private let productService = ProductService(apiService: APIService().self)
@@ -77,5 +83,7 @@ extension AfterAddCartViewController {
     
     @objc func tapButton() {
         print("tapButton")
+        self.dismiss(animated: true)
+        delegate?.tapBuyButton()
     }
 }

@@ -309,13 +309,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		097F58062B0EFE5500918304 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
 		09BA86902B0A3B9F00BF85D9 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -432,7 +425,6 @@
 		09EAE9932B0B3BFE0079CAC4 /* AfterAddCart */ = {
 			isa = PBXGroup;
 			children = (
-				097F58062B0EFE5500918304 /* Cells */,
 				097F58032B0E739000918304 /* Model */,
 				09EAE9952B0B3C190079CAC4 /* Views */,
 				09EAE9942B0B3C0A0079CAC4 /* ViewControllers */,
