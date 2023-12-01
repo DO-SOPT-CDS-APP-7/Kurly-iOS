@@ -23,7 +23,6 @@ final class CartViewController: BaseViewController {
     private var cartItemData: [CartModel] = [] {
         didSet {
             cartView.cartHeaderView.allSelectedItemView.bindData(seletedItemCount: selectedItem.count, AllItemCount: cartItemData.count)
-            
             cartView.cartItemCollectionView.reloadData()
         }
     }
