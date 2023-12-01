@@ -29,5 +29,20 @@ extension RelatedModel {
                              originalPrice: 5900,
                              imageURL: "ImageLiterals.Home.img.activityTop03")]
     }
+    
+    static func dummys() -> [RelatedModel] {
+        return [RelatedModel(deliveryType: "",
+                             productName: "",
+                             originalPrice: 0,
+                             imageURL: ""),
+                RelatedModel(deliveryType: "",
+                             productName: "",
+                             originalPrice: 0,
+                             imageURL: ""),
+                RelatedModel(deliveryType: "",
+                             productName: "",
+                             originalPrice: 0,
+                             imageURL: "")]
+    }
 }
 

@@ -21,7 +21,7 @@ final class RecommendService {
     }
     
     func fetchProduct() async throws -> [RelatedModel] {
-        guard let model = try await self.getRecommendResponse(productId: 1) else { throw NetworkError.badCasting }
+        guard let model = try await self.getRecommendResponse(productId: 5) else { throw NetworkError.badCasting }
         var relatedModelList: [RelatedModel] = []
         model.forEach {
             relatedModelList.append(RelatedModel(deliveryType: $0.deliveryType,
