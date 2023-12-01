@@ -168,7 +168,7 @@ extension OrderPriceCollectionViewCell {
         numberFormatter.numberStyle = .decimal
         
         self.itemPrice.text = "\(numberFormatter.string(for: model.itemPrice) ?? "0") 원"
-        self.itemDiscountPrice.text = model.discountedPrice == 0 ? "\(model.discountedPrice) 원" : "-\(numberFormatter.string(for: model.discountedPrice) ?? "0") 원"
+        self.itemDiscountPrice.text = model.discountPrice == 0 ? "\(model.discountPrice) 원" : "-\(numberFormatter.string(for: model.discountPrice) ?? "0") 원"
         self.deliveryPrice.text = "\(model.deliveryPrice) 원"
         self.orderPrice.text = "\((model.totalPrice).priceText)"
     }

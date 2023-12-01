@@ -23,6 +23,8 @@
 		092DC56C2B15106A008746A6 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092DC56B2B15106A008746A6 /* Encodable.swift */; };
 		092DC5712B15B81E008746A6 /* CartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092DC5702B15B81E008746A6 /* CartService.swift */; };
 		092DC5752B164B79008746A6 /* CartRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092DC5742B164B79008746A6 /* CartRequest.swift */; };
+		092DC5772B17A3E7008746A6 /* RelatedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092DC5762B17A3E7008746A6 /* RelatedResponse.swift */; };
+		092DC5792B17A4A0008746A6 /* RelatedRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092DC5782B17A4A0008746A6 /* RelatedRequest.swift */; };
 		095AB57A2B11AD9000DA246F /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095AB5792B11AD9000DA246F /* AlertBuilder.swift */; };
 		095AB57C2B11ADB400DA246F /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095AB57B2B11ADB400DA246F /* CustomAlertViewController.swift */; };
 		095AB5872B11CAC500DA246F /* CustomCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095AB5862B11CAC500DA246F /* CustomCollectionView.swift */; };
@@ -113,6 +115,8 @@
 		3FE6C3732B14CE0A00209599 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE6C3722B14CE0A00209599 /* OrderModel.swift */; };
 		3FE6C3752B15007000209599 /* CartAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE6C3742B15007000209599 /* CartAddressView.swift */; };
 		3FE6C3772B15C53A00209599 /* AllSelectedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE6C3762B15C53A00209599 /* AllSelectedItemView.swift */; };
+		3FE6C37D2B175A9A00209599 /* CartResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE6C37C2B175A9A00209599 /* CartResponse.swift */; };
+		3FE6C37F2B175AB800209599 /* CartCheckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE6C37E2B175AB800209599 /* CartCheckService.swift */; };
 		F15DD1D52B0C8C6600984E6D /* NotifyAddToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1D42B0C8C6600984E6D /* NotifyAddToastView.swift */; };
 		F15DD1D72B0C8C7E00984E6D /* NotifyRemoveToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1D62B0C8C7E00984E6D /* NotifyRemoveToastView.swift */; };
 		F15DD1DC2B0C96E700984E6D /* RelatedFoodModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DD1DB2B0C96E700984E6D /* RelatedFoodModalViewController.swift */; };
@@ -145,6 +149,8 @@
 		092DC56F2B156956008746A6 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		092DC5702B15B81E008746A6 /* CartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartService.swift; sourceTree = "<group>"; };
 		092DC5742B164B79008746A6 /* CartRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartRequest.swift; sourceTree = "<group>"; };
+		092DC5762B17A3E7008746A6 /* RelatedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedResponse.swift; sourceTree = "<group>"; };
+		092DC5782B17A4A0008746A6 /* RelatedRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedRequest.swift; sourceTree = "<group>"; };
 		095AB5792B11AD9000DA246F /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
 		095AB57B2B11ADB400DA246F /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 		095AB5862B11CAC500DA246F /* CustomCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionView.swift; sourceTree = "<group>"; };
@@ -234,6 +240,8 @@
 		3FE6C3722B14CE0A00209599 /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		3FE6C3742B15007000209599 /* CartAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartAddressView.swift; sourceTree = "<group>"; };
 		3FE6C3762B15C53A00209599 /* AllSelectedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSelectedItemView.swift; sourceTree = "<group>"; };
+		3FE6C37C2B175A9A00209599 /* CartResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartResponse.swift; sourceTree = "<group>"; };
+		3FE6C37E2B175AB800209599 /* CartCheckService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCheckService.swift; sourceTree = "<group>"; };
 		F15DD1D42B0C8C6600984E6D /* NotifyAddToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyAddToastView.swift; sourceTree = "<group>"; };
 		F15DD1D62B0C8C7E00984E6D /* NotifyRemoveToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyRemoveToastView.swift; sourceTree = "<group>"; };
 		F15DD1DB2B0C96E700984E6D /* RelatedFoodModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedFoodModalViewController.swift; sourceTree = "<group>"; };
@@ -281,6 +289,9 @@
 				F1F8792B2B18AFDE00A5692A /* RelatedFoodResponse.swift */,
 				17D2D2E92B1892BA00013B05 /* RelatedResponseV2.swift */,
 				F1F879312B18C64400A5692A /* RecommendResponse.swift */,
+				092DC5762B17A3E7008746A6 /* RelatedResponse.swift */,
+				092DC5782B17A4A0008746A6 /* RelatedRequest.swift */,
+				3FE6C37C2B175A9A00209599 /* CartResponse.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -661,6 +672,7 @@
 				17D2D2EB2B18930100013B05 /* RelatedProductService.swift */,
 				F1F8792D2B18C3E600A5692A /* RelatedFoodService.swift */,
 				F1F8792F2B18C63500A5692A /* RecommendService.swift */,
+				3FE6C37E2B175AB800209599 /* CartCheckService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -978,6 +990,7 @@
 				092DC5552B14F550008746A6 /* NetworkError.swift in Sources */,
 				3FE4CCEC2B10C4D7009C9029 /* CompletedOrderView.swift in Sources */,
 				3FE6C3712B14333B00209599 /* CartModel.swift in Sources */,
+				3FE6C37F2B175AB800209599 /* CartCheckService.swift in Sources */,
 				09BA86BB2B0A6F0E00BF85D9 /* BottomCTAButton.swift in Sources */,
 				095AB57A2B11AD9000DA246F /* AlertBuilder.swift in Sources */,
 				174713732B0FDAFC00E8EC51 /* DetailBottomBarView.swift in Sources */,
@@ -986,6 +999,7 @@
 				17A870A72B08657500D5162C /* Font.swift in Sources */,
 				F15DD1DE2B0C970700984E6D /* RelatedFoodModalView.swift in Sources */,
 				09BA86AD2B0A4C9200BF85D9 /* TabBarView.swift in Sources */,
+				3FE6C37D2B175A9A00209599 /* CartResponse.swift in Sources */,
 				092DC5532B14F536008746A6 /* HTTPMethod.swift in Sources */,
 				09BA86B32B0A4E4D00BF85D9 /* UICollectionView+.swift in Sources */,
 				3FE4CCF02B11024D009C9029 /* BenefitsInfoView.swift in Sources */,
@@ -1011,11 +1025,13 @@
 				178335FE2B0B4DA1000DF127 /* DetailView.swift in Sources */,
 				3FE6C3732B14CE0A00209599 /* OrderModel.swift in Sources */,
 				3FE4CCEA2B10C4AF009C9029 /* CompletedOrderViewController.swift in Sources */,
+				092DC5792B17A4A0008746A6 /* RelatedRequest.swift in Sources */,
 				F15DD1E12B0C9CAB00984E6D /* RecommendCollectionViewCell.swift in Sources */,
 				178336022B0B6832000DF127 /* DetailProduct.swift in Sources */,
 				17A870DA2B08A6E200D5162C /* UITextView+.swift in Sources */,
 				092DC5712B15B81E008746A6 /* CartService.swift in Sources */,
 				095AB5872B11CAC500DA246F /* CustomCollectionView.swift in Sources */,
+				092DC5772B17A3E7008746A6 /* RelatedResponse.swift in Sources */,
 				09BA86B12B0A4DB100BF85D9 /* TabBarCollectionViewCell.swift in Sources */,
 				3F6E80F82B0DEAD200D89606 /* CartItemCollectionViewCell.swift in Sources */,
 				3F52DDCC2B0B531E00BD216E /* CartViewController.swift in Sources */,

@@ -9,7 +9,7 @@ import Foundation
 
 struct OrderModel {
     let itemPrice: Int
-    let discountedPrice: Int
+    let discountPrice: Int
     let deliveryPrice: Int
     let totalPrice: Int
 }
