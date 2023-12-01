@@ -161,7 +161,7 @@ extension AddCartView {
         Task {
             let image = try await KingfisherService.fetchImage(with: model.image)
             self.imageView.image = image
-                }
+        }
         self.nameLabel.text = model.name
         self.descriptionLabel.text = model.description
         self.orderNameLabel.text = model.name
