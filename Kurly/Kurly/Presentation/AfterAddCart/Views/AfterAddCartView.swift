@@ -18,8 +18,7 @@ final class AfterAddCartView: BaseView {
     private let priceLabel = UILabel()
     private let progressView = UIProgressView()
     private let divisionLabel = UILabel()
-    
-    private let collectionView = CustomCollectionView(type: .withHeader, model: RelatedModel.dummy(), model2: nil)
+    var collectionView = CustomCollectionView(type: .withHeader, model: [RelatedModel(deliveryType: "", productName: "", originalPrice: 0, imageURL: "")], model2: nil)
     
     override func setUI() {
         self.backgroundColor = .white
@@ -121,6 +120,6 @@ extension AfterAddCartView {
     }
     
     func bindRelativeFood(model: [RelatedModel]) {
-        print("")
+        collectionView.updateModel(with: model, newModel2: nil)
     }
 }
