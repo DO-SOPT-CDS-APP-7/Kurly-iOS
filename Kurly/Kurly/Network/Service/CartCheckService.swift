@@ -25,10 +25,6 @@ final class CartCheckService {
         guard let model = try await self.getCartResponse(xAuthId: xAuthId) else {
             throw NetworkError.badCasting
         }
-
-        guard let iamge = try await KingfisherService.fetchImage(with: model.imageURL) else {
-            throw NetworkError.badCasting
-        }
         
         return createCartModelData(cartData: model)
     }
