@@ -9,7 +9,7 @@ import UIKit
 
 class CompletedOrderViewController: BaseViewController {
 
-    private let completedOrderView = CompletedOrderView()
+    let completedOrderView = CompletedOrderView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,5 +42,9 @@ extension CompletedOrderViewController {
     
     @objc func tapShoppingCTAButton() {
         print("쇼핑 계속하기!")
+        
+        if let productViewController = navigationController?.viewControllers.first(where: { $0 is DetailViewController }) {
+            navigationController?.popToViewController(productViewController, animated: true)
+        }
     }
 }
