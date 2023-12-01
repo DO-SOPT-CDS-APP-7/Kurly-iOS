@@ -59,8 +59,9 @@ final class CartItemCollectionViewCell: UICollectionViewCell, CollectionViewCell
         }
         
         itemImageView.do {
-            $0.image = ImageLiterals.Home.img.large
+//            $0.image = ImageLiterals.Home.img.large
             $0.sizeToFit()
+            $0.contentMode = .scaleAspectFit
         }
         
         itemDiscountPrice.do {
@@ -135,12 +136,20 @@ final class CartItemCollectionViewCell: UICollectionViewCell, CollectionViewCell
 
 extension CartItemCollectionViewCell {
     
-    func bindModel(model: CartModel) {
-        self.itemRow = model.id
+    func bindModel(model: CartModel, row: Int) {
+        self.itemRow = row
         self.itemLabel.text = model.productName
         self.itemDiscountPrice.text = "\(Int(model.discountedPrice).priceText)"
         self.itemPrice.text = "\(Int(model.calculatePrice).priceText)"
         self.itemPrice.attributedText = itemPrice.text?.strikeThrough()
+        
+        Task {
+            let image = try await KingfisherService.fetchImage(with: model.imageURL)
+            
+            DispatchQueue.main.async {
+                self.itemImageView.image = image
+            }
+        }
         
         self.selectItemButton.isSelected = model.isSelect
         self.stepper.value = model.itemCount

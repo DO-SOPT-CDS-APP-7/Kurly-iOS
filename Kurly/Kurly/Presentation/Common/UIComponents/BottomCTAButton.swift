@@ -41,7 +41,12 @@ enum BottomCTAButtonType {
 
 final class BottomCTAButton: UIButton {
     
-    var titleType: BottomCTAButtonType
+    var titleType: BottomCTAButtonType {
+        didSet{
+            setUI()
+            print("버튼 값 변경")
+        }
+    }
     
     init(type: BottomCTAButtonType) {
         self.titleType = type
