@@ -1,4 +1,4 @@
-# Kurly iOS
+# Kurly iOS
 
 ## 🧑‍💻 Developers
 
