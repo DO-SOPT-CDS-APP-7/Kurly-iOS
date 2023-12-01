@@ -16,7 +16,7 @@ final class RelatedProductService {
         self.apiService = apiService
     }
 
-    func getRelatedProductResponse(productId: Int, page: Int, size: Int) async throws -> [RelatedResponse]? {
+    func getRelatedProductResponse(productId: Int, page: Int, size: Int) async throws -> [RelatedResponseV2]? {
         let query = RelatedFoodRequest(page: page, size: size)
         let urlRequest = try NetworkRequest(path: "product/\(productId)/related", httpMethod: .get,  query: query).makeURLRequest()
         return try await apiService.request(urlRequest)
