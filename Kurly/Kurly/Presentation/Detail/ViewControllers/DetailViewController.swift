@@ -163,6 +163,10 @@ extension DetailViewController {
                 self.notifyRemoveToastView.downToastView()
             }
         }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            self.notifyRemoveToastView.removeFromSuperview()
+        }
     }
 }
 
