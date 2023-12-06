@@ -68,5 +68,9 @@ extension RelatedFoodModalViewController {
                 self.relatedFoodModalView.notifyAddToastView.downToastView()
             }
         }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            self.relatedFoodModalView.notifyAddToastView.removeFromSuperview()
+        }
     }
 }
