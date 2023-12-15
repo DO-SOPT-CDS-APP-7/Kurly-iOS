@@ -9,6 +9,7 @@ import UIKit
 
 import SnapKit
 import Kingfisher
+import Combine
 
 enum CartViewType {
     case emptyCart
@@ -17,39 +18,22 @@ enum CartViewType {
 
 final class CartViewController: BaseViewController {
     
-    private var cartView = CartView(type: .emptyCart)
+    private var cartView = CartView(type: .order)
     private var cartCheckService = CartCheckService(apiService: APIService().self)
     private var cartResetService = CartResetService(apiService: APIService().self)
-    private var cartItemData: [CartModel] = [] {
-        didSet {
-            cartView.cartHeaderView.allSelectedItemView.bindData(seletedItemCount: selectedItem.count, AllItemCount: cartItemData.count)
-            cartView.cartItemCollectionView.reloadData()
-        }
-    }
     
-    private var selectedItem: [CartModel] = [] {
-        didSet {
-            cartView.cartHeaderView.allSelectedItemView.bindData(seletedItemCount: selectedItem.count, AllItemCount: cartItemData.count)
-            
-            let result = calculateSelectedItemPrice(seletedItem: self.selectedItem)
-            cartView.bindPrice(totalPrice: result.totalPrice)
-            
-            cartView.cartItemCollectionView.reloadData()
-        }
-    }
+    private let selectedButtonTap = PassthroughSubject<(Bool, Int), Never>()
+    private let allSelectedButtonTap = PassthroughSubject<Bool, Never>()
+    private var cancellables = Set<AnyCancellable>()
     
+    private let viewModel = CartViewModel()
     private var totalPrice = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setTarget()
-        bindModel()
+        bindViewModel()
     }
-    
-    deinit {
-       // Notification 구독 해제
-       NotificationCenter.default.removeObserver(self, name: CartView.cartTypeDidChangeNotification, object: nil)
-   }
     
     override func loadView() {
         self.view = self.cartView
@@ -102,8 +86,8 @@ extension CartViewController {
             do {
                 let result = try await cartCheckService.fetchCart(xAuthId: 1)
 
-                cartItemData = result
-                selectedItem.removeAll()
+                viewModel.cartItemData = result
+                viewModel.selectedItem.removeAll()
                 
                 if result.isEmpty {
                     cartView.cartType = .emptyCart
@@ -121,28 +105,18 @@ extension CartViewController {
 extension CartViewController: SelectedItemProtocol {
     
     func getButtonState(state: Bool, row: Int) {
-        if state == true {
-            cartItemData[row].isSelect = state
-            
-            selectedItem.append(cartItemData[row])
-        } else {
-            cartItemData[row].isSelect = state
-            
-            if let index = selectedItem.firstIndex(where: { $0.productName == cartItemData[row].productName }) {
-                selectedItem.remove(at: index)
-            }
-        }
+        selectedButtonTap.send((state, row))
     }
 }
 
 extension CartViewController: UpdatingStepperProtocol {
     
     func updateStepperValue(value: Int, row: Int) {
-        cartItemData[row].itemCount = value
+        viewModel.cartItemData[row].itemCount = value
         
-        if cartItemData[row].isSelect == true {
-            if let index = selectedItem.firstIndex(where: { $0.productName == cartItemData[row].productName }) {
-                selectedItem[index] = cartItemData[row]
+        if viewModel.cartItemData[row].isSelect == true {
+            if let index = viewModel.selectedItem.firstIndex(where: { $0.productName == viewModel.cartItemData[row].productName }) {
+                viewModel.selectedItem[index] = viewModel.cartItemData[row]
             }
         } else {
             cartView.cartItemCollectionView.reloadData()
@@ -152,10 +126,29 @@ extension CartViewController: UpdatingStepperProtocol {
 
 extension CartViewController {
     
-    private func bindModel() {
-        cartView.cartHeaderView.allSelectedItemView.bindData(seletedItemCount: selectedItem.count, AllItemCount: cartItemData.count)
+    func bindViewModel() {
+        viewModel.$cartItemData.combineLatest(viewModel.$selectedItem)
+            .sink { [weak self] cartItems, selectedItems in
+                self?.cartView.cartHeaderView.allSelectedItemView.bindData(seletedItemCount: selectedItems.count, AllItemCount: cartItems.count)
+                self?.cartView.cartItemCollectionView.reloadData()
+            }
+            .store(in: &cancellables)
         
-        cartView.bindPrice(totalPrice: 0)
+        viewModel.$selectedItem
+            .sink { [weak self] data in
+                let result = self?.calculateSelectedItemPrice(seletedItem: data)
+                self?.cartView.bindPrice(totalPrice: result?.totalPrice ?? 0)
+                
+                self?.cartView.cartItemCollectionView.reloadData()
+            }
+            .store(in: &cancellables)
+
+    
+        viewModel.transformButtonState(input: self.selectedButtonTap.eraseToAnyPublisher())
+        
+        viewModel.transformSelectButton(input: self.allSelectedButtonTap.eraseToAnyPublisher())
+        
+//        viewModel.transformSteeper(input: self.stepperButtonTap.eraseToAnyPublisher())
     }
     
     private func setTarget() {
@@ -212,20 +205,7 @@ extension CartViewController {
         print("구매 상품 전체 선택하기!")
         
         sender.isSelected.toggle()
-        
-        if sender.isSelected == true {
-            for i in 0..<cartItemData.count {
-                if cartItemData[i].isSelect == false {
-                    cartItemData[i].isSelect = true
-                    selectedItem.append(cartItemData[i])
-                }
-            }
-        } else {
-            for i in 0..<cartItemData.count {
-                cartItemData[i].isSelect = false
-                selectedItem.removeAll()
-            }
-        }
+        allSelectedButtonTap.send(sender.isSelected)
     }
     
     @objc func tapSelectDeleteItemButton() {
@@ -249,7 +229,7 @@ extension CartViewController: UICollectionViewDataSource {
         
         switch section {
         case 0 :
-            return cartItemData.count
+            return viewModel.cartItemData.count
         case 1 :
             return 1
         default:
@@ -268,13 +248,13 @@ extension CartViewController: UICollectionViewDataSource {
             
             cell.deleteItemButton.addTarget(self, action: #selector(tapDeleteItemButton), for: .touchUpInside)
             
-            cell.bindModel(model: cartItemData[indexPath.row], row: indexPath.row)
+            cell.bindModel(model: viewModel.cartItemData[indexPath.row], row: indexPath.row)
             
             return cell
         case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OrderPriceCollectionViewCell.identifier, for: indexPath) as? OrderPriceCollectionViewCell else { return UICollectionViewCell() }
             
-            cell.bindModel(model: calculateSelectedItemPrice(seletedItem: selectedItem))
+            cell.bindModel(model: calculateSelectedItemPrice(seletedItem: viewModel.selectedItem))
             
             return cell
         default:

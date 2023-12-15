@@ -27,8 +27,6 @@ final class CartHeaderView: BaseView {
     init(type: CartViewType) {
         self.cartType = type
         super.init(frame: .zero)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(handleCartTypeDidChange(_:)), name: CartView.cartTypeDidChangeNotification, object: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -78,11 +76,5 @@ final class CartHeaderView: BaseView {
         if let newCartType = notification.object as? CartViewType {
             cartType = newCartType
         }
-    }
-
-    deinit {
-        print("CartHeaderView NotificationCenter 연결 종료")
-        
-        NotificationCenter.default.removeObserver(self, name: CartView.cartTypeDidChangeNotification, object: nil)
     }
 }
