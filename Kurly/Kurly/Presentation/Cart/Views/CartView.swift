@@ -12,11 +12,8 @@ import Then
 
 final class CartView: BaseView {
     
-    static let cartTypeDidChangeNotification = Notification.Name("CartTypeDidChangeNotification")
-    
     var cartType: CartViewType = .emptyCart {
         didSet {
-            NotificationCenter.default.post(name: CartView.cartTypeDidChangeNotification, object: cartType)
             bottomCTAButton.titleType = self.cartType == .emptyCart ? .emptyCart : .order
 
             setLayout()
@@ -115,10 +112,6 @@ final class CartView: BaseView {
             }
         }
     }
-    
-    deinit {
-       NotificationCenter.default.removeObserver(self, name: CartView.cartTypeDidChangeNotification, object: nil)
-   }
 }
 
 extension CartView {
